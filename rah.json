@@ -1,0 +1,42 @@
+[
+    {
+        "auth": "xeUiaLuGCf9LlAegDFcF0RenmtS-U5TcqQeAlSDiA_k",
+        "name": "tryazaed",
+        "Games": 99,
+        "Wins": 0,
+        "Goals": 4,
+        "Assists": 0,
+        "CS": 0,
+        "Own goals": 1
+    },
+    {
+        "auth": "xeUiaLuGCf9LlAegDFcF0RenmtS-U5TcqQeAlSDiA_k",
+        "name": "yura",
+        "Games": 89,
+        "Wins": 0,
+        "Goals": 4,
+        "Assists": 0,
+        "CS": 0,
+        "Own goals": 2
+    },
+    {
+        "auth": "xeUiaLuGCf9LlAegDFcF0RenmtS-U5TcqQeAlSDiA_k",
+        "name": "comrade",
+        "Games": 5,
+        "Wins": 0,
+        "Goals": 4,
+        "Assists": 0,
+        "CS": 0,
+        "Own goals": 10
+    },
+    {
+        "auth": "xeUiaLuGCf9LlAegDFcF0RenmtS-U5TcqQeAlSDiA_k",
+        "name": "vvv",
+        "Games": 9,
+        "Wins": 0,
+        "Goals": 4,
+        "Assists": 0,
+        "CS": 0,
+        "Own goals": 0
+    }
+]
