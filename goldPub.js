@@ -9,7 +9,7 @@ HaxballJS.then((HBInit) => {
     /* ROOM */
     let password = '1951'
     const headless = false;
-    const roomName = '🟣⚫⚽️ 𝗦.𝗣.𝗟. 𝗚𝗼𝗹𝗱 🏆 | Futsal 4v4 ⚽️⚫🟣';
+    const roomName = '🟣⚫⚽️ 𝗦.𝗣.𝗟. 𝟭 🏆 | Futsal 4v4 ⚽️⚫🟣';
     const maxPlayers = 18;
     const roomPublic = headless ? false : true;
     const token = 'thr1.AAAAAGX4d8Kwodm5VkhkaQ.BzRRYAGtSrc'; // Insert token here
@@ -7316,16 +7316,16 @@ Example: !removeadmin #300 will remove admin to the player with id 300,
             room.sendAnnouncement(`🚨 Join our discord server here: https://discord.gg/cx9WWA84dv!`, null, announcementColour, "bold", null);
         }
         coins() {
-            room.sendAnnouncement('🪙 You now win coins when you score, assist or keep a clean sheet! Check your balance using !bank and check the available items using !shop', null, announcementColour, 'bold')
+            room.sendAnnouncement('🪙 Earn coins by scoring goals and spend them in our !shop', null, announcementColour, 'bold')
         }
-        gotm() {
-            room.sendAnnouncement('⚽️ Want to win a special role and loads of coins? Send your best goal on the discord in #flex-yo-gif and one goal will be elected Goal of the Month!', null, announcementColour, 'bold')
-        }
+        // gotm() {
+        //     room.sendAnnouncement('⚽️ Want to win a special role and loads of coins? Send your best goal on the discord in #flex-yo-gif and one goal will be elected Goal of the Month!', null, announcementColour, 'bold')
+        // }
     }
     const notify = new Notify();
 
     setInterval(notify.discord, 170000);
-    setInterval(notify.gotm, 200000);
+    // setInterval(notify.gotm, 200000);
     setInterval(notify.coins, 230000);
 
 })
