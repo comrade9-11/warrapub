@@ -10,9 +10,9 @@ HaxballJS.then((HBInit) => {
     let password = '1951'
     const headless = false;
     const roomName = '🟣⚫⚽️ 𝗦.𝗣.𝗟. 𝟮 🔥 | Futsal 4v4 ⚽️⚫🟣';
-    const maxPlayers = 18;
+    const maxPlayers = 9;
     const roomPublic = headless ? false : true;
-    const token = 'thr1.AAAAAGX4d8Kwodm5VkhkaQ.BzRRYAGtSrc'; // Insert token here
+    const token = 'thr1.AAAAAGX6fX-DWYieWPTIBw.HfoJtIw2Q2Q'; // Insert token here
     const roomGeo = { 'code': 'gb', 'lat': 52, 'lon': 5 };
 
     //3def system settings
@@ -2967,7 +2967,7 @@ HaxballJS.then((HBInit) => {
     ];
     let masterList = [
         'xeUiaLuGCf9LlAegDFcF0RenmtS-U5TcqQeAlSDiA_k', //coradme
-        //'DBCSxwLnoX1U3OL1L7sD8X08j0BfyWlsoyUZRq22pRY' //comradelaucher
+        'DBCSxwLnoX1U3OL1L7sD8X08j0BfyWlsoyUZRq22pRY' //comradelaucher
     ];
 
     /* OPTIONS */
@@ -5968,13 +5968,21 @@ Example: !removeadmin #300 will remove admin to the player with id 300,
         if (cs == 'none') {
             return '🥅 No CS';
         } else if (cs == 'red') {
-            updateCS(authArray[getGkRed().id][0])
-            avatarCelebration(getGkRed().id, '🧤')
-            return `🥅 ${getGkRed().name} had a CS.`;
+            if (getGkRed().id != null) {
+                updateCS(authArray[getGkRed().id][0])
+                avatarCelebration(getGkRed().id, '🧤')
+                return `🥅 ${getGkRed().name} had a CS.`;
+            } else {
+                return `🥅 red team had a CS.`;
+            }
         } else if (cs == 'blue') {
-            updateCS(authArray[getGkBlue().id][0])
-            avatarCelebration(getGkBlue().id, '🧤')
-            return `🥅 ${getGkBlue().name} had a CS.`;
+            if (getGkBlue().id != null) {
+                updateCS(authArray[getGkBlue().id][0])
+                avatarCelebration(getGkBlue().id, '🧤')
+                return `🥅 ${getGkBlue().name} had a CS.`;
+            } else {
+                return `🥅 blue team had a CS.`;
+            }
         }
     }
 
@@ -6906,8 +6914,33 @@ Example: !removeadmin #300 will remove admin to the player with id 300,
     }
     const ball = new Ball();
 
+    let forbiddenWords = ['nigga', 'gay', 'nigger', 'niggas', 'niggers']
+
+    var lastMessage = []
+    var spamWarning = []
+
     /* PLAYER ACTIVITY */
     room.onPlayerChat = function (player, message) { //chat
+        for (let i = 0; i < forbiddenWords.length; i++) {
+            let muteObj = new MutePlayer(player.name, player.id, authArray[player.id][0])
+            
+            if (message.toLowerCase().includes(forbiddenWords[i])) {
+                muteObj.setDuration(10)
+                room.sendAnnouncement(`${player.name} has been muted for 10 minutes for saying a banned word.`, null, announcementColour, 'bold')
+            }
+        }
+
+        let muteObj = new MutePlayer(player.name, player.id, authArray[player.id][0])
+
+        if (spamWarning[player.id] == true) {
+            muteObj.setDuration(5)
+            room.sendAnnouncement(`${player.name} has been muted for 5 minutes for spamming.`, null, announcementColour, 'bold')
+        }
+
+        lastMessage[player.id] == message ? spamWarning[player.id] = true : spamWarning[player.id] = false
+
+        lastMessage[player.id] = message
+
         if (gameState !== State.STOP && player.team != Team.SPECTATORS) {
             let pComp = getPlayerComp(player);
             if (pComp != null) pComp.inactivityTicks = 0;
@@ -6986,11 +7019,9 @@ Example: !removeadmin #300 will remove admin to the player with id 300,
             var playerEmoji = emojisArray[player.id]
         }
 
-        // || authArray[player.id][0] == 'DBCSxwLnoX1U3OL1L7sD8X08j0BfyWlsoyUZRq22pRY'
-
         if (authArray[player.id][0] == 'FJ6IOSY7xYlnLzeKBC-NoPGJnbIdaFOvAI1PchPU5rI' || authArray[player.id][0] == 'r3zt-IZ5DvDUDOvgmILrrrg06_UkEc6oGEGsBia3N2c') {
             room.sendAnnouncement(`🍎 Admin | Lvl ${playerLevel} | ${player.name}: ${message}`, undefined, 0xEE3232, "normal", 0); //apple
-        } else if (authArray[player.id][0] == 'xeUiaLuGCf9LlAegDFcF0RenmtS-U5TcqQeAlSDiA_k') {
+        } else if (authArray[player.id][0] == 'xeUiaLuGCf9LlAegDFcF0RenmtS-U5TcqQeAlSDiA_k' || authArray[player.id][0] == 'DBCSxwLnoX1U3OL1L7sD8X08j0BfyWlsoyUZRq22pRY') {
             room.sendAnnouncement(`🗣️ Master | Lvl ${playerLevel} | ${player.name}: ${message}`, undefined, 0xB7FFF6, "normal", 0); //comrade
         } else if (authArray[player.id][0] == 'NmZF9AHd9WT_DZuRlcP56TgFGpTVo8v7GTmnqQJWI5g') {
             room.sendAnnouncement(`🪲 Admin | Lvl ${playerLevel} | ${player.name}: ${message}`, undefined, 0x8DFF83, "normal", 0); //slv
