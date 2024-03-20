@@ -2967,7 +2967,7 @@ HaxballJS.then((HBInit) => {
     ];
     let masterList = [
         'xeUiaLuGCf9LlAegDFcF0RenmtS-U5TcqQeAlSDiA_k', //coradme
-        //'DBCSxwLnoX1U3OL1L7sD8X08j0BfyWlsoyUZRq22pRY' //comradelaucher
+        'DBCSxwLnoX1U3OL1L7sD8X08j0BfyWlsoyUZRq22pRY' //comradelaucher
     ];
 
     /* OPTIONS */
@@ -7019,11 +7019,9 @@ Example: !removeadmin #300 will remove admin to the player with id 300,
             var playerEmoji = emojisArray[player.id]
         }
 
-        // || authArray[player.id][0] == 'DBCSxwLnoX1U3OL1L7sD8X08j0BfyWlsoyUZRq22pRY'
-
         if (authArray[player.id][0] == 'FJ6IOSY7xYlnLzeKBC-NoPGJnbIdaFOvAI1PchPU5rI' || authArray[player.id][0] == 'r3zt-IZ5DvDUDOvgmILrrrg06_UkEc6oGEGsBia3N2c') {
             room.sendAnnouncement(`🍎 Admin | Lvl ${playerLevel} | ${player.name}: ${message}`, undefined, 0xEE3232, "normal", 0); //apple
-        } else if (authArray[player.id][0] == 'xeUiaLuGCf9LlAegDFcF0RenmtS-U5TcqQeAlSDiA_k') {
+        } else if (authArray[player.id][0] == 'xeUiaLuGCf9LlAegDFcF0RenmtS-U5TcqQeAlSDiA_k' || authArray[player.id][0] == 'DBCSxwLnoX1U3OL1L7sD8X08j0BfyWlsoyUZRq22pRY') {
             room.sendAnnouncement(`🗣️ Master | Lvl ${playerLevel} | ${player.name}: ${message}`, undefined, 0xB7FFF6, "normal", 0); //comrade
         } else if (authArray[player.id][0] == 'NmZF9AHd9WT_DZuRlcP56TgFGpTVo8v7GTmnqQJWI5g') {
             room.sendAnnouncement(`🪲 Admin | Lvl ${playerLevel} | ${player.name}: ${message}`, undefined, 0x8DFF83, "normal", 0); //slv
