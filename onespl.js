@@ -9,7 +9,7 @@ HaxballJS.then((HBInit) => {
     /* ROOM */
     let password = '1951'
     const headless = false;
-    const roomName = '🟣⚫⚽️ 𝗦.𝗣.𝗟. 𝟮 🔥 | Futsal 4v4 ⚽️⚫🟣';
+    const roomName = '🟣⚫⚽️ 𝗦.𝗣.𝗟. 𝟭 🏆 | Futsal 4v4 ⚽️⚫🟣';
     const maxPlayers = 18;
     const roomPublic = headless ? false : true;
     const token = 'thr1.AAAAAGX4d8Kwodm5VkhkaQ.BzRRYAGtSrc'; // Insert token here
@@ -3257,7 +3257,7 @@ HaxballJS.then((HBInit) => {
         {
             name: 'chat colour',
             price: 250,
-            description: 'Allows you to set a custom chat colour and emoji. (Syntax: !buy 1 <emoji> <colour> (colour format: xxxxxx))',
+            description: 'Changes your colour chat and emoji. (Syntax: !buy 1 <emoji> <colour> (colour format: xxxxxx))',
             function: changePlayerChat
         },
         {
