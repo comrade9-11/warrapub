@@ -6741,13 +6741,13 @@ Example: !removeadmin #300 will remove admin to the player with id 300,
             }
         }
 
-        let sameConnCheck = playersAll.filter((p) => p.id != player.id && authArray[p.id][1] == player.conn);
-        if (sameConnCheck.length > 0 && !debugMode && !headless) {
-            let oldPlayerArray = playersAll.filter((p) => p.id != player.id && authArray[p.id][1] == player.conn);
-            for (let oldPlayer of oldPlayerArray) {
-                ghostKickHandle(oldPlayer, player);
-            }
-        }
+        // let sameConnCheck = playersAll.filter((p) => p.id != player.id && authArray[p.id][1] == player.conn);
+        // if (sameConnCheck.length > 0 && !debugMode && !headless) {
+        //     let oldPlayerArray = playersAll.filter((p) => p.id != player.id && authArray[p.id][1] == player.conn);
+        //     for (let oldPlayer of oldPlayerArray) {
+        //         ghostKickHandle(oldPlayer, player);
+        //     }
+        // }
         handlePlayersJoin();
     };
 
