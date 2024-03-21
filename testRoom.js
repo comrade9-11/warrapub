@@ -5972,7 +5972,7 @@ Example: !removeadmin #300 will remove admin to the player with id 300,
         if (cs == 'none') {
             return '🥅 No CS';
         } else if (cs == 'red') {
-            if (getGkRed().id != null) {
+            if (getGkRed() != null) {
                 updateCS(authArray[getGkRed().id][0])
                 avatarCelebration(getGkRed().id, '🧤')
                 return `🥅 ${getGkRed().name} had a CS.`;
@@ -5980,7 +5980,7 @@ Example: !removeadmin #300 will remove admin to the player with id 300,
                 return `🥅 red team had a CS.`;
             }
         } else if (cs == 'blue') {
-            if (getGkBlue().id != null) {
+            if (getGkBlue() != null) {
                 updateCS(authArray[getGkBlue().id][0])
                 avatarCelebration(getGkBlue().id, '🧤')
                 return `🥅 ${getGkBlue().name} had a CS.`;

@@ -10,9 +10,9 @@ HaxballJS.then((HBInit) => {
     let password = '1951'
     const headless = false;
     const roomName = '🟣⚫⚽️ 𝗦.𝗣.𝗟. 𝟮 🔥 | Futsal 4v4 ⚽️⚫🟣';
-    const maxPlayers = 9;
+    const maxPlayers = 20;
     const roomPublic = headless ? false : true;
-    const token = 'thr1.AAAAAGX6fX-DWYieWPTIBw.HfoJtIw2Q2Q'; // Insert token here
+    const token = 'thr1.AAAAAGX7LTCpj3ycj67WLg.tJWJqytFmxA'; // Insert token here
     const roomGeo = { 'code': 'gb', 'lat': 52, 'lon': 5 };
 
     //3def system settings
@@ -2976,7 +2976,7 @@ HaxballJS.then((HBInit) => {
     let maxAdmins = 0;
     let disableBans = false;
     let debugMode = false;
-    let afkLimit = debugMode ? Infinity : 21;
+    let afkLimit = debugMode ? Infinity : 15;
     let defaultSlowMode = 0.5;
     let chooseModeSlowMode = 1;
     let slowMode = defaultSlowMode;
@@ -3998,7 +3998,11 @@ Example: !removeadmin #300 will remove admin to the player with id 300,
     /* PLAYER COMMANDS */
 
     function leaveCommand(player, message) {
-        room.kickPlayer(player.id, 'Bye!', false);
+        if (room.getScores() == null || player.team == 0) {
+            room.kickPlayer(player.id, 'Bye!', false);
+        } else {
+            room.sendAnnouncement('You cannot leave now! Wait for the game to end.', player.id, warningColour, 'bold')
+        }
     }
 
     function helpCommand(player, message) {
@@ -4971,8 +4975,8 @@ Example: !removeadmin #300 will remove admin to the player with id 300,
         let actionString = `🔴 ${actionRedPct.toFixed(0)}% - ${actionBluePct.toFixed(0)}% 🔵`;
         let CSString = getCSString(scores);
         room.sendAnnouncement(
-            `📊 Possession: 🔴 ${possessionString}\n` +
-            `📊 Action Zone: 🔴 ${actionString}\n` +
+            `📊 Possession: ${possessionString}\n` +
+            `📊 Action Zone: ${actionString}\n` +
             `${CSString}`,
             null,
             announcementColour,
@@ -5968,7 +5972,7 @@ Example: !removeadmin #300 will remove admin to the player with id 300,
         if (cs == 'none') {
             return '🥅 No CS';
         } else if (cs == 'red') {
-            if (getGkRed().id != null) {
+            if (getGkRed() != null) {
                 updateCS(authArray[getGkRed().id][0])
                 avatarCelebration(getGkRed().id, '🧤')
                 return `🥅 ${getGkRed().name} had a CS.`;
@@ -5976,7 +5980,7 @@ Example: !removeadmin #300 will remove admin to the player with id 300,
                 return `🥅 red team had a CS.`;
             }
         } else if (cs == 'blue') {
-            if (getGkBlue().id != null) {
+            if (getGkBlue() != null) {
                 updateCS(authArray[getGkBlue().id][0])
                 avatarCelebration(getGkBlue().id, '🧤')
                 return `🥅 ${getGkBlue().name} had a CS.`;
@@ -6677,7 +6681,13 @@ Example: !removeadmin #300 will remove admin to the player with id 300,
         })
     }
 
+    let playerLimit = maxPlayers - 2
+
     room.onPlayerJoin = function (player) {
+        if (room.getPlayerList().length >= playerLimit) {
+            room.setPassword('crazy')
+        }
+
         authArray[player.id] = [player.auth, player.conn];
 
         createPlayerData(player.auth, player.name)
@@ -6730,6 +6740,14 @@ Example: !removeadmin #300 will remove admin to the player with id 300,
                 ghostKickHandle(oldPlayer, player);
             }
         }
+
+        let sameConnCheck = playersAll.filter((p) => p.id != player.id && authArray[p.id][1] == player.conn);
+        if (sameConnCheck.length > 0 && !debugMode && !headless) {
+            let oldPlayerArray = playersAll.filter((p) => p.id != player.id && authArray[p.id][1] == player.conn);
+            for (let oldPlayer of oldPlayerArray) {
+                ghostKickHandle(oldPlayer, player);
+            }
+        }
         handlePlayersJoin();
     };
 
@@ -6757,6 +6775,10 @@ Example: !removeadmin #300 will remove admin to the player with id 300,
     };
 
     room.onPlayerLeave = function (player) {
+        if (room.getPlayerList().length < playerLimit) {
+            room.setPassword(null)
+        }
+
         setTimeout(() => {
             if (!kickFetchletiable) {
                 if (roomWebhook != '') {
@@ -6921,25 +6943,17 @@ Example: !removeadmin #300 will remove admin to the player with id 300,
 
     /* PLAYER ACTIVITY */
     room.onPlayerChat = function (player, message) { //chat
+
         for (let i = 0; i < forbiddenWords.length; i++) {
             let muteObj = new MutePlayer(player.name, player.id, authArray[player.id][0])
             
-            if (message.toLowerCase().includes(forbiddenWords[i])) {
-                muteObj.setDuration(10)
-                room.sendAnnouncement(`${player.name} has been muted for 10 minutes for saying a banned word.`, null, announcementColour, 'bold')
+            if (!player.admin) {
+                if (message.toLowerCase().includes(forbiddenWords[i]) && muteArray.getByPlayerId(player.id) == null) {
+                    muteObj.setDuration(10)
+                    room.sendAnnouncement(`${player.name} has been muted for 10 minutes for saying a banned word.`, null, announcementColour, 'bold')
+                }
             }
         }
-
-        let muteObj = new MutePlayer(player.name, player.id, authArray[player.id][0])
-
-        if (spamWarning[player.id] == true) {
-            muteObj.setDuration(5)
-            room.sendAnnouncement(`${player.name} has been muted for 5 minutes for spamming.`, null, announcementColour, 'bold')
-        }
-
-        lastMessage[player.id] == message ? spamWarning[player.id] = true : spamWarning[player.id] = false
-
-        lastMessage[player.id] = message
 
         if (gameState !== State.STOP && player.team != Team.SPECTATORS) {
             let pComp = getPlayerComp(player);
@@ -7020,7 +7034,7 @@ Example: !removeadmin #300 will remove admin to the player with id 300,
         }
 
         if (authArray[player.id][0] == 'FJ6IOSY7xYlnLzeKBC-NoPGJnbIdaFOvAI1PchPU5rI' || authArray[player.id][0] == 'r3zt-IZ5DvDUDOvgmILrrrg06_UkEc6oGEGsBia3N2c') {
-            room.sendAnnouncement(`🍎 Admin | Lvl ${playerLevel} | ${player.name}: ${message}`, undefined, 0xEE3232, "normal", 0); //apple
+            room.sendAnnouncement(`🍎 Admin | Lvl ${playerLevel} | ${player.name}: ${message}`, undefined, 0xEE3232, "bold", 0); //apple
         } else if (authArray[player.id][0] == 'xeUiaLuGCf9LlAegDFcF0RenmtS-U5TcqQeAlSDiA_k' || authArray[player.id][0] == 'DBCSxwLnoX1U3OL1L7sD8X08j0BfyWlsoyUZRq22pRY') {
             room.sendAnnouncement(`🗣️ Master | Lvl ${playerLevel} | ${player.name}: ${message}`, undefined, 0xB7FFF6, "normal", 0); //comrade
         } else if (authArray[player.id][0] == 'NmZF9AHd9WT_DZuRlcP56TgFGpTVo8v7GTmnqQJWI5g') {
