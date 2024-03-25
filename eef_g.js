@@ -2,10 +2,10 @@
 
 /* ROOM */
 const headless = false;
-const roomName = 'Futsal 4v4 | Gold';
+const roomName = '🟡 𝐄.𝐄.𝐅. 𝐆𝐨𝐥𝐝 🎁 | Futsal x4';
 const maxPlayers = 24;
 const roomPublic = headless ? false : true;
-const token = "x"; // Insert token here
+const token = "xk"; // Insert token here
 const roomGeo = {"code": "gb", "lat": 50.389767789311, "lon": 3.48716683321}; // 50.883837, 4.382505
 
 //3def system settings
@@ -25,4997 +25,4992 @@ let fetchRecordingletiable = true;
 let timeLimit = 3;
 let scoreLimit = 3;
 
-/*
-if (typeof token == 'string' && token.length == 39) {
-    gameConfig.token = token;
-}
-*/
 
 const room = HBInit({
     roomName: roomName,
     maxPlayers: maxPlayers,
-    public: false,
+    public: roomPublic,
     geo: roomGeo,
     noPlayer: true,
 });
 
 const trainingMap = `{
-	"name": "EEF training",
-	"width": 465,
-	"height": 230,
-	"cameraWidth": 0,
-	"cameraHeight": 0,
-	"maxViewWidth": 0,
-	"cameraFollow": "ball",
-	"spawnDistance": 150,
-	"redSpawnPoints": [],
-	"blueSpawnPoints": [],
-	"canBeStored": false,
-	"kickOffReset": "full",
-	"bg": {
-		"color": "323847",
-		"height": 200,
-		"width": 400
-	},
-	"traits": {
-		"ballArea": {
-			"vis": false,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			]
-		},
-		"goalPost": {
-			"radius": 8,
-			"invMass": 0,
-			"bCoef": 0.5
-		},
-		"goalNet": {
-			"vis": true,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			]
-		},
-		"kickOffBarrier": {
-			"vis": false,
-			"bCoef": 0.1,
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"cMask": [
-				"red",
-				"blue"
-			]
-		}
-	},
-	"vertexes": [
-		{
-			"x": -401,
-			"y": -200,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": -10,
-			"vis": true
-		},
-		{
-			"x": 401,
-			"y": -200,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": -10,
-			"vis": true
-		},
-		{
-			"x": -401,
-			"y": 200,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": 10,
-			"vis": true
-		},
-		{
-			"x": 401,
-			"y": 200,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": 10,
-			"vis": true
-		},
-		{
-			"x": -400,
-			"y": 70,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": 10,
-			"vis": true
-		},
-		{
-			"x": -400,
-			"y": 201,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": 10,
-			"vis": true
-		},
-		{
-			"x": 400,
-			"y": 70,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": -10,
-			"vis": true
-		},
-		{
-			"x": 400,
-			"y": 201,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": -10,
-			"vis": true
-		},
-		{
-			"x": -400,
-			"y": -201,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": 10,
-			"vis": true
-		},
-		{
-			"x": -400,
-			"y": -70,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": 10,
-			"vis": true
-		},
-		{
-			"x": 400,
-			"y": -201,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": -10,
-			"vis": true
-		},
-		{
-			"x": 400,
-			"y": -70,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": -10,
-			"vis": true
-		},
-		{
-			"x": -436,
-			"y": -70,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10,
-			"color": "ff6666"
-		},
-		{
-			"x": -400,
-			"y": -70,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10,
-			"color": "ff6666"
-		},
-		{
-			"x": -436,
-			"y": 70,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10,
-			"color": "ff6666"
-		},
-		{
-			"x": -400,
-			"y": 70,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10,
-			"color": "ff6666"
-		},
-		{
-			"x": -435,
-			"y": -71,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10,
-			"color": "ff6666"
-		},
-		{
-			"x": -435,
-			"y": 71,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10,
-			"color": "ff6666"
-		},
-		{
-			"x": 435,
-			"y": -71,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10,
-			"color": "6666ff"
-		},
-		{
-			"x": 435,
-			"y": 71,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10,
-			"color": "6666ff"
-		},
-		{
-			"x": 436,
-			"y": -70,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10,
-			"color": "6666ff"
-		},
-		{
-			"x": 400,
-			"y": -70,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10,
-			"color": "6666ff"
-		},
-		{
-			"x": 436,
-			"y": 70,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10,
-			"color": "6666ff"
-		},
-		{
-			"x": 400,
-			"y": 70,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10,
-			"color": "6666ff"
-		},
-		{
-			"x": -400,
-			"y": -70,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "DCDCDC",
-			"curve": 0
-		},
-		{
-			"x": -400,
-			"y": 70,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "DCDCDC",
-			"curve": 0
-		},
-		{
-			"x": 400,
-			"y": -70,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "DCDCDC"
-		},
-		{
-			"x": 400,
-			"y": 70,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "DCDCDC"
-		},
-		{
-			"x": -200,
-			"y": -198.5,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "686763"
-		},
-		{
-			"x": -200,
-			"y": 198.5,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "686763"
-		},
-		{
-			"x": 200,
-			"y": -198.5,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "686763",
-			"_data": {
-				"mirror": {}
-			}
-		},
-		{
-			"x": 200,
-			"y": 198.5,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "686763",
-			"_data": {
-				"mirror": {}
-			}
-		},
-		{
-			"x": -398.5,
-			"y": -100,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 0,
-			"color": "686763"
-		},
-		{
-			"x": -339,
-			"y": -100,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 0,
-			"color": "686763"
-		},
-		{
-			"x": -398.5,
-			"y": 100,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 0,
-			"color": "686763"
-		},
-		{
-			"x": -339,
-			"y": 100,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 0,
-			"color": "686763"
-		},
-		{
-			"x": -340,
-			"y": -101,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "686763"
-		},
-		{
-			"x": -340,
-			"y": 101,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "686763"
-		},
-		{
-			"x": 340,
-			"y": -101,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "686763"
-		},
-		{
-			"x": 340,
-			"y": 101,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "686763"
-		},
-		{
-			"x": 339,
-			"y": -100,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 0,
-			"color": "686763"
-		},
-		{
-			"x": 398.5,
-			"y": -100,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 0,
-			"color": "686763"
-		},
-		{
-			"x": 339,
-			"y": 100,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 0,
-			"color": "686763"
-		},
-		{
-			"x": 398.5,
-			"y": 100,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 0,
-			"color": "686763"
-		},
-		{
-			"x": -270,
-			"y": 2.5,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 180,
-			"color": "686763"
-		},
-		{
-			"x": -270,
-			"y": -2.5,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 180,
-			"color": "686763"
-		},
-		{
-			"x": 270,
-			"y": 2.5,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 180,
-			"color": "686763"
-		},
-		{
-			"x": 270,
-			"y": -2.5,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 180,
-			"color": "686763"
-		},
-		{
-			"x": 0,
-			"y": -230,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"vis": false,
-			"color": "818FB0"
-		},
-		{
-			"x": 0,
-			"y": -80,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"vis": false,
-			"color": "818FB0"
-		},
-		{
-			"x": 0,
-			"y": 80,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"color": "818FB0",
-			"vis": false
-		},
-		{
-			"x": 0,
-			"y": 230,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"color": "818FB0",
-			"vis": false
-		},
-		{
-			"x": 0,
-			"y": 80,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"blueKO"
-			],
-			"color": "0A1524"
-		},
-		{
-			"x": 0,
-			"y": -80,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"blueKO"
-			],
-			"color": "0A1524"
-		},
-		{
-			"x": 0,
-			"y": -80,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO"
-			],
-			"color": "f09ec9"
-		},
-		{
-			"x": 0,
-			"y": 80,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO"
-			],
-			"color": "f09ec9"
-		},
-		{
-			"x": 0,
-			"y": -81,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "f09ec9"
-		},
-		{
-			"x": 0,
-			"y": 81,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "f09ec9"
-		},
-		{
-			"x": -402,
-			"y": -70,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "353C4A"
-		},
-		{
-			"x": -402,
-			"y": 70,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "353C4A"
-		},
-		{
-			"x": -398,
-			"y": -70,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "353C4A"
-		},
-		{
-			"x": -398,
-			"y": 70,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "353C4A"
-		},
-		{
-			"x": 398,
-			"y": -70,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "353C4A",
-			"curve": 0
-		},
-		{
-			"x": 398,
-			"y": 70,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "353C4A",
-			"curve": 0
-		},
-		{
-			"x": 402,
-			"y": -70,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "353C4A",
-			"curve": 0
-		},
-		{
-			"x": 402,
-			"y": 70,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "353C4A",
-			"curve": 0
-		},
-		{
-			"x": 0,
-			"y": 2.5,
-			"bCoef": 0.75,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "f09ec9"
-		},
-		{
-			"x": 0,
-			"y": -2.5,
-			"bCoef": 0.75,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "f09ec9"
-		},
-		{
-			"x": 0,
-			"y": -198.5,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"color": "151a1e",
-			"vis": true
-		},
-		{
-			"x": 0,
-			"y": -83,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"color": "151a1e",
-			"vis": true
-		},
-		{
-			"x": 0,
-			"y": 83,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"color": "151a1e",
-			"vis": true
-		},
-		{
-			"x": 0,
-			"y": 198.5,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"color": "151a1e",
-			"vis": true
-		}
-	],
-	"segments": [
-		{
-			"v0": 0,
-			"v1": 1,
-			"vis": true,
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"bias": -10,
-			"y": -200
-		},
-		{
-			"v0": 2,
-			"v1": 3,
-			"vis": true,
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"bias": 10,
-			"y": 200
-		},
-		{
-			"v0": 4,
-			"v1": 5,
-			"vis": true,
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"bias": 10,
-			"x": -400
-		},
-		{
-			"v0": 6,
-			"v1": 7,
-			"vis": true,
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"bias": -10,
-			"x": 400
-		},
-		{
-			"v0": 8,
-			"v1": 9,
-			"vis": true,
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"bias": 10
-		},
-		{
-			"v0": 10,
-			"v1": 11,
-			"vis": true,
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"bias": -10
-		},
-		{
-			"v0": 12,
-			"v1": 13,
-			"color": "ff6666",
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10
-		},
-		{
-			"v0": 14,
-			"v1": 15,
-			"color": "ff6666",
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10,
-			"y": 70
-		},
-		{
-			"v0": 16,
-			"v1": 17,
-			"color": "ff6666",
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10
-		},
-		{
-			"v0": 18,
-			"v1": 19,
-			"color": "6666ff",
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10,
-			"x": 435
-		},
-		{
-			"v0": 20,
-			"v1": 21,
-			"color": "6666ff",
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10
-		},
-		{
-			"v0": 22,
-			"v1": 23,
-			"color": "6666ff",
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10,
-			"y": 70
-		},
-		{
-			"v0": 24,
-			"v1": 25,
-			"curve": 0,
-			"color": "DCDCDC",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": -400
-		},
-		{
-			"v0": 26,
-			"v1": 27,
-			"color": "DCDCDC",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": 400
-		},
-		{
-			"v0": 28,
-			"v1": 29,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": -200
-		},
-		{
-			"v0": 30,
-			"v1": 31,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": 200,
-			"_data": {
-				"mirror": {},
-				"arc": {
-					"a": [
-						200,
-						-198.5
-					],
-					"b": [
-						200,
-						198.5
-					],
-					"radius": null,
-					"center": [
-						null,
-						null
-					],
-					"from": null,
-					"to": null
-				}
-			}
-		},
-		{
-			"v0": 32,
-			"v1": 33,
-			"curve": 0,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"y": -100
-		},
-		{
-			"v0": 34,
-			"v1": 35,
-			"curve": 0,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"y": 100
-		},
-		{
-			"v0": 36,
-			"v1": 37,
-			"curve": 0,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			]
-		},
-		{
-			"v0": 38,
-			"v1": 39,
-			"curve": 0,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": 340
-		},
-		{
-			"v0": 40,
-			"v1": 41,
-			"curve": 0,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"y": -100
-		},
-		{
-			"v0": 42,
-			"v1": 43,
-			"curve": 0,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"y": 100
-		},
-		{
-			"v0": 44,
-			"v1": 45,
-			"curve": 0,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": -270
-		},
-		{
-			"v0": 45,
-			"v1": 44,
-			"curve": 180,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": -270
-		},
-		{
-			"v0": 44,
-			"v1": 45,
-			"curve": 180,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": -270
-		},
-		{
-			"v0": 46,
-			"v1": 47,
-			"curve": 0,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": 270
-		},
-		{
-			"v0": 47,
-			"v1": 46,
-			"curve": 180,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": 270
-		},
-		{
-			"v0": 46,
-			"v1": 47,
-			"curve": 180,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": 270
-		},
-		{
-			"v0": 48,
-			"v1": 49,
-			"vis": false,
-			"color": "818FB0",
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"x": 0
-		},
-		{
-			"v0": 50,
-			"v1": 51,
-			"vis": false,
-			"color": "818FB0",
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"x": 0
-		},
-		{
-			"v0": 52,
-			"v1": 53,
-			"curve": 180,
-			"vis": false,
-			"color": "0A1524",
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"blueKO"
-			],
-			"x": 0
-		},
-		{
-			"v0": 54,
-			"v1": 55,
-			"curve": 180,
-			"vis": false,
-			"color": "f09ec9",
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO"
-			],
-			"x": 0
-		},
-		{
-			"v0": 56,
-			"v1": 57,
-			"curve": -180,
-			"color": "f09ec9",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": 0
-		},
-		{
-			"v0": 57,
-			"v1": 56,
-			"curve": -180,
-			"color": "f09ec9",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": 0
-		},
-		{
-			"v0": 66,
-			"v1": 67,
-			"color": "f09ec9",
-			"bCoef": 0.75,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			]
-		},
-		{
-			"v0": 68,
-			"v1": 69,
-			"vis": true,
-			"color": "151a1e",
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"x": 0
-		},
-		{
-			"v0": 70,
-			"v1": 71,
-			"vis": true,
-			"color": "151a1e",
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"x": 0
-		}
-	],
-	"goals": [],
-	"discs": [
-		{
-			"radius": 5.4,
-			"invMass": 0,
-			"pos": [
-				-400,
-				-70
-			],
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"all"
-			],
-			"cGroup": [
-				"all"
-			]
-		},
-		{
-			"radius": 5.4,
-			"invMass": 0,
-			"pos": [
-				-400,
-				70
-			],
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"all"
-			],
-			"cGroup": [
-				"all"
-			]
-		},
-		{
-			"radius": 5.4,
-			"invMass": 0,
-			"pos": [
-				400,
-				-70
-			],
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"all"
-			],
-			"cGroup": [
-				"all"
-			]
-		},
-		{
-			"radius": 5.4,
-			"invMass": 0,
-			"pos": [
-				400,
-				70
-			],
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"all"
-			],
-			"cGroup": [
-				"all"
-			]
-		}
-	],
-	"planes": [
-		{
-			"normal": [
-				0,
-				1
-			],
-			"dist": -230,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"_data": {
-				"extremes": {
-					"normal": [
-						0,
-						1
-					],
-					"dist": -230,
-					"canvas_rect": [
-						-702,
-						-230,
-						702,
-						230
-					],
-					"a": [
-						-702,
-						-230
-					],
-					"b": [
-						702,
-						-230
-					]
-				}
-			}
-		},
-		{
-			"normal": [
-				0,
-				-1
-			],
-			"dist": -230,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"_data": {
-				"extremes": {
-					"normal": [
-						0,
-						-1
-					],
-					"dist": -230,
-					"canvas_rect": [
-						-702,
-						-230,
-						702,
-						230
-					],
-					"a": [
-						-702,
-						230
-					],
-					"b": [
-						702,
-						230
-					]
-				}
-			}
-		}
-	],
-	"joints": [],
-	"playerPhysics": {
-		"bCoef": 0,
-		"acceleration": 0.11,
-		"kickingAcceleration": 0.083,
-		"kickStrength": 4.545
-	},
-	"ballPhysics": {
-		"radius": 5.8,
-		"bCoef": 0.412,
-		"invMass": 1.5,
-		"color": "FFD700"
-	}
+    "name": "EEF 1v0",
+    "width": 465,
+    "height": 230,
+    "cameraWidth": 0,
+    "cameraHeight": 0,
+    "maxViewWidth": 0,
+    "cameraFollow": "ball",
+    "spawnDistance": 150,
+    "redSpawnPoints": [],
+    "blueSpawnPoints": [],
+    "canBeStored": false,
+    "kickOffReset": "full",
+    "bg": {
+        "color": "3D3542",
+        "height": 200,
+        "width": 400
+    },
+    "traits": {
+        "ballArea": {
+            "vis": false,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ]
+        },
+        "goalPost": {
+            "radius": 8,
+            "invMass": 0,
+            "bCoef": 0.5
+        },
+        "goalNet": {
+            "vis": true,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ]
+        },
+        "kickOffBarrier": {
+            "vis": false,
+            "bCoef": 0.1,
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "cMask": [
+                "red",
+                "blue"
+            ]
+        }
+    },
+    "vertexes": [
+        {
+            "x": -401,
+            "y": -200,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": -10,
+            "vis": true
+        },
+        {
+            "x": 401,
+            "y": -200,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": -10,
+            "vis": true
+        },
+        {
+            "x": -401,
+            "y": 200,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": 10,
+            "vis": true
+        },
+        {
+            "x": 401,
+            "y": 200,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": 10,
+            "vis": true
+        },
+        {
+            "x": -400,
+            "y": 70,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": 10,
+            "vis": true
+        },
+        {
+            "x": -400,
+            "y": 201,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": 10,
+            "vis": true
+        },
+        {
+            "x": 400,
+            "y": 70,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": -10,
+            "vis": true
+        },
+        {
+            "x": 400,
+            "y": 201,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": -10,
+            "vis": true
+        },
+        {
+            "x": -400,
+            "y": -201,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": 10,
+            "vis": true
+        },
+        {
+            "x": -400,
+            "y": -70,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": 10,
+            "vis": true
+        },
+        {
+            "x": 400,
+            "y": -201,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": -10,
+            "vis": true
+        },
+        {
+            "x": 400,
+            "y": -70,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": -10,
+            "vis": true
+        },
+        {
+            "x": -436,
+            "y": -70,
+            "bCoef": 1.7,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10,
+            "color": "ff6666"
+        },
+        {
+            "x": -400,
+            "y": -70,
+            "bCoef": 1.7,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10,
+            "color": "ff6666"
+        },
+        {
+            "x": -436,
+            "y": 70,
+            "bCoef": 1.7,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10,
+            "color": "ff6666"
+        },
+        {
+            "x": -400,
+            "y": 70,
+            "bCoef": 1.7,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10,
+            "color": "ff6666"
+        },
+        {
+            "x": -435,
+            "y": -71,
+            "bCoef": 1.7,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10,
+            "color": "ff6666"
+        },
+        {
+            "x": -435,
+            "y": 71,
+            "bCoef": 1.7,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10,
+            "color": "ff6666"
+        },
+        {
+            "x": 435,
+            "y": -71,
+            "bCoef": 1.7,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10,
+            "color": "6666ff"
+        },
+        {
+            "x": 435,
+            "y": 71,
+            "bCoef": 1.7,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10,
+            "color": "6666ff"
+        },
+        {
+            "x": 436,
+            "y": -70,
+            "bCoef": 1.7,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10,
+            "color": "6666ff"
+        },
+        {
+            "x": 400,
+            "y": -70,
+            "bCoef": 1.7,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10,
+            "color": "6666ff"
+        },
+        {
+            "x": 436,
+            "y": 70,
+            "bCoef": 1.7,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10,
+            "color": "6666ff"
+        },
+        {
+            "x": 400,
+            "y": 70,
+            "bCoef": 1.7,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10,
+            "color": "6666ff"
+        },
+        {
+            "x": -400,
+            "y": -70,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "DCDCDC",
+            "curve": 0
+        },
+        {
+            "x": -400,
+            "y": 70,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "DCDCDC",
+            "curve": 0
+        },
+        {
+            "x": 400,
+            "y": -70,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "DCDCDC"
+        },
+        {
+            "x": 400,
+            "y": 70,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "DCDCDC"
+        },
+        {
+            "x": -200,
+            "y": -198.5,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": -200,
+            "y": 198.5,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": 200,
+            "y": -198.5,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6",
+            "_data": {
+                "mirror": {}
+            }
+        },
+        {
+            "x": 200,
+            "y": 198.5,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6",
+            "_data": {
+                "mirror": {}
+            }
+        },
+        {
+            "x": -398.5,
+            "y": -100,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 0,
+            "color": "b078a6"
+        },
+        {
+            "x": -339,
+            "y": -100,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 0,
+            "color": "b078a6"
+        },
+        {
+            "x": -398.5,
+            "y": 100,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 0,
+            "color": "b078a6"
+        },
+        {
+            "x": -339,
+            "y": 100,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 0,
+            "color": "b078a6"
+        },
+        {
+            "x": -340,
+            "y": -101,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": -340,
+            "y": 101,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": 340,
+            "y": -101,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": 340,
+            "y": 101,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": 339,
+            "y": -100,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 0,
+            "color": "b078a6"
+        },
+        {
+            "x": 398.5,
+            "y": -100,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 0,
+            "color": "b078a6"
+        },
+        {
+            "x": 339,
+            "y": 100,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 0,
+            "color": "b078a6"
+        },
+        {
+            "x": 398.5,
+            "y": 100,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 0,
+            "color": "b078a6"
+        },
+        {
+            "x": -270,
+            "y": 2.5,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 180,
+            "color": "b078a6"
+        },
+        {
+            "x": -270,
+            "y": -2.5,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 180,
+            "color": "b078a6"
+        },
+        {
+            "x": 270,
+            "y": 2.5,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 180,
+            "color": "b078a6"
+        },
+        {
+            "x": 270,
+            "y": -2.5,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 180,
+            "color": "b078a6"
+        },
+        {
+            "x": 0,
+            "y": -230,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "vis": false,
+            "color": "818FB0"
+        },
+        {
+            "x": 0,
+            "y": -80,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "vis": false,
+            "color": "818FB0"
+        },
+        {
+            "x": 0,
+            "y": 80,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "color": "818FB0",
+            "vis": false
+        },
+        {
+            "x": 0,
+            "y": 230,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "color": "818FB0",
+            "vis": false
+        },
+        {
+            "x": 0,
+            "y": 80,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "blueKO"
+            ],
+            "color": "0A1524"
+        },
+        {
+            "x": 0,
+            "y": -80,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "blueKO"
+            ],
+            "color": "0A1524"
+        },
+        {
+            "x": 0,
+            "y": -80,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": 0,
+            "y": 80,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": 0,
+            "y": -81,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": 0,
+            "y": 81,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": -402,
+            "y": -70,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "353C4A"
+        },
+        {
+            "x": -402,
+            "y": 70,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "353C4A"
+        },
+        {
+            "x": -398,
+            "y": -70,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "353C4A"
+        },
+        {
+            "x": -398,
+            "y": 70,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "353C4A"
+        },
+        {
+            "x": 398,
+            "y": -70,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "353C4A",
+            "curve": 0
+        },
+        {
+            "x": 398,
+            "y": 70,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "353C4A",
+            "curve": 0
+        },
+        {
+            "x": 402,
+            "y": -70,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "353C4A",
+            "curve": 0
+        },
+        {
+            "x": 402,
+            "y": 70,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "353C4A",
+            "curve": 0
+        },
+        {
+            "x": 0,
+            "y": 2.5,
+            "bCoef": 0.75,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": 0,
+            "y": -2.5,
+            "bCoef": 0.75,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": 0,
+            "y": -198.5,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "color": "151a1e",
+            "vis": true
+        },
+        {
+            "x": 0,
+            "y": -83,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "color": "151a1e",
+            "vis": true
+        },
+        {
+            "x": 0,
+            "y": 83,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "color": "151a1e",
+            "vis": true
+        },
+        {
+            "x": 0,
+            "y": 198.5,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "color": "151a1e",
+            "vis": true
+        }
+    ],
+    "segments": [
+        {
+            "v0": 0,
+            "v1": 1,
+            "vis": true,
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "bias": -10,
+            "y": -200
+        },
+        {
+            "v0": 2,
+            "v1": 3,
+            "vis": true,
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "bias": 10,
+            "y": 200
+        },
+        {
+            "v0": 4,
+            "v1": 5,
+            "vis": true,
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "bias": 10,
+            "x": -400
+        },
+        {
+            "v0": 6,
+            "v1": 7,
+            "vis": true,
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "bias": -10,
+            "x": 400
+        },
+        {
+            "v0": 8,
+            "v1": 9,
+            "vis": true,
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "bias": 10
+        },
+        {
+            "v0": 10,
+            "v1": 11,
+            "vis": true,
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "bias": -10
+        },
+        {
+            "v0": 12,
+            "v1": 13,
+            "color": "ff6666",
+            "bCoef": 1.7,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10
+        },
+        {
+            "v0": 14,
+            "v1": 15,
+            "color": "ff6666",
+            "bCoef": 1.7,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10,
+            "y": 70
+        },
+        {
+            "v0": 16,
+            "v1": 17,
+            "color": "ff6666",
+            "bCoef": 1.7,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10
+        },
+        {
+            "v0": 18,
+            "v1": 19,
+            "color": "6666ff",
+            "bCoef": 1.7,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10,
+            "x": 435
+        },
+        {
+            "v0": 20,
+            "v1": 21,
+            "color": "6666ff",
+            "bCoef": 1.7,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10
+        },
+        {
+            "v0": 22,
+            "v1": 23,
+            "color": "6666ff",
+            "bCoef": 1.7,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10,
+            "y": 70
+        },
+        {
+            "v0": 24,
+            "v1": 25,
+            "curve": 0,
+            "color": "DCDCDC",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": -400
+        },
+        {
+            "v0": 26,
+            "v1": 27,
+            "color": "DCDCDC",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": 400
+        },
+        {
+            "v0": 28,
+            "v1": 29,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": -200
+        },
+        {
+            "v0": 30,
+            "v1": 31,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": 200,
+            "_data": {
+                "mirror": {},
+                "arc": {
+                    "a": [
+                        200,
+                        -198.5
+                    ],
+                    "b": [
+                        200,
+                        198.5
+                    ],
+                    "radius": null,
+                    "center": [
+                        null,
+                        null
+                    ],
+                    "from": null,
+                    "to": null
+                }
+            }
+        },
+        {
+            "v0": 32,
+            "v1": 33,
+            "curve": 0,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "y": -100
+        },
+        {
+            "v0": 34,
+            "v1": 35,
+            "curve": 0,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "y": 100
+        },
+        {
+            "v0": 36,
+            "v1": 37,
+            "curve": 0,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ]
+        },
+        {
+            "v0": 38,
+            "v1": 39,
+            "curve": 0,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": 340
+        },
+        {
+            "v0": 40,
+            "v1": 41,
+            "curve": 0,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "y": -100
+        },
+        {
+            "v0": 42,
+            "v1": 43,
+            "curve": 0,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "y": 100
+        },
+        {
+            "v0": 44,
+            "v1": 45,
+            "curve": 0,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": -270
+        },
+        {
+            "v0": 45,
+            "v1": 44,
+            "curve": 180,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": -270
+        },
+        {
+            "v0": 44,
+            "v1": 45,
+            "curve": 180,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": -270
+        },
+        {
+            "v0": 46,
+            "v1": 47,
+            "curve": 0,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": 270
+        },
+        {
+            "v0": 47,
+            "v1": 46,
+            "curve": 180,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": 270
+        },
+        {
+            "v0": 46,
+            "v1": 47,
+            "curve": 180,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": 270
+        },
+        {
+            "v0": 48,
+            "v1": 49,
+            "vis": false,
+            "color": "818FB0",
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "x": 0
+        },
+        {
+            "v0": 50,
+            "v1": 51,
+            "vis": false,
+            "color": "818FB0",
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "x": 0
+        },
+        {
+            "v0": 52,
+            "v1": 53,
+            "curve": 180,
+            "vis": false,
+            "color": "0A1524",
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "blueKO"
+            ],
+            "x": 0
+        },
+        {
+            "v0": 54,
+            "v1": 55,
+            "curve": 180,
+            "vis": false,
+            "color": "b078a6",
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO"
+            ],
+            "x": 0
+        },
+        {
+            "v0": 56,
+            "v1": 57,
+            "curve": -180,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": 0
+        },
+        {
+            "v0": 57,
+            "v1": 56,
+            "curve": -180,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": 0
+        },
+        {
+            "v0": 66,
+            "v1": 67,
+            "color": "b078a6",
+            "bCoef": 0.75,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ]
+        },
+        {
+            "v0": 68,
+            "v1": 69,
+            "vis": true,
+            "color": "151a1e",
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "x": 0
+        },
+        {
+            "v0": 70,
+            "v1": 71,
+            "vis": true,
+            "color": "151a1e",
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "x": 0
+        }
+    ],
+    "goals": [],
+    "discs": [
+        {
+            "radius": 5.4,
+            "invMass": 0,
+            "pos": [
+                -400,
+                -70
+            ],
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "all"
+            ],
+            "cGroup": [
+                "all"
+            ]
+        },
+        {
+            "radius": 5.4,
+            "invMass": 0,
+            "pos": [
+                -400,
+                70
+            ],
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "all"
+            ],
+            "cGroup": [
+                "all"
+            ]
+        },
+        {
+            "radius": 5.4,
+            "invMass": 0,
+            "pos": [
+                400,
+                -70
+            ],
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "all"
+            ],
+            "cGroup": [
+                "all"
+            ]
+        },
+        {
+            "radius": 5.4,
+            "invMass": 0,
+            "pos": [
+                400,
+                70
+            ],
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "all"
+            ],
+            "cGroup": [
+                "all"
+            ]
+        }
+    ],
+    "planes": [
+        {
+            "normal": [
+                0,
+                1
+            ],
+            "dist": -230,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "_data": {
+                "extremes": {
+                    "normal": [
+                        0,
+                        1
+                    ],
+                    "dist": -230,
+                    "canvas_rect": [
+                        -702,
+                        -230,
+                        702,
+                        230
+                    ],
+                    "a": [
+                        -702,
+                        -230
+                    ],
+                    "b": [
+                        702,
+                        -230
+                    ]
+                }
+            }
+        },
+        {
+            "normal": [
+                0,
+                -1
+            ],
+            "dist": -230,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "_data": {
+                "extremes": {
+                    "normal": [
+                        0,
+                        -1
+                    ],
+                    "dist": -230,
+                    "canvas_rect": [
+                        -702,
+                        -230,
+                        702,
+                        230
+                    ],
+                    "a": [
+                        -702,
+                        230
+                    ],
+                    "b": [
+                        702,
+                        230
+                    ]
+                }
+            }
+        }
+    ],
+    "joints": [],
+    "playerPhysics": {
+        "bCoef": 0,
+        "acceleration": 0.11,
+        "kickingAcceleration": 0.083,
+        "kickStrength": 4.545
+    },
+    "ballPhysics": {
+        "radius": 5.8,
+        "bCoef": 0.412,
+        "invMass": 1.5,
+        "color": "FFD700"
+    }
 }`;
 const classicMap = `{
-	"name": "EEF v2",
-	"width": 465,
-	"height": 230,
-	"cameraWidth": 0,
-	"cameraHeight": 0,
-	"maxViewWidth": 0,
-	"cameraFollow": "ball",
-	"spawnDistance": 150,
-	"redSpawnPoints": [],
-	"blueSpawnPoints": [],
-	"canBeStored": false,
-	"kickOffReset": "full",
-	"bg": {
-		"color": "323847",
-		"height": 200,
-		"width": 400
-	},
-	"traits": {
-		"ballArea": {
-			"vis": false,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			]
-		},
-		"goalPost": {
-			"radius": 8,
-			"invMass": 0,
-			"bCoef": 0.5
-		},
-		"goalNet": {
-			"vis": true,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			]
-		},
-		"kickOffBarrier": {
-			"vis": false,
-			"bCoef": 0.1,
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"cMask": [
-				"red",
-				"blue"
-			]
-		}
-	},
-	"vertexes": [
-		{
-			"x": -401,
-			"y": -200,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": -10,
-			"vis": true
-		},
-		{
-			"x": 401,
-			"y": -200,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": -10,
-			"vis": true
-		},
-		{
-			"x": -401,
-			"y": 200,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": 10,
-			"vis": true
-		},
-		{
-			"x": 401,
-			"y": 200,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": 10,
-			"vis": true
-		},
-		{
-			"x": -400,
-			"y": 70,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": 10,
-			"vis": true
-		},
-		{
-			"x": -400,
-			"y": 201,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": 10,
-			"vis": true
-		},
-		{
-			"x": 400,
-			"y": 70,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": -10,
-			"vis": true
-		},
-		{
-			"x": 400,
-			"y": 201,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": -10,
-			"vis": true
-		},
-		{
-			"x": -400,
-			"y": -201,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": 10,
-			"vis": true
-		},
-		{
-			"x": -400,
-			"y": -70,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": 10,
-			"vis": true
-		},
-		{
-			"x": 400,
-			"y": -201,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": -10,
-			"vis": true
-		},
-		{
-			"x": 400,
-			"y": -70,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": -10,
-			"vis": true
-		},
-		{
-			"x": -436,
-			"y": -70,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10,
-			"color": "ff6666"
-		},
-		{
-			"x": -400,
-			"y": -70,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10,
-			"color": "ff6666"
-		},
-		{
-			"x": -436,
-			"y": 70,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10,
-			"color": "ff6666"
-		},
-		{
-			"x": -400,
-			"y": 70,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10,
-			"color": "ff6666"
-		},
-		{
-			"x": -435,
-			"y": -71,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10,
-			"color": "ff6666"
-		},
-		{
-			"x": -435,
-			"y": 71,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10,
-			"color": "ff6666"
-		},
-		{
-			"x": 435,
-			"y": -71,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10,
-			"color": "6666ff"
-		},
-		{
-			"x": 435,
-			"y": 71,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10,
-			"color": "6666ff"
-		},
-		{
-			"x": 436,
-			"y": -70,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10,
-			"color": "6666ff"
-		},
-		{
-			"x": 400,
-			"y": -70,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10,
-			"color": "6666ff"
-		},
-		{
-			"x": 436,
-			"y": 70,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10,
-			"color": "6666ff"
-		},
-		{
-			"x": 400,
-			"y": 70,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10,
-			"color": "6666ff"
-		},
-		{
-			"x": -400,
-			"y": -70,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "DCDCDC",
-			"curve": 0
-		},
-		{
-			"x": -400,
-			"y": 70,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "DCDCDC",
-			"curve": 0
-		},
-		{
-			"x": 400,
-			"y": -70,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "DCDCDC"
-		},
-		{
-			"x": 400,
-			"y": 70,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "DCDCDC"
-		},
-		{
-			"x": -200,
-			"y": -198.5,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "686763",
-			"_data": {
-				"mirror": {}
-			}
-		},
-		{
-			"x": -200,
-			"y": 198.5,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "686763",
-			"_data": {
-				"mirror": {}
-			}
-		},
-		{
-			"x": 200,
-			"y": -198.5,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "686763"
-		},
-		{
-			"x": 200,
-			"y": 198.5,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "686763"
-		},
-		{
-			"x": -398.5,
-			"y": -100,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 0,
-			"color": "686763"
-		},
-		{
-			"x": -339,
-			"y": -100,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 0,
-			"color": "686763"
-		},
-		{
-			"x": -398.5,
-			"y": 100,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 0,
-			"color": "686763"
-		},
-		{
-			"x": -339,
-			"y": 100,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 0,
-			"color": "686763"
-		},
-		{
-			"x": -340,
-			"y": -101,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "686763"
-		},
-		{
-			"x": -340,
-			"y": 101,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "686763"
-		},
-		{
-			"x": 340,
-			"y": -101,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "686763"
-		},
-		{
-			"x": 340,
-			"y": 101,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "686763"
-		},
-		{
-			"x": 339,
-			"y": -100,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 0,
-			"color": "686763"
-		},
-		{
-			"x": 398.5,
-			"y": -100,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 0,
-			"color": "686763"
-		},
-		{
-			"x": 339,
-			"y": 100,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 0,
-			"color": "686763"
-		},
-		{
-			"x": 398.5,
-			"y": 100,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 0,
-			"color": "686763"
-		},
-		{
-			"x": -270,
-			"y": 2.5,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 180,
-			"color": "686763"
-		},
-		{
-			"x": -270,
-			"y": -2.5,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 180,
-			"color": "686763"
-		},
-		{
-			"x": 270,
-			"y": 2.5,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 180,
-			"color": "686763"
-		},
-		{
-			"x": 270,
-			"y": -2.5,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 180,
-			"color": "686763"
-		},
-		{
-			"x": 0,
-			"y": -230,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"vis": false,
-			"color": "818FB0"
-		},
-		{
-			"x": 0,
-			"y": -80,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"vis": false,
-			"color": "818FB0"
-		},
-		{
-			"x": 0,
-			"y": 80,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"color": "818FB0",
-			"vis": false
-		},
-		{
-			"x": 0,
-			"y": 230,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"color": "818FB0",
-			"vis": false
-		},
-		{
-			"x": 0,
-			"y": 80,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"blueKO"
-			],
-			"color": "0A1524"
-		},
-		{
-			"x": 0,
-			"y": -80,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"blueKO"
-			],
-			"color": "0A1524"
-		},
-		{
-			"x": 0,
-			"y": -80,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO"
-			],
-			"color": "0A1524"
-		},
-		{
-			"x": 0,
-			"y": 80,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO"
-			],
-			"color": "0A1524"
-		},
-		{
-			"x": 0,
-			"y": -81,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "f09ec9"
-		},
-		{
-			"x": 0,
-			"y": 81,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "f09ec9"
-		},
-		{
-			"x": -402,
-			"y": -70,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "353C4A"
-		},
-		{
-			"x": -402,
-			"y": 70,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "353C4A"
-		},
-		{
-			"x": -398,
-			"y": -70,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "353C4A"
-		},
-		{
-			"x": -398,
-			"y": 70,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "353C4A"
-		},
-		{
-			"x": 398,
-			"y": -70,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "353C4A",
-			"curve": 0
-		},
-		{
-			"x": 398,
-			"y": 70,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "353C4A",
-			"curve": 0
-		},
-		{
-			"x": 402,
-			"y": -70,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "353C4A",
-			"curve": 0
-		},
-		{
-			"x": 402,
-			"y": 70,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "353C4A",
-			"curve": 0
-		},
-		{
-			"x": 0,
-			"y": 2.5,
-			"bCoef": 0.75,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "f09ec9"
-		},
-		{
-			"x": 0,
-			"y": -2.5,
-			"bCoef": 0.75,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "f09ec9"
-		},
-		{
-			"x": 0,
-			"y": -198.5,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"color": "151a1e",
-			"vis": true
-		},
-		{
-			"x": 0,
-			"y": -83,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"color": "151a1e",
-			"vis": true
-		},
-		{
-			"x": 0,
-			"y": 83,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"color": "151a1e",
-			"vis": true
-		},
-		{
-			"x": 0,
-			"y": 198.5,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"color": "151a1e",
-			"vis": true
-		}
-	],
-	"segments": [
-		{
-			"v0": 0,
-			"v1": 1,
-			"vis": true,
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"bias": -10,
-			"y": -200
-		},
-		{
-			"v0": 2,
-			"v1": 3,
-			"vis": true,
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"bias": 10,
-			"y": 200
-		},
-		{
-			"v0": 4,
-			"v1": 5,
-			"vis": true,
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"bias": 10,
-			"x": -400
-		},
-		{
-			"v0": 6,
-			"v1": 7,
-			"vis": true,
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"bias": -10,
-			"x": 400
-		},
-		{
-			"v0": 8,
-			"v1": 9,
-			"vis": true,
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"bias": 10
-		},
-		{
-			"v0": 10,
-			"v1": 11,
-			"vis": true,
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"bias": -10
-		},
-		{
-			"v0": 12,
-			"v1": 13,
-			"color": "ff6666",
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10
-		},
-		{
-			"v0": 14,
-			"v1": 15,
-			"color": "ff6666",
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10,
-			"y": 70
-		},
-		{
-			"v0": 16,
-			"v1": 17,
-			"color": "ff6666",
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10
-		},
-		{
-			"v0": 18,
-			"v1": 19,
-			"color": "6666ff",
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10,
-			"x": 435
-		},
-		{
-			"v0": 20,
-			"v1": 21,
-			"color": "6666ff",
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10
-		},
-		{
-			"v0": 22,
-			"v1": 23,
-			"color": "6666ff",
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10,
-			"y": 70
-		},
-		{
-			"v0": 24,
-			"v1": 25,
-			"curve": 0,
-			"color": "DCDCDC",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": -400
-		},
-		{
-			"v0": 26,
-			"v1": 27,
-			"color": "DCDCDC",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": 400
-		},
-		{
-			"v0": 28,
-			"v1": 29,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": -200,
-			"_data": {
-				"mirror": {},
-				"arc": {
-					"a": [
-						-200,
-						-198.5
-					],
-					"b": [
-						-200,
-						198.5
-					],
-					"radius": null,
-					"center": [
-						null,
-						null
-					],
-					"from": null,
-					"to": null
-				}
-			}
-		},
-		{
-			"v0": 30,
-			"v1": 31,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": 200
-		},
-		{
-			"v0": 32,
-			"v1": 33,
-			"curve": 0,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"y": -100
-		},
-		{
-			"v0": 34,
-			"v1": 35,
-			"curve": 0,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"y": 100
-		},
-		{
-			"v0": 36,
-			"v1": 37,
-			"curve": 0,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			]
-		},
-		{
-			"v0": 38,
-			"v1": 39,
-			"curve": 0,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": 340
-		},
-		{
-			"v0": 40,
-			"v1": 41,
-			"curve": 0,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"y": -100
-		},
-		{
-			"v0": 42,
-			"v1": 43,
-			"curve": 0,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"y": 100
-		},
-		{
-			"v0": 44,
-			"v1": 45,
-			"curve": 0,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": -270
-		},
-		{
-			"v0": 45,
-			"v1": 44,
-			"curve": 180,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": -270
-		},
-		{
-			"v0": 44,
-			"v1": 45,
-			"curve": 180,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": -270
-		},
-		{
-			"v0": 46,
-			"v1": 47,
-			"curve": 0,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": 270
-		},
-		{
-			"v0": 47,
-			"v1": 46,
-			"curve": 180,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": 270
-		},
-		{
-			"v0": 46,
-			"v1": 47,
-			"curve": 180,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": 270
-		},
-		{
-			"v0": 48,
-			"v1": 49,
-			"vis": false,
-			"color": "818FB0",
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"x": 0
-		},
-		{
-			"v0": 50,
-			"v1": 51,
-			"vis": false,
-			"color": "818FB0",
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"x": 0
-		},
-		{
-			"v0": 52,
-			"v1": 53,
-			"curve": 180,
-			"vis": false,
-			"color": "0A1524",
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"blueKO"
-			],
-			"x": 0
-		},
-		{
-			"v0": 54,
-			"v1": 55,
-			"curve": 180,
-			"vis": false,
-			"color": "0A1524",
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO"
-			],
-			"x": 0
-		},
-		{
-			"v0": 56,
-			"v1": 57,
-			"curve": -180,
-			"color": "f09ec9",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": 0
-		},
-		{
-			"v0": 57,
-			"v1": 56,
-			"curve": -180,
-			"color": "f09ec9",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": 0
-		},
-		{
-			"v0": 66,
-			"v1": 67,
-			"color": "f09ec9",
-			"bCoef": 0.75,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			]
-		},
-		{
-			"v0": 68,
-			"v1": 69,
-			"vis": true,
-			"color": "151a1e",
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"x": 0
-		},
-		{
-			"v0": 70,
-			"v1": 71,
-			"vis": true,
-			"color": "151a1e",
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"x": 0
-		}
-	],
-	"goals": [
-		{
-			"p0": [
-				-405.8,
-				-70
-			],
-			"p1": [
-				-405.8,
-				70
-			],
-			"team": "red"
-		},
-		{
-			"p0": [
-				405.8,
-				-70
-			],
-			"p1": [
-				405.8,
-				70
-			],
-			"team": "blue"
-		}
-	],
-	"discs": [
-		{
-			"radius": 5.4,
-			"invMass": 0,
-			"pos": [
-				-400,
-				-70
-			],
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"all"
-			],
-			"cGroup": [
-				"all"
-			]
-		},
-		{
-			"radius": 5.4,
-			"invMass": 0,
-			"pos": [
-				-400,
-				70
-			],
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"all"
-			],
-			"cGroup": [
-				"all"
-			]
-		},
-		{
-			"radius": 5.4,
-			"invMass": 0,
-			"pos": [
-				400,
-				-70
-			],
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"all"
-			],
-			"cGroup": [
-				"all"
-			]
-		},
-		{
-			"radius": 5.4,
-			"invMass": 0,
-			"pos": [
-				400,
-				70
-			],
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"all"
-			],
-			"cGroup": [
-				"all"
-			]
-		}
-	],
-	"planes": [
-		{
-			"normal": [
-				0,
-				1
-			],
-			"dist": -230,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"_data": {
-				"extremes": {
-					"normal": [
-						0,
-						1
-					],
-					"dist": -230,
-					"canvas_rect": [
-						-702,
-						-230,
-						702,
-						230
-					],
-					"a": [
-						-702,
-						-230
-					],
-					"b": [
-						702,
-						-230
-					]
-				}
-			}
-		},
-		{
-			"normal": [
-				0,
-				-1
-			],
-			"dist": -230,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"_data": {
-				"extremes": {
-					"normal": [
-						0,
-						-1
-					],
-					"dist": -230,
-					"canvas_rect": [
-						-702,
-						-230,
-						702,
-						230
-					],
-					"a": [
-						-702,
-						230
-					],
-					"b": [
-						702,
-						230
-					]
-				}
-			}
-		}
-	],
-	"joints": [],
-	"playerPhysics": {
-		"bCoef": 0,
-		"acceleration": 0.11,
-		"kickingAcceleration": 0.083,
-		"kickStrength": 4.545
-	},
-	"ballPhysics": {
-		"radius": 5.8,
-		"bCoef": 0.412,
-		"invMass": 1.5,
-		"color": "FFD700"
-	}
+    "name": "EEF 2v2",
+    "width": 465,
+    "height": 230,
+    "cameraWidth": 0,
+    "cameraHeight": 0,
+    "maxViewWidth": 0,
+    "cameraFollow": "ball",
+    "spawnDistance": 150,
+    "redSpawnPoints": [],
+    "blueSpawnPoints": [],
+    "canBeStored": false,
+    "kickOffReset": "full",
+    "bg": {
+        "color": "3D3542",
+        "height": 200,
+        "width": 400
+    },
+    "traits": {
+        "ballArea": {
+            "vis": false,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ]
+        },
+        "goalPost": {
+            "radius": 8,
+            "invMass": 0,
+            "bCoef": 0.5
+        },
+        "goalNet": {
+            "vis": true,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ]
+        },
+        "kickOffBarrier": {
+            "vis": false,
+            "bCoef": 0.1,
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "cMask": [
+                "red",
+                "blue"
+            ]
+        }
+    },
+    "vertexes": [
+        {
+            "x": -401,
+            "y": -200,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": -10,
+            "vis": true
+        },
+        {
+            "x": 401,
+            "y": -200,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": -10,
+            "vis": true
+        },
+        {
+            "x": -401,
+            "y": 200,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": 10,
+            "vis": true
+        },
+        {
+            "x": 401,
+            "y": 200,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": 10,
+            "vis": true
+        },
+        {
+            "x": -400,
+            "y": 70,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": 10,
+            "vis": true
+        },
+        {
+            "x": -400,
+            "y": 201,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": 10,
+            "vis": true
+        },
+        {
+            "x": 400,
+            "y": 70,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": -10,
+            "vis": true
+        },
+        {
+            "x": 400,
+            "y": 201,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": -10,
+            "vis": true
+        },
+        {
+            "x": -400,
+            "y": -201,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": 10,
+            "vis": true
+        },
+        {
+            "x": -400,
+            "y": -70,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": 10,
+            "vis": true
+        },
+        {
+            "x": 400,
+            "y": -201,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": -10,
+            "vis": true
+        },
+        {
+            "x": 400,
+            "y": -70,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": -10,
+            "vis": true
+        },
+        {
+            "x": -436,
+            "y": -70,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10,
+            "color": "ff6666"
+        },
+        {
+            "x": -400,
+            "y": -70,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10,
+            "color": "ff6666"
+        },
+        {
+            "x": -436,
+            "y": 70,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10,
+            "color": "ff6666"
+        },
+        {
+            "x": -400,
+            "y": 70,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10,
+            "color": "ff6666"
+        },
+        {
+            "x": -435,
+            "y": -71,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10,
+            "color": "ff6666"
+        },
+        {
+            "x": -435,
+            "y": 71,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10,
+            "color": "ff6666"
+        },
+        {
+            "x": 435,
+            "y": -71,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10,
+            "color": "6666ff"
+        },
+        {
+            "x": 435,
+            "y": 71,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10,
+            "color": "6666ff"
+        },
+        {
+            "x": 436,
+            "y": -70,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10,
+            "color": "6666ff"
+        },
+        {
+            "x": 400,
+            "y": -70,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10,
+            "color": "6666ff"
+        },
+        {
+            "x": 436,
+            "y": 70,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10,
+            "color": "6666ff"
+        },
+        {
+            "x": 400,
+            "y": 70,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10,
+            "color": "6666ff"
+        },
+        {
+            "x": -400,
+            "y": -70,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "DCDCDC",
+            "curve": 0
+        },
+        {
+            "x": -400,
+            "y": 70,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "DCDCDC",
+            "curve": 0
+        },
+        {
+            "x": 400,
+            "y": -70,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "DCDCDC"
+        },
+        {
+            "x": 400,
+            "y": 70,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "DCDCDC"
+        },
+        {
+            "x": -200,
+            "y": -198.5,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6",
+            "_data": {
+                "mirror": {}
+            }
+        },
+        {
+            "x": -200,
+            "y": 198.5,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6",
+            "_data": {
+                "mirror": {}
+            }
+        },
+        {
+            "x": 200,
+            "y": -198.5,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": 200,
+            "y": 198.5,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": -398.5,
+            "y": -100,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 0,
+            "color": "b078a6"
+        },
+        {
+            "x": -339,
+            "y": -100,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 0,
+            "color": "b078a6"
+        },
+        {
+            "x": -398.5,
+            "y": 100,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 0,
+            "color": "b078a6"
+        },
+        {
+            "x": -339,
+            "y": 100,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 0,
+            "color": "b078a6"
+        },
+        {
+            "x": -340,
+            "y": -101,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": -340,
+            "y": 101,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": 340,
+            "y": -101,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": 340,
+            "y": 101,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": 339,
+            "y": -100,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 0,
+            "color": "b078a6"
+        },
+        {
+            "x": 398.5,
+            "y": -100,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 0,
+            "color": "b078a6"
+        },
+        {
+            "x": 339,
+            "y": 100,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 0,
+            "color": "b078a6"
+        },
+        {
+            "x": 398.5,
+            "y": 100,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 0,
+            "color": "b078a6"
+        },
+        {
+            "x": -270,
+            "y": 2.5,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 180,
+            "color": "b078a6"
+        },
+        {
+            "x": -270,
+            "y": -2.5,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 180,
+            "color": "b078a6"
+        },
+        {
+            "x": 270,
+            "y": 2.5,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 180,
+            "color": "b078a6"
+        },
+        {
+            "x": 270,
+            "y": -2.5,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 180,
+            "color": "b078a6"
+        },
+        {
+            "x": 0,
+            "y": -230,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "vis": false,
+            "color": "818FB0"
+        },
+        {
+            "x": 0,
+            "y": -80,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "vis": false,
+            "color": "818FB0"
+        },
+        {
+            "x": 0,
+            "y": 80,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "color": "818FB0",
+            "vis": false
+        },
+        {
+            "x": 0,
+            "y": 230,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "color": "818FB0",
+            "vis": false
+        },
+        {
+            "x": 0,
+            "y": 80,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "blueKO"
+            ],
+            "color": "0A1524"
+        },
+        {
+            "x": 0,
+            "y": -80,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "blueKO"
+            ],
+            "color": "0A1524"
+        },
+        {
+            "x": 0,
+            "y": -80,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO"
+            ],
+            "color": "0A1524"
+        },
+        {
+            "x": 0,
+            "y": 80,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO"
+            ],
+            "color": "0A1524"
+        },
+        {
+            "x": 0,
+            "y": -81,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": 0,
+            "y": 81,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": -402,
+            "y": -70,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "353C4A"
+        },
+        {
+            "x": -402,
+            "y": 70,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "353C4A"
+        },
+        {
+            "x": -398,
+            "y": -70,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "353C4A"
+        },
+        {
+            "x": -398,
+            "y": 70,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "353C4A"
+        },
+        {
+            "x": 398,
+            "y": -70,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "353C4A",
+            "curve": 0
+        },
+        {
+            "x": 398,
+            "y": 70,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "353C4A",
+            "curve": 0
+        },
+        {
+            "x": 402,
+            "y": -70,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "353C4A",
+            "curve": 0
+        },
+        {
+            "x": 402,
+            "y": 70,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "353C4A",
+            "curve": 0
+        },
+        {
+            "x": 0,
+            "y": 2.5,
+            "bCoef": 0.75,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": 0,
+            "y": -2.5,
+            "bCoef": 0.75,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": 0,
+            "y": -198.5,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "color": "151a1e",
+            "vis": true
+        },
+        {
+            "x": 0,
+            "y": -83,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "color": "151a1e",
+            "vis": true
+        },
+        {
+            "x": 0,
+            "y": 83,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "color": "151a1e",
+            "vis": true
+        },
+        {
+            "x": 0,
+            "y": 198.5,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "color": "151a1e",
+            "vis": true
+        }
+    ],
+    "segments": [
+        {
+            "v0": 0,
+            "v1": 1,
+            "vis": true,
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "bias": -10,
+            "y": -200
+        },
+        {
+            "v0": 2,
+            "v1": 3,
+            "vis": true,
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "bias": 10,
+            "y": 200
+        },
+        {
+            "v0": 4,
+            "v1": 5,
+            "vis": true,
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "bias": 10,
+            "x": -400
+        },
+        {
+            "v0": 6,
+            "v1": 7,
+            "vis": true,
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "bias": -10,
+            "x": 400
+        },
+        {
+            "v0": 8,
+            "v1": 9,
+            "vis": true,
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "bias": 10
+        },
+        {
+            "v0": 10,
+            "v1": 11,
+            "vis": true,
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "bias": -10
+        },
+        {
+            "v0": 12,
+            "v1": 13,
+            "color": "ff6666",
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10
+        },
+        {
+            "v0": 14,
+            "v1": 15,
+            "color": "ff6666",
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10,
+            "y": 70
+        },
+        {
+            "v0": 16,
+            "v1": 17,
+            "color": "ff6666",
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10
+        },
+        {
+            "v0": 18,
+            "v1": 19,
+            "color": "6666ff",
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10,
+            "x": 435
+        },
+        {
+            "v0": 20,
+            "v1": 21,
+            "color": "6666ff",
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10
+        },
+        {
+            "v0": 22,
+            "v1": 23,
+            "color": "6666ff",
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10,
+            "y": 70
+        },
+        {
+            "v0": 24,
+            "v1": 25,
+            "curve": 0,
+            "color": "DCDCDC",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": -400
+        },
+        {
+            "v0": 26,
+            "v1": 27,
+            "color": "DCDCDC",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": 400
+        },
+        {
+            "v0": 28,
+            "v1": 29,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": -200,
+            "_data": {
+                "mirror": {},
+                "arc": {
+                    "a": [
+                        -200,
+                        -198.5
+                    ],
+                    "b": [
+                        -200,
+                        198.5
+                    ],
+                    "radius": null,
+                    "center": [
+                        null,
+                        null
+                    ],
+                    "from": null,
+                    "to": null
+                }
+            }
+        },
+        {
+            "v0": 30,
+            "v1": 31,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": 200
+        },
+        {
+            "v0": 32,
+            "v1": 33,
+            "curve": 0,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "y": -100
+        },
+        {
+            "v0": 34,
+            "v1": 35,
+            "curve": 0,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "y": 100
+        },
+        {
+            "v0": 36,
+            "v1": 37,
+            "curve": 0,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ]
+        },
+        {
+            "v0": 38,
+            "v1": 39,
+            "curve": 0,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": 340
+        },
+        {
+            "v0": 40,
+            "v1": 41,
+            "curve": 0,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "y": -100
+        },
+        {
+            "v0": 42,
+            "v1": 43,
+            "curve": 0,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "y": 100
+        },
+        {
+            "v0": 44,
+            "v1": 45,
+            "curve": 0,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": -270
+        },
+        {
+            "v0": 45,
+            "v1": 44,
+            "curve": 180,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": -270
+        },
+        {
+            "v0": 44,
+            "v1": 45,
+            "curve": 180,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": -270
+        },
+        {
+            "v0": 46,
+            "v1": 47,
+            "curve": 0,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": 270
+        },
+        {
+            "v0": 47,
+            "v1": 46,
+            "curve": 180,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": 270
+        },
+        {
+            "v0": 46,
+            "v1": 47,
+            "curve": 180,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": 270
+        },
+        {
+            "v0": 48,
+            "v1": 49,
+            "vis": false,
+            "color": "818FB0",
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "x": 0
+        },
+        {
+            "v0": 50,
+            "v1": 51,
+            "vis": false,
+            "color": "818FB0",
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "x": 0
+        },
+        {
+            "v0": 52,
+            "v1": 53,
+            "curve": 180,
+            "vis": false,
+            "color": "0A1524",
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "blueKO"
+            ],
+            "x": 0
+        },
+        {
+            "v0": 54,
+            "v1": 55,
+            "curve": 180,
+            "vis": false,
+            "color": "0A1524",
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO"
+            ],
+            "x": 0
+        },
+        {
+            "v0": 56,
+            "v1": 57,
+            "curve": -180,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": 0
+        },
+        {
+            "v0": 57,
+            "v1": 56,
+            "curve": -180,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": 0
+        },
+        {
+            "v0": 66,
+            "v1": 67,
+            "color": "b078a6",
+            "bCoef": 0.75,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ]
+        },
+        {
+            "v0": 68,
+            "v1": 69,
+            "vis": true,
+            "color": "151a1e",
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "x": 0
+        },
+        {
+            "v0": 70,
+            "v1": 71,
+            "vis": true,
+            "color": "151a1e",
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "x": 0
+        }
+    ],
+    "goals": [
+        {
+            "p0": [
+                -405.8,
+                -70
+            ],
+            "p1": [
+                -405.8,
+                70
+            ],
+            "team": "red"
+        },
+        {
+            "p0": [
+                405.8,
+                -70
+            ],
+            "p1": [
+                405.8,
+                70
+            ],
+            "team": "blue"
+        }
+    ],
+    "discs": [
+        {
+            "radius": 5.4,
+            "invMass": 0,
+            "pos": [
+                -400,
+                -70
+            ],
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "all"
+            ],
+            "cGroup": [
+                "all"
+            ]
+        },
+        {
+            "radius": 5.4,
+            "invMass": 0,
+            "pos": [
+                -400,
+                70
+            ],
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "all"
+            ],
+            "cGroup": [
+                "all"
+            ]
+        },
+        {
+            "radius": 5.4,
+            "invMass": 0,
+            "pos": [
+                400,
+                -70
+            ],
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "all"
+            ],
+            "cGroup": [
+                "all"
+            ]
+        },
+        {
+            "radius": 5.4,
+            "invMass": 0,
+            "pos": [
+                400,
+                70
+            ],
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "all"
+            ],
+            "cGroup": [
+                "all"
+            ]
+        }
+    ],
+    "planes": [
+        {
+            "normal": [
+                0,
+                1
+            ],
+            "dist": -230,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "_data": {
+                "extremes": {
+                    "normal": [
+                        0,
+                        1
+                    ],
+                    "dist": -230,
+                    "canvas_rect": [
+                        -702,
+                        -230,
+                        702,
+                        230
+                    ],
+                    "a": [
+                        -702,
+                        -230
+                    ],
+                    "b": [
+                        702,
+                        -230
+                    ]
+                }
+            }
+        },
+        {
+            "normal": [
+                0,
+                -1
+            ],
+            "dist": -230,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "_data": {
+                "extremes": {
+                    "normal": [
+                        0,
+                        -1
+                    ],
+                    "dist": -230,
+                    "canvas_rect": [
+                        -702,
+                        -230,
+                        702,
+                        230
+                    ],
+                    "a": [
+                        -702,
+                        230
+                    ],
+                    "b": [
+                        702,
+                        230
+                    ]
+                }
+            }
+        }
+    ],
+    "joints": [],
+    "playerPhysics": {
+        "bCoef": 0,
+        "acceleration": 0.11,
+        "kickingAcceleration": 0.083,
+        "kickStrength": 4.545
+    },
+    "ballPhysics": {
+        "radius": 5.8,
+        "bCoef": 0.412,
+        "invMass": 1.5,
+        "color": "FFD700"
+    }
 }`;
 const bigMap = `{
-	"name": "EEF v4",
-	"width": 765,
-	"height": 350,
-	"cameraWidth": 0,
-	"cameraHeight": 0,
-	"maxViewWidth": 0,
-	"cameraFollow": "ball",
-	"spawnDistance": 150,
-	"redSpawnPoints": [],
-	"blueSpawnPoints": [],
-	"canBeStored": false,
-	"kickOffReset": "full",
-	"bg": {
-		"color": "323847",
-		"height": 320,
-		"width": 700
-	},
-	"traits": {
-		"ballArea": {
-			"vis": false,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			]
-		},
-		"goalPost": {
-			"radius": 8,
-			"invMass": 0,
-			"bCoef": 0.5
-		},
-		"goalNet": {
-			"vis": true,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			]
-		},
-		"kickOffBarrier": {
-			"vis": false,
-			"bCoef": 0.1,
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"cMask": [
-				"red",
-				"blue"
-			]
-		}
-	},
-	"vertexes": [
-		{
-			"x": -701,
-			"y": -320,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": -10,
-			"vis": true
-		},
-		{
-			"x": 701,
-			"y": -320,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": -10,
-			"vis": true
-		},
-		{
-			"x": -701,
-			"y": 320,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": 10,
-			"vis": true,
-			"_data": {
-				"mirror": {}
-			}
-		},
-		{
-			"x": 701,
-			"y": 320,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": 10,
-			"vis": true,
-			"_data": {
-				"mirror": {}
-			}
-		},
-		{
-			"x": -700,
-			"y": 85,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": 10,
-			"vis": true
-		},
-		{
-			"x": -700,
-			"y": 321,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": 10,
-			"vis": true
-		},
-		{
-			"x": 700,
-			"y": 85,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": -10,
-			"vis": true
-		},
-		{
-			"x": 700,
-			"y": 321,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": -10,
-			"vis": true
-		},
-		{
-			"x": -700,
-			"y": -321,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": 10,
-			"vis": true
-		},
-		{
-			"x": -700,
-			"y": -85,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": 10,
-			"vis": true
-		},
-		{
-			"x": 700,
-			"y": -321,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": -10,
-			"vis": true
-		},
-		{
-			"x": 700,
-			"y": -85,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"color": "151a1e",
-			"bias": -10,
-			"vis": true
-		},
-		{
-			"x": -736,
-			"y": -85,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10,
-			"color": "ff6666"
-		},
-		{
-			"x": -700,
-			"y": -85,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10,
-			"color": "ff6666"
-		},
-		{
-			"x": -736,
-			"y": 85,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10,
-			"color": "ff6666"
-		},
-		{
-			"x": -700,
-			"y": 85,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10,
-			"color": "ff6666"
-		},
-		{
-			"x": -735,
-			"y": -86,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10,
-			"color": "ff6666"
-		},
-		{
-			"x": -735,
-			"y": 86,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10,
-			"color": "ff6666"
-		},
-		{
-			"x": 735,
-			"y": -86,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10,
-			"color": "6666ff"
-		},
-		{
-			"x": 735,
-			"y": 86,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10,
-			"color": "6666ff"
-		},
-		{
-			"x": 736,
-			"y": -85,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10,
-			"color": "6666ff"
-		},
-		{
-			"x": 700,
-			"y": -85,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10,
-			"color": "6666ff"
-		},
-		{
-			"x": 736,
-			"y": 85,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10,
-			"color": "6666ff"
-		},
-		{
-			"x": 700,
-			"y": 85,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10,
-			"color": "6666ff"
-		},
-		{
-			"x": -700,
-			"y": -85,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "DCDCDC"
-		},
-		{
-			"x": -700,
-			"y": 85,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "DCDCDC"
-		},
-		{
-			"x": 700,
-			"y": -85,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "DCDCDC"
-		},
-		{
-			"x": 700,
-			"y": 85,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "DCDCDC"
-		},
-		{
-			"x": -360,
-			"y": -350,
-			"cMask": [
-				"c0"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "686763",
-			"_data": {
-				"mirror": {}
-			},
-			"vis": false
-		},
-		{
-			"x": -360,
-			"y": 350,
-			"cMask": [
-				"c0"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "686763",
-			"_data": {
-				"mirror": {}
-			},
-			"vis": false
-		},
-		{
-			"x": 360,
-			"y": -350,
-			"cMask": [
-				"c1"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "686763",
-			"_data": {
-				"mirror": {}
-			},
-			"vis": false
-		},
-		{
-			"x": 360,
-			"y": 350,
-			"cMask": [
-				"c1"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "686763",
-			"_data": {
-				"mirror": {}
-			},
-			"vis": false
-		},
-		{
-			"x": -698.5,
-			"y": -125,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 0,
-			"color": "686763"
-		},
-		{
-			"x": -624,
-			"y": -125,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 0,
-			"color": "686763"
-		},
-		{
-			"x": -698.5,
-			"y": 125,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 0,
-			"color": "686763"
-		},
-		{
-			"x": -624,
-			"y": 125,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 0,
-			"color": "686763"
-		},
-		{
-			"x": -625,
-			"y": -126,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "686763"
-		},
-		{
-			"x": -625,
-			"y": 126,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "686763"
-		},
-		{
-			"x": 625,
-			"y": -126,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "686763"
-		},
-		{
-			"x": 625,
-			"y": 126,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "686763"
-		},
-		{
-			"x": 624,
-			"y": -125,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 0,
-			"color": "686763"
-		},
-		{
-			"x": 698.5,
-			"y": -125,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 0,
-			"color": "686763"
-		},
-		{
-			"x": 624,
-			"y": 125,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 0,
-			"color": "686763"
-		},
-		{
-			"x": 698.5,
-			"y": 125,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 0,
-			"color": "686763"
-		},
-		{
-			"x": -500,
-			"y": 2.5,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 180,
-			"color": "686763"
-		},
-		{
-			"x": -500,
-			"y": -2.5,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 180,
-			"color": "686763"
-		},
-		{
-			"x": 500,
-			"y": 2.5,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 180,
-			"color": "686763"
-		},
-		{
-			"x": 500,
-			"y": -2.5,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"curve": 180,
-			"color": "686763"
-		},
-		{
-			"x": 0,
-			"y": -350,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"vis": false,
-			"color": "818FB0"
-		},
-		{
-			"x": 0,
-			"y": -85,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"vis": false,
-			"color": "818FB0"
-		},
-		{
-			"x": 0,
-			"y": 85,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"color": "818FB0",
-			"vis": false
-		},
-		{
-			"x": 0,
-			"y": 350,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"color": "818FB0",
-			"vis": false,
-			"_data": {
-				"mirror": {}
-			}
-		},
-		{
-			"x": 0,
-			"y": 85,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"blueKO"
-			],
-			"color": "f09ec9",
-			"vis": true,
-			"curve": 180
-		},
-		{
-			"x": 0,
-			"y": -85,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"blueKO"
-			],
-			"color": "f09ec9",
-			"vis": true,
-			"curve": 180
-		},
-		{
-			"x": 0,
-			"y": -85,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO"
-			],
-			"color": "f09ec9",
-			"vis": true
-		},
-		{
-			"x": 0,
-			"y": 85,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO"
-			],
-			"color": "f09ec9",
-			"vis": true
-		},
-		{
-			"x": 0,
-			"y": -86,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"c1"
-			],
-			"color": "f09ec9"
-		},
-		{
-			"x": 0,
-			"y": 86,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"c1"
-			],
-			"color": "f09ec9"
-		},
-		{
-			"x": -698,
-			"y": -85,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "454C5E",
-			"curve": 0
-		},
-		{
-			"x": -698,
-			"y": 85,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "454C5E",
-			"curve": 0
-		},
-		{
-			"x": -702,
-			"y": -85,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "454C5E",
-			"curve": 0
-		},
-		{
-			"x": -702,
-			"y": 85,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "454C5E",
-			"curve": 0
-		},
-		{
-			"x": 698,
-			"y": -85,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "454C5E",
-			"curve": 0
-		},
-		{
-			"x": 698,
-			"y": 85,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "454C5E",
-			"curve": 0
-		},
-		{
-			"x": 702,
-			"y": -85,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "454C5E",
-			"curve": 0
-		},
-		{
-			"x": 702,
-			"y": 85,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "454C5E",
-			"curve": 0
-		},
-		{
-			"x": 0,
-			"y": -2.5,
-			"bCoef": 0.75,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "f09ec9"
-		},
-		{
-			"x": 0,
-			"y": 2.5,
-			"bCoef": 0.75,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"color": "f09ec9"
-		},
-		{
-			"x": 0,
-			"y": -318.5,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"vis": true,
-			"color": "151a1e"
-		},
-		{
-			"x": 0,
-			"y": -88,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"vis": true,
-			"color": "151a1e"
-		},
-		{
-			"x": 0,
-			"y": 88,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"vis": true,
-			"color": "151a1e"
-		},
-		{
-			"x": 0,
-			"y": 318.5,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"vis": true,
-			"color": "151a1e"
-		},
-		{
-			"cMask": [
-				"c1"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": 360,
-			"y": 318.5,
-			"_data": {
-				"mirror": {}
-			},
-			"vis": true
-		},
-		{
-			"cMask": [
-				"c1"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": 360,
-			"y": -318.5,
-			"_data": {
-				"mirror": {}
-			},
-			"vis": true
-		},
-		{
-			"cMask": [
-				"c0"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": -360,
-			"y": 318.5,
-			"_data": {
-				"mirror": {}
-			},
-			"vis": true
-		},
-		{
-			"cMask": [
-				"c0"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": -360,
-			"y": -318.5,
-			"_data": {
-				"mirror": {}
-			},
-			"vis": true
-		}
-	],
-	"segments": [
-		{
-			"v0": 0,
-			"v1": 1,
-			"vis": true,
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"bias": -10,
-			"y": -320
-		},
-		{
-			"v0": 2,
-			"v1": 3,
-			"vis": true,
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"bias": 10,
-			"y": 320,
-			"_data": {
-				"mirror": {},
-				"arc": {
-					"a": [
-						-701,
-						320
-					],
-					"b": [
-						701,
-						320
-					],
-					"radius": null,
-					"center": [
-						null,
-						null
-					],
-					"from": null,
-					"to": null
-				}
-			}
-		},
-		{
-			"v0": 4,
-			"v1": 5,
-			"vis": true,
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"bias": 10,
-			"x": -700
-		},
-		{
-			"v0": 6,
-			"v1": 7,
-			"vis": true,
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"bias": -10,
-			"x": 700
-		},
-		{
-			"v0": 8,
-			"v1": 9,
-			"vis": true,
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"bias": 10,
-			"x": -700
-		},
-		{
-			"v0": 10,
-			"v1": 11,
-			"vis": true,
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"bias": -10,
-			"x": 700
-		},
-		{
-			"v0": 12,
-			"v1": 13,
-			"color": "ff6666",
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10
-		},
-		{
-			"v0": 14,
-			"v1": 15,
-			"color": "ff6666",
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10,
-			"y": 70
-		},
-		{
-			"v0": 16,
-			"v1": 17,
-			"color": "ff6666",
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10,
-			"x": -735
-		},
-		{
-			"v0": 18,
-			"v1": 19,
-			"color": "6666ff",
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10,
-			"x": 735
-		},
-		{
-			"v0": 20,
-			"v1": 21,
-			"color": "6666ff",
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": 10
-		},
-		{
-			"v0": 22,
-			"v1": 23,
-			"color": "6666ff",
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			],
-			"cGroup": [
-				"ball"
-			],
-			"bias": -10,
-			"y": 70
-		},
-		{
-			"v0": 24,
-			"v1": 25,
-			"color": "DCDCDC",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": -700
-		},
-		{
-			"v0": 26,
-			"v1": 27,
-			"color": "DCDCDC",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": 700
-		},
-		{
-			"v0": 28,
-			"v1": 29,
-			"color": "686763",
-			"cMask": [
-				"c0"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": -360,
-			"_data": {
-				"mirror": {},
-				"arc": {
-					"a": [
-						-360,
-						-350
-					],
-					"b": [
-						-360,
-						350
-					],
-					"radius": null,
-					"center": [
-						null,
-						null
-					],
-					"from": null,
-					"to": null
-				}
-			},
-			"vis": false
-		},
-		{
-			"v0": 30,
-			"v1": 31,
-			"color": "686763",
-			"cMask": [
-				"c1"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": 360,
-			"_data": {
-				"mirror": {},
-				"arc": {
-					"a": [
-						360,
-						-350
-					],
-					"b": [
-						360,
-						350
-					],
-					"radius": null,
-					"center": [
-						null,
-						null
-					],
-					"from": null,
-					"to": null
-				}
-			},
-			"vis": false
-		},
-		{
-			"v0": 32,
-			"v1": 33,
-			"curve": 0,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"y": -125
-		},
-		{
-			"v0": 34,
-			"v1": 35,
-			"curve": 0,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"y": 125
-		},
-		{
-			"v0": 36,
-			"v1": 37,
-			"curve": 0,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": -625
-		},
-		{
-			"v0": 38,
-			"v1": 39,
-			"curve": 0,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": 625
-		},
-		{
-			"v0": 40,
-			"v1": 41,
-			"curve": 0,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"y": -125
-		},
-		{
-			"v0": 42,
-			"v1": 43,
-			"curve": 0,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"y": 125
-		},
-		{
-			"v0": 44,
-			"v1": 45,
-			"curve": 0,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": -500
-		},
-		{
-			"v0": 45,
-			"v1": 44,
-			"curve": 180,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": -500
-		},
-		{
-			"v0": 44,
-			"v1": 45,
-			"curve": 180,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": -500
-		},
-		{
-			"v0": 46,
-			"v1": 47,
-			"curve": 0,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": 500
-		},
-		{
-			"v0": 47,
-			"v1": 46,
-			"curve": 180,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": 500
-		},
-		{
-			"v0": 46,
-			"v1": 47,
-			"curve": 180,
-			"color": "686763",
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"x": 500
-		},
-		{
-			"v0": 48,
-			"v1": 49,
-			"vis": false,
-			"color": "818FB0",
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"x": 0
-		},
-		{
-			"v0": 50,
-			"v1": 51,
-			"vis": false,
-			"color": "818FB0",
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"x": 0
-		},
-		{
-			"v0": 52,
-			"v1": 53,
-			"curve": 180,
-			"vis": true,
-			"color": "f09ec9",
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"blueKO"
-			],
-			"x": 0
-		},
-		{
-			"v0": 54,
-			"v1": 55,
-			"curve": 180,
-			"vis": true,
-			"color": "f09ec9",
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO"
-			],
-			"x": 0
-		},
-		{
-			"v0": 66,
-			"v1": 67,
-			"color": "f09ec9",
-			"bCoef": 0.75,
-			"cMask": [
-				"wall"
-			],
-			"cGroup": [
-				"wall"
-			]
-		},
-		{
-			"v0": 68,
-			"v1": 69,
-			"vis": true,
-			"color": "151a1e",
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"x": 0
-		},
-		{
-			"v0": 70,
-			"v1": 71,
-			"vis": true,
-			"color": "151a1e",
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"x": 0
-		},
-		{
-			"color": "686763",
-			"cMask": [
-				"c1"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"v0": 72,
-			"v1": 73,
-			"_data": {
-				"mirror": {},
-				"arc": {
-					"a": [
-						360,
-						318.5
-					],
-					"b": [
-						360,
-						-318.5
-					],
-					"radius": null,
-					"center": [
-						null,
-						null
-					],
-					"from": null,
-					"to": null
-				}
-			},
-			"x": 360,
-			"vis": true
-		},
-		{
-			"color": "686763",
-			"cMask": [
-				"c0"
-			],
-			"cGroup": [
-				"wall"
-			],
-			"v0": 74,
-			"v1": 75,
-			"_data": {
-				"mirror": {},
-				"arc": {
-					"a": [
-						-360,
-						318.5
-					],
-					"b": [
-						-360,
-						-318.5
-					],
-					"radius": null,
-					"center": [
-						null,
-						null
-					],
-					"from": null,
-					"to": null
-				}
-			},
-			"x": -360,
-			"vis": true
-		}
-	],
-	"goals": [
-		{
-			"p0": [
-				-705.8,
-				-85
-			],
-			"p1": [
-				-705.8,
-				85
-			],
-			"team": "red"
-		},
-		{
-			"p0": [
-				705.8,
-				-85
-			],
-			"p1": [
-				705.8,
-				85
-			],
-			"team": "blue"
-		}
-	],
-	"discs": [
-		{
-			"radius": 5.4,
-			"invMass": 0,
-			"pos": [
-				-700,
-				-85
-			],
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"all"
-			],
-			"cGroup": [
-				"all"
-			]
-		},
-		{
-			"radius": 5.4,
-			"invMass": 0,
-			"pos": [
-				-700,
-				85
-			],
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"all"
-			],
-			"cGroup": [
-				"all"
-			]
-		},
-		{
-			"radius": 5.4,
-			"invMass": 0,
-			"pos": [
-				700,
-				-85
-			],
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"all"
-			],
-			"cGroup": [
-				"all"
-			]
-		},
-		{
-			"radius": 5.4,
-			"invMass": 0,
-			"pos": [
-				700,
-				85
-			],
-			"color": "151a1e",
-			"bCoef": 1,
-			"cMask": [
-				"all"
-			],
-			"cGroup": [
-				"all"
-			]
-		}
-	],
-	"planes": [
-		{
-			"normal": [
-				0,
-				1
-			],
-			"dist": -350,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"y": -350,
-			"_data": {
-				"extremes": {
-					"normal": [
-						0,
-						1
-					],
-					"dist": -350,
-					"canvas_rect": [
-						-446.3701523755323,
-						-204.22163834174683,
-						446.3701523755323,
-						204.22163834174683
-					],
-					"a": [
-						-446.3701523755323,
-						-350
-					],
-					"b": [
-						446.3701523755323,
-						-350
-					]
-				},
-				"mirror": {}
-			}
-		},
-		{
-			"normal": [
-				0,
-				-1
-			],
-			"dist": -350,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"y": 350,
-			"_data": {
-				"extremes": {
-					"normal": [
-						0,
-						-1
-					],
-					"dist": -350,
-					"canvas_rect": [
-						-446.3701523755323,
-						-204.22163834174683,
-						446.3701523755323,
-						204.22163834174683
-					],
-					"a": [
-						-446.3701523755323,
-						350
-					],
-					"b": [
-						446.3701523755323,
-						350
-					]
-				}
-			}
-		}
-	],
-	"playerPhysics": {
-		"bCoef": 0,
-		"acceleration": 0.11,
-		"kickingAcceleration": 0.083,
-		"kickStrength": 4.545,
-		"radius": 15,
-		"invMass": 0.5,
-		"damping": 0.96,
-		"cGroup": [
-			"red",
-			"blue"
-		],
-		"gravity": [
-			0,
-			0
-		],
-		"kickingDamping": 0.96,
-		"kickback": 0
-	},
-	"ballPhysics": {
-		"radius": 5.8,
-		"bCoef": 0.412,
-		"invMass": 1.5,
-		"color": "FFD700",
-		"cMask": [
-			"all"
-		],
-		"damping": 0.99,
-		"gravity": [
-			0,
-			0
-		],
-		"cGroup": [
-			"ball"
-		]
-	},
-	"joints": []
+    "name": "EEF 4v4",
+    "width": 765,
+    "height": 350,
+    "cameraWidth": 0,
+    "cameraHeight": 0,
+    "maxViewWidth": 0,
+    "cameraFollow": "ball",
+    "spawnDistance": 150,
+    "redSpawnPoints": [],
+    "blueSpawnPoints": [],
+    "canBeStored": false,
+    "kickOffReset": "full",
+    "bg": {
+        "color": "3D3542",
+        "height": 320,
+        "width": 700
+    },
+    "traits": {
+        "ballArea": {
+            "vis": false,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ]
+        },
+        "goalPost": {
+            "radius": 8,
+            "invMass": 0,
+            "bCoef": 0.5
+        },
+        "goalNet": {
+            "vis": true,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ]
+        },
+        "kickOffBarrier": {
+            "vis": false,
+            "bCoef": 0.1,
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "cMask": [
+                "red",
+                "blue"
+            ]
+        }
+    },
+    "vertexes": [
+        {
+            "x": -701,
+            "y": -320,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": -10,
+            "vis": true
+        },
+        {
+            "x": 701,
+            "y": -320,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": -10,
+            "vis": true
+        },
+        {
+            "x": -701,
+            "y": 320,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": 10,
+            "vis": true,
+            "_data": {
+                "mirror": {}
+            }
+        },
+        {
+            "x": 701,
+            "y": 320,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": 10,
+            "vis": true,
+            "_data": {
+                "mirror": {}
+            }
+        },
+        {
+            "x": -700,
+            "y": 85,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": 10,
+            "vis": true
+        },
+        {
+            "x": -700,
+            "y": 321,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": 10,
+            "vis": true
+        },
+        {
+            "x": 700,
+            "y": 85,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": -10,
+            "vis": true
+        },
+        {
+            "x": 700,
+            "y": 321,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": -10,
+            "vis": true
+        },
+        {
+            "x": -700,
+            "y": -321,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": 10,
+            "vis": true
+        },
+        {
+            "x": -700,
+            "y": -85,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": 10,
+            "vis": true
+        },
+        {
+            "x": 700,
+            "y": -321,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": -10,
+            "vis": true
+        },
+        {
+            "x": 700,
+            "y": -85,
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "color": "151a1e",
+            "bias": -10,
+            "vis": true
+        },
+        {
+            "x": -736,
+            "y": -85,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10,
+            "color": "ff6666"
+        },
+        {
+            "x": -700,
+            "y": -85,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10,
+            "color": "ff6666"
+        },
+        {
+            "x": -736,
+            "y": 85,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10,
+            "color": "ff6666"
+        },
+        {
+            "x": -700,
+            "y": 85,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10,
+            "color": "ff6666"
+        },
+        {
+            "x": -735,
+            "y": -86,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10,
+            "color": "ff6666"
+        },
+        {
+            "x": -735,
+            "y": 86,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10,
+            "color": "ff6666"
+        },
+        {
+            "x": 735,
+            "y": -86,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10,
+            "color": "6666ff"
+        },
+        {
+            "x": 735,
+            "y": 86,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10,
+            "color": "6666ff"
+        },
+        {
+            "x": 736,
+            "y": -85,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10,
+            "color": "6666ff"
+        },
+        {
+            "x": 700,
+            "y": -85,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10,
+            "color": "6666ff"
+        },
+        {
+            "x": 736,
+            "y": 85,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10,
+            "color": "6666ff"
+        },
+        {
+            "x": 700,
+            "y": 85,
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10,
+            "color": "6666ff"
+        },
+        {
+            "x": -700,
+            "y": -85,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "DCDCDC"
+        },
+        {
+            "x": -700,
+            "y": 85,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "DCDCDC"
+        },
+        {
+            "x": 700,
+            "y": -85,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "DCDCDC"
+        },
+        {
+            "x": 700,
+            "y": 85,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "DCDCDC"
+        },
+        {
+            "x": -360,
+            "y": -350,
+            "cMask": [
+                "c0"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6",
+            "_data": {
+                "mirror": {}
+            },
+            "vis": false
+        },
+        {
+            "x": -360,
+            "y": 350,
+            "cMask": [
+                "c0"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6",
+            "_data": {
+                "mirror": {}
+            },
+            "vis": false
+        },
+        {
+            "x": 360,
+            "y": -350,
+            "cMask": [
+                "c1"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6",
+            "_data": {
+                "mirror": {}
+            },
+            "vis": false
+        },
+        {
+            "x": 360,
+            "y": 350,
+            "cMask": [
+                "c1"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6",
+            "_data": {
+                "mirror": {}
+            },
+            "vis": false
+        },
+        {
+            "x": -698.5,
+            "y": -125,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 0,
+            "color": "b078a6"
+        },
+        {
+            "x": -624,
+            "y": -125,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 0,
+            "color": "b078a6"
+        },
+        {
+            "x": -698.5,
+            "y": 125,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 0,
+            "color": "b078a6"
+        },
+        {
+            "x": -624,
+            "y": 125,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 0,
+            "color": "b078a6"
+        },
+        {
+            "x": -625,
+            "y": -126,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": -625,
+            "y": 126,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": 625,
+            "y": -126,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": 625,
+            "y": 126,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": 624,
+            "y": -125,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 0,
+            "color": "b078a6"
+        },
+        {
+            "x": 698.5,
+            "y": -125,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 0,
+            "color": "b078a6"
+        },
+        {
+            "x": 624,
+            "y": 125,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 0,
+            "color": "b078a6"
+        },
+        {
+            "x": 698.5,
+            "y": 125,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 0,
+            "color": "b078a6"
+        },
+        {
+            "x": -500,
+            "y": 2.5,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 180,
+            "color": "b078a6"
+        },
+        {
+            "x": -500,
+            "y": -2.5,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 180,
+            "color": "b078a6"
+        },
+        {
+            "x": 500,
+            "y": 2.5,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 180,
+            "color": "b078a6"
+        },
+        {
+            "x": 500,
+            "y": -2.5,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "curve": 180,
+            "color": "b078a6"
+        },
+        {
+            "x": 0,
+            "y": -350,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "vis": false,
+            "color": "818FB0"
+        },
+        {
+            "x": 0,
+            "y": -85,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "vis": false,
+            "color": "818FB0"
+        },
+        {
+            "x": 0,
+            "y": 85,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "color": "818FB0",
+            "vis": false
+        },
+        {
+            "x": 0,
+            "y": 350,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "color": "818FB0",
+            "vis": false,
+            "_data": {
+                "mirror": {}
+            }
+        },
+        {
+            "x": 0,
+            "y": 85,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "blueKO"
+            ],
+            "color": "b078a6",
+            "vis": true,
+            "curve": 180
+        },
+        {
+            "x": 0,
+            "y": -85,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "blueKO"
+            ],
+            "color": "b078a6",
+            "vis": true,
+            "curve": 180
+        },
+        {
+            "x": 0,
+            "y": -85,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO"
+            ],
+            "color": "b078a6",
+            "vis": true
+        },
+        {
+            "x": 0,
+            "y": 85,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO"
+            ],
+            "color": "b078a6",
+            "vis": true
+        },
+        {
+            "x": 0,
+            "y": -86,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "c1"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": 0,
+            "y": 86,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "c1"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": -698,
+            "y": -85,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "454C5E",
+            "curve": 0
+        },
+        {
+            "x": -698,
+            "y": 85,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "454C5E",
+            "curve": 0
+        },
+        {
+            "x": -702,
+            "y": -85,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "454C5E",
+            "curve": 0
+        },
+        {
+            "x": -702,
+            "y": 85,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "454C5E",
+            "curve": 0
+        },
+        {
+            "x": 698,
+            "y": -85,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "454C5E",
+            "curve": 0
+        },
+        {
+            "x": 698,
+            "y": 85,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "454C5E",
+            "curve": 0
+        },
+        {
+            "x": 702,
+            "y": -85,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "454C5E",
+            "curve": 0
+        },
+        {
+            "x": 702,
+            "y": 85,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "454C5E",
+            "curve": 0
+        },
+        {
+            "x": 0,
+            "y": -2.5,
+            "bCoef": 0.75,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": 0,
+            "y": 2.5,
+            "bCoef": 0.75,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "color": "b078a6"
+        },
+        {
+            "x": 0,
+            "y": -318.5,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "vis": true,
+            "color": "151a1e"
+        },
+        {
+            "x": 0,
+            "y": -88,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "vis": true,
+            "color": "151a1e"
+        },
+        {
+            "x": 0,
+            "y": 88,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "vis": true,
+            "color": "151a1e"
+        },
+        {
+            "x": 0,
+            "y": 318.5,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "vis": true,
+            "color": "151a1e"
+        },
+        {
+            "cMask": [
+                "c1"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": 360,
+            "y": 318.5,
+            "_data": {
+                "mirror": {}
+            },
+            "vis": true
+        },
+        {
+            "cMask": [
+                "c1"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": 360,
+            "y": -318.5,
+            "_data": {
+                "mirror": {}
+            },
+            "vis": true
+        },
+        {
+            "cMask": [
+                "c0"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": -360,
+            "y": 318.5,
+            "_data": {
+                "mirror": {}
+            },
+            "vis": true
+        },
+        {
+            "cMask": [
+                "c0"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": -360,
+            "y": -318.5,
+            "_data": {
+                "mirror": {}
+            },
+            "vis": true
+        }
+    ],
+    "segments": [
+        {
+            "v0": 0,
+            "v1": 1,
+            "vis": true,
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "bias": -10,
+            "y": -320
+        },
+        {
+            "v0": 2,
+            "v1": 3,
+            "vis": true,
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "bias": 10,
+            "y": 320,
+            "_data": {
+                "mirror": {},
+                "arc": {
+                    "a": [
+                        -701,
+                        320
+                    ],
+                    "b": [
+                        701,
+                        320
+                    ],
+                    "radius": null,
+                    "center": [
+                        null,
+                        null
+                    ],
+                    "from": null,
+                    "to": null
+                }
+            }
+        },
+        {
+            "v0": 4,
+            "v1": 5,
+            "vis": true,
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "bias": 10,
+            "x": -700
+        },
+        {
+            "v0": 6,
+            "v1": 7,
+            "vis": true,
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "bias": -10,
+            "x": 700
+        },
+        {
+            "v0": 8,
+            "v1": 9,
+            "vis": true,
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "bias": 10,
+            "x": -700
+        },
+        {
+            "v0": 10,
+            "v1": 11,
+            "vis": true,
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "ball"
+            ],
+            "bias": -10,
+            "x": 700
+        },
+        {
+            "v0": 12,
+            "v1": 13,
+            "color": "ff6666",
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10
+        },
+        {
+            "v0": 14,
+            "v1": 15,
+            "color": "ff6666",
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10,
+            "y": 70
+        },
+        {
+            "v0": 16,
+            "v1": 17,
+            "color": "ff6666",
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10,
+            "x": -735
+        },
+        {
+            "v0": 18,
+            "v1": 19,
+            "color": "6666ff",
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10,
+            "x": 735
+        },
+        {
+            "v0": 20,
+            "v1": 21,
+            "color": "6666ff",
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": 10
+        },
+        {
+            "v0": 22,
+            "v1": 23,
+            "color": "6666ff",
+            "bCoef": 0.1,
+            "cMask": [
+                "ball"
+            ],
+            "cGroup": [
+                "ball"
+            ],
+            "bias": -10,
+            "y": 70
+        },
+        {
+            "v0": 24,
+            "v1": 25,
+            "color": "DCDCDC",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": -700
+        },
+        {
+            "v0": 26,
+            "v1": 27,
+            "color": "DCDCDC",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": 700
+        },
+        {
+            "v0": 28,
+            "v1": 29,
+            "color": "b078a6",
+            "cMask": [
+                "c0"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": -360,
+            "_data": {
+                "mirror": {},
+                "arc": {
+                    "a": [
+                        -360,
+                        -350
+                    ],
+                    "b": [
+                        -360,
+                        350
+                    ],
+                    "radius": null,
+                    "center": [
+                        null,
+                        null
+                    ],
+                    "from": null,
+                    "to": null
+                }
+            },
+            "vis": false
+        },
+        {
+            "v0": 30,
+            "v1": 31,
+            "color": "b078a6",
+            "cMask": [
+                "c1"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": 360,
+            "_data": {
+                "mirror": {},
+                "arc": {
+                    "a": [
+                        360,
+                        -350
+                    ],
+                    "b": [
+                        360,
+                        350
+                    ],
+                    "radius": null,
+                    "center": [
+                        null,
+                        null
+                    ],
+                    "from": null,
+                    "to": null
+                }
+            },
+            "vis": false
+        },
+        {
+            "v0": 32,
+            "v1": 33,
+            "curve": 0,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "y": -125
+        },
+        {
+            "v0": 34,
+            "v1": 35,
+            "curve": 0,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "y": 125
+        },
+        {
+            "v0": 36,
+            "v1": 37,
+            "curve": 0,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": -625
+        },
+        {
+            "v0": 38,
+            "v1": 39,
+            "curve": 0,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": 625
+        },
+        {
+            "v0": 40,
+            "v1": 41,
+            "curve": 0,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "y": -125
+        },
+        {
+            "v0": 42,
+            "v1": 43,
+            "curve": 0,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "y": 125
+        },
+        {
+            "v0": 44,
+            "v1": 45,
+            "curve": 0,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": -500
+        },
+        {
+            "v0": 45,
+            "v1": 44,
+            "curve": 180,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": -500
+        },
+        {
+            "v0": 44,
+            "v1": 45,
+            "curve": 180,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": -500
+        },
+        {
+            "v0": 46,
+            "v1": 47,
+            "curve": 0,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": 500
+        },
+        {
+            "v0": 47,
+            "v1": 46,
+            "curve": 180,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": 500
+        },
+        {
+            "v0": 46,
+            "v1": 47,
+            "curve": 180,
+            "color": "b078a6",
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "x": 500
+        },
+        {
+            "v0": 48,
+            "v1": 49,
+            "vis": false,
+            "color": "818FB0",
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "x": 0
+        },
+        {
+            "v0": 50,
+            "v1": 51,
+            "vis": false,
+            "color": "818FB0",
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "x": 0
+        },
+        {
+            "v0": 52,
+            "v1": 53,
+            "curve": 180,
+            "vis": true,
+            "color": "b078a6",
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "blueKO"
+            ],
+            "x": 0
+        },
+        {
+            "v0": 54,
+            "v1": 55,
+            "curve": 180,
+            "vis": true,
+            "color": "b078a6",
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO"
+            ],
+            "x": 0
+        },
+        {
+            "v0": 66,
+            "v1": 67,
+            "color": "b078a6",
+            "bCoef": 0.75,
+            "cMask": [
+                "wall"
+            ],
+            "cGroup": [
+                "wall"
+            ]
+        },
+        {
+            "v0": 68,
+            "v1": 69,
+            "vis": true,
+            "color": "151a1e",
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "x": 0
+        },
+        {
+            "v0": 70,
+            "v1": 71,
+            "vis": true,
+            "color": "151a1e",
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "cGroup": [
+                "redKO",
+                "blueKO"
+            ],
+            "x": 0
+        },
+        {
+            "color": "b078a6",
+            "cMask": [
+                "c1"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "v0": 72,
+            "v1": 73,
+            "_data": {
+                "mirror": {},
+                "arc": {
+                    "a": [
+                        360,
+                        318.5
+                    ],
+                    "b": [
+                        360,
+                        -318.5
+                    ],
+                    "radius": null,
+                    "center": [
+                        null,
+                        null
+                    ],
+                    "from": null,
+                    "to": null
+                }
+            },
+            "x": 360,
+            "vis": true
+        },
+        {
+            "color": "b078a6",
+            "cMask": [
+                "c0"
+            ],
+            "cGroup": [
+                "wall"
+            ],
+            "v0": 74,
+            "v1": 75,
+            "_data": {
+                "mirror": {},
+                "arc": {
+                    "a": [
+                        -360,
+                        318.5
+                    ],
+                    "b": [
+                        -360,
+                        -318.5
+                    ],
+                    "radius": null,
+                    "center": [
+                        null,
+                        null
+                    ],
+                    "from": null,
+                    "to": null
+                }
+            },
+            "x": -360,
+            "vis": true
+        }
+    ],
+    "goals": [
+        {
+            "p0": [
+                -705.8,
+                -85
+            ],
+            "p1": [
+                -705.8,
+                85
+            ],
+            "team": "red"
+        },
+        {
+            "p0": [
+                705.8,
+                -85
+            ],
+            "p1": [
+                705.8,
+                85
+            ],
+            "team": "blue"
+        }
+    ],
+    "discs": [
+        {
+            "radius": 5.4,
+            "invMass": 0,
+            "pos": [
+                -700,
+                -85
+            ],
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "all"
+            ],
+            "cGroup": [
+                "all"
+            ]
+        },
+        {
+            "radius": 5.4,
+            "invMass": 0,
+            "pos": [
+                -700,
+                85
+            ],
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "all"
+            ],
+            "cGroup": [
+                "all"
+            ]
+        },
+        {
+            "radius": 5.4,
+            "invMass": 0,
+            "pos": [
+                700,
+                -85
+            ],
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "all"
+            ],
+            "cGroup": [
+                "all"
+            ]
+        },
+        {
+            "radius": 5.4,
+            "invMass": 0,
+            "pos": [
+                700,
+                85
+            ],
+            "color": "151a1e",
+            "bCoef": 1,
+            "cMask": [
+                "all"
+            ],
+            "cGroup": [
+                "all"
+            ]
+        }
+    ],
+    "planes": [
+        {
+            "normal": [
+                0,
+                1
+            ],
+            "dist": -350,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "y": -350,
+            "_data": {
+                "extremes": {
+                    "normal": [
+                        0,
+                        1
+                    ],
+                    "dist": -350,
+                    "canvas_rect": [
+                        -446.3701523755323,
+                        -204.22163834174683,
+                        446.3701523755323,
+                        204.22163834174683
+                    ],
+                    "a": [
+                        -446.3701523755323,
+                        -350
+                    ],
+                    "b": [
+                        446.3701523755323,
+                        -350
+                    ]
+                },
+                "mirror": {}
+            }
+        },
+        {
+            "normal": [
+                0,
+                -1
+            ],
+            "dist": -350,
+            "cMask": [
+                "red",
+                "blue"
+            ],
+            "y": 350,
+            "_data": {
+                "extremes": {
+                    "normal": [
+                        0,
+                        -1
+                    ],
+                    "dist": -350,
+                    "canvas_rect": [
+                        -446.3701523755323,
+                        -204.22163834174683,
+                        446.3701523755323,
+                        204.22163834174683
+                    ],
+                    "a": [
+                        -446.3701523755323,
+                        350
+                    ],
+                    "b": [
+                        446.3701523755323,
+                        350
+                    ]
+                }
+            }
+        }
+    ],
+    "playerPhysics": {
+        "bCoef": 0,
+        "acceleration": 0.11,
+        "kickingAcceleration": 0.083,
+        "kickStrength": 4.545,
+        "radius": 15,
+        "invMass": 0.5,
+        "damping": 0.96,
+        "cGroup": [
+            "red",
+            "blue"
+        ],
+        "gravity": [
+            0,
+            0
+        ],
+        "kickingDamping": 0.96,
+        "kickback": 0
+    },
+    "ballPhysics": {
+        "radius": 5.8,
+        "bCoef": 0.412,
+        "invMass": 1.5,
+        "color": "FFD700",
+        "cMask": [
+            "all"
+        ],
+        "damping": 0.99,
+        "gravity": [
+            0,
+            0
+        ],
+        "cGroup": [
+            "ball"
+        ]
+    },
+    "joints": []
 }`;
 let currentStadium = 'training';
 //let bigMapObj = JSON.parse(trainingMap);
@@ -5079,7 +5074,7 @@ class MutePlayer {
             room.sendAnnouncement(
                 `You have been unmuted.`,
                 this.playerId,
-                announcementColour,
+                announcementColor,
                 "bold",
                 HaxNotification.CHAT
             );
@@ -5196,7 +5191,7 @@ let adminList = [
     //['nSjaaoKofSvRAGa0LqAn9ibsd4i44ZhTVFMQsP8unxo', 'kenzo'],
     ['gsQy4UsLdYNSENdFLo75Nm0mhtK6DQZ4xurK-0s_224', 'lonic'],
     ['szYMRXq8UNuYu8SCaYlgACpDMaSE16qTMC1MHtF22aI', 'Walter White']
-	//['ffrkheHkC8K7qdLqrtzXHh4G6WDWTuIYmZ3qlD_3IaQ', 'Gabriel']
+    //['ffrkheHkC8K7qdLqrtzXHh4G6WDWTuIYmZ3qlD_3IaQ', 'Gabriel']
 ];
 let masterList = [
     '2znUsLSqKuiOpr-SYHqxJOdDhrfOBlEXX3emPKiQpnU', //dar
@@ -5227,16 +5222,17 @@ let ballRadius = 10;
 let triggerDistance = playerRadius + ballRadius + 0.01;
 
 /* COLORS */
-let welcomeColour = 0x5c4e9e;
-let announcementColour = 0xffefd6;
-let infoColour = 0xbebebe;
-let privateMessageColour = 0xffc933;
-let redColour = 0xff4c4c;
-let blueColour = 0x62cbff;
-let warningColour = 0xffa135;
-let errorColour = 0xa40000;
-let successColour = 0x75ff75;
-let defaultColour = null;
+let welcomeColor = 0x5c4e9e;
+let announcementColor = 0xffefd6;
+let infoColor = 0xbebebe;
+let privateMessageColor = 0xffc933;
+let redColor = 0xff4c4c;
+let blueColor = 0x62cbff;
+let warningColor = 0xffa135;
+let errorColor = 0xa40000;
+let successColor = 0x75ff75;
+let defaultColor = null;
+let kits = [[2, 60, 0x000000, [0xFF0000, 0xFF4F0F, 0xFF6726]], [2, 60, 0x000000, [0x05FFCD, 0x05FFCD, 0x05F7FF]]]
 
 /* AUXILIARY */
 let checkTimeletiable = false;
@@ -5323,15 +5319,15 @@ function handleDef() {
                 if (redDefenders.length < maxDefenders) {
                     for (let j = 0; j < attackers[0].length; j++) {
                         room.setPlayerDiscProperties(attackers[0][j].id, { cGroup: room.CollisionFlags.red });
-						if(def3Mess) {
-							room.sendAnnouncement(
-								`[3def system] now you can join the defense`,
-								attackers[0][j].id,
-								0xf53131,
-								'normal',
-								null
-							);
-						}
+                        if(def3Mess) {
+                            room.sendAnnouncement(
+                                `[3def system] now you can join the defense`,
+                                attackers[0][j].id,
+                                0xf53131,
+                                'normal',
+                                null
+                            );
+                        }
                     }
                 }
             }
@@ -5345,15 +5341,15 @@ function handleDef() {
                 attackers[0] = teamRed.filter(a => !redDefenders.map(b => b.id).includes(a.id));
                 attackers[0].forEach(a => {
                     room.setPlayerDiscProperties(a.id, { cGroup: room.CollisionFlags.red | room.CollisionFlags.c0 });
-					if(def3Mess) {
-						room.sendAnnouncement(
-							`[3def system] go attack`,
-							a.id,
-							0xf53131,
-							'normal',
-							null
-						);
-					}
+                    if(def3Mess) {
+                        room.sendAnnouncement(
+                            `[3def system] go attack`,
+                            a.id,
+                            0xf53131,
+                            'normal',
+                            null
+                        );
+                    }
                 });
                 break;
             }
@@ -5372,14 +5368,14 @@ function handleDef() {
                     for (let j = 0; j < attackers[1].length; j++) {
                         room.setPlayerDiscProperties(attackers[1][j].id, { cGroup: room.CollisionFlags.blue });
                         if(def3Mess) {
-							room.sendAnnouncement(
-								`[3def system] now you can join the defense`,
-								attackers[1][j].id,
-								0x283fed,
-								'normal',
-								null
-							);
-						}
+                            room.sendAnnouncement(
+                                `[3def system] now you can join the defense`,
+                                attackers[1][j].id,
+                                0x283fed,
+                                'normal',
+                                null
+                            );
+                        }
                     }
                 }
             }
@@ -5394,14 +5390,14 @@ function handleDef() {
                 attackers[1].forEach(a => {
                     room.setPlayerDiscProperties(a.id, { cGroup: room.CollisionFlags.blue | room.CollisionFlags.c1 });
                     if(def3Mess) {
-						room.sendAnnouncement(
-							`[3def system] go attack`,
-							a.id,
-							0x283fed,
-							'normal',
-							null
-						);
-					}
+                        room.sendAnnouncement(
+                            `[3def system] go attack`,
+                            a.id,
+                            0x283fed,
+                            'normal',
+                            null
+                        );
+                    }
                 });
                 break;
             }
@@ -5832,7 +5828,7 @@ function teamChat(player, message) {
     let emoji = player.team == Team.RED ? '🔴' : player.team == Team.BLUE ? '🔵' : '⚪';
     let mess = `${emoji} [TEAM] ${player.name}: ${msgArray.join(' ')}`;
     let team = getTeamArray(player.team, true);
-    let color = player.team == Team.RED ? redColour : player.team == Team.BLUE ? blueColour : null;
+    let color = player.team == Team.RED ? redColor : player.team == Team.BLUE ? blueColor : null;
     let style = 'normal';
     let mention = HaxNotification.CHAT;
     sendAnnouncementTeam(mess, team, color, style, mention);
@@ -5847,7 +5843,7 @@ function playerChat(player, message) {
         room.sendAnnouncement(
             `Invalid player, make sure the name you entered is correct.`,
             player.id,
-            errorColour,
+            errorColor,
             'bold',
             null
         );
@@ -5858,7 +5854,7 @@ function playerChat(player, message) {
         room.sendAnnouncement(
             `You can't send a PM to yourself!`,
             player.id,
-            errorColour,
+            errorColor,
             'bold',
             null
         );
@@ -5871,14 +5867,14 @@ function playerChat(player, message) {
     room.sendAnnouncement(
         messageFrom,
         player.id,
-        privateMessageColour,
+        privateMessageColor,
         'bold',
         HaxNotification.CHAT
     );
     room.sendAnnouncement(
         messageTo,
         playerTarget.id,
-        privateMessageColour,
+        privateMessageColor,
         'bold',
         HaxNotification.CHAT
     );
@@ -6033,7 +6029,7 @@ function helpCommand(player, message) {
         room.sendAnnouncement(
             commandString,
             player.id,
-            infoColour,
+            infoColor,
             'bold',
             HaxNotification.CHAT
         );
@@ -6043,7 +6039,7 @@ function helpCommand(player, message) {
             room.sendAnnouncement(
                 `\'${commandName}\' command :\n${commands[commandName].desc}`,
                 player.id,
-                infoColour,
+                infoColor,
                 'bold',
                 HaxNotification.CHAT
             );
@@ -6051,7 +6047,7 @@ function helpCommand(player, message) {
             room.sendAnnouncement(
                 `The command you tried to get information on does not exist. To check all available commands, type \'!help\'`,
                 player.id,
-                errorColour,
+                errorColor,
                 'bold',
                 HaxNotification.CHAT
             );
@@ -6067,7 +6063,7 @@ function globalStatsCommand(player, message) {
     room.sendAnnouncement(
         statsString,
         player.id,
-        infoColour,
+        infoColor,
         'bold',
         HaxNotification.CHAT
     );
@@ -6086,7 +6082,7 @@ function renameCommand(player, message) {
         room.sendAnnouncement(
             `You successfully renamed yourself ${stats.playerName} !`,
             player.id,
-            successColour,
+            successColor,
             'bold',
             HaxNotification.CHAT
         );
@@ -6094,7 +6090,7 @@ function renameCommand(player, message) {
         room.sendAnnouncement(
             `You haven't played a game in this room yet !`,
             player.id,
-            errorColour,
+            errorColor,
             'bold',
             HaxNotification.CHAT
         );
@@ -6113,7 +6109,7 @@ function afkCommand(player, message) {
                 room.sendAnnouncement(
                     `There is a minimum of ${minAFKDuration} minute of AFK time. Don't abuse the command !`,
                     player.id,
-                    errorColour,
+                    errorColor,
                     'bold',
                     HaxNotification.CHAT
                 );
@@ -6122,7 +6118,7 @@ function afkCommand(player, message) {
                 room.sendAnnouncement(
                     `🌅 ${player.name} is not AFK anymore !`,
                     null,
-                    announcementColour,
+                    announcementColor,
                     'normal',
                     null
                 );
@@ -6134,7 +6130,7 @@ function afkCommand(player, message) {
                 room.sendAnnouncement(
                     `You can only go AFK every ${AFKCooldown} minutes. Don't abuse the command !`,
                     player.id,
-                    errorColour,
+                    errorColor,
                     'bold',
                     HaxNotification.CHAT
                 );
@@ -6169,7 +6165,7 @@ function afkCommand(player, message) {
                 room.sendAnnouncement(
                     `😴 ${player.name} is now AFK !`,
                     null,
-                    announcementColour,
+                    announcementColor,
                     'normal',
                     null
                 );
@@ -6181,7 +6177,7 @@ function afkCommand(player, message) {
         room.sendAnnouncement(
             `You can't go AFK while in a team !`,
             player.id,
-            errorColour,
+            errorColor,
             'bold',
             HaxNotification.CHAT
         );
@@ -6193,7 +6189,7 @@ function afkListCommand(player, message) {
         room.sendAnnouncement(
             "😴 There's nobody in the AFK list.",
             player.id,
-            announcementColour,
+            announcementColor,
             'bold',
             null
         );
@@ -6205,7 +6201,7 @@ function afkListCommand(player, message) {
         if (p != null) cstm += p.name + `, `;
     });
     cstm = cstm.substring(0, cstm.length - 2) + '.';
-    room.sendAnnouncement(cstm, player.id, announcementColour, 'bold', null);
+    room.sendAnnouncement(cstm, player.id, announcementColor, 'bold', null);
 }
 
 function masterCommand(player, message) {
@@ -6218,7 +6214,7 @@ function masterCommand(player, message) {
             room.sendAnnouncement(
                 `${player.name} is now a room master !`,
                 null,
-                announcementColour,
+                announcementColor,
                 'bold',
                 HaxNotification.CHAT
             );
@@ -6226,7 +6222,7 @@ function masterCommand(player, message) {
             room.sendAnnouncement(
                 `You are a master already !`,
                 player.id,
-                errorColour,
+                errorColor,
                 'bold',
                 HaxNotification.CHAT
             );
@@ -6261,7 +6257,7 @@ function swapCommand(player, message) {
         room.sendAnnouncement(
             '✔️ Teams swapped !',
             null,
-            announcementColour,
+            announcementColor,
             'bold',
             null
         );
@@ -6269,7 +6265,7 @@ function swapCommand(player, message) {
         room.sendAnnouncement(
             `Please stop the game before swapping.`,
             player.id,
-            errorColour,
+            errorColor,
             'bold',
             HaxNotification.CHAT
         );
@@ -6327,7 +6323,7 @@ function stadiumCommand(player, message) {
             room.sendAnnouncement(
                 `Stadium not recognized.`,
                 player.id,
-                errorColour,
+                errorColor,
                 'bold',
                 HaxNotification.CHAT
             );
@@ -6336,7 +6332,7 @@ function stadiumCommand(player, message) {
         room.sendAnnouncement(
             `Please stop the game before using this command.`,
             player.id,
-            errorColour,
+            errorColor,
             'bold',
             HaxNotification.CHAT
         );
@@ -6360,7 +6356,7 @@ function muteCommand(player, message) {
                     room.sendAnnouncement(
                         `${playerMute.name} has been muted for ${minutesMute} minutes.`,
                         null,
-                        announcementColour,
+                        announcementColor,
                         'bold',
                         null
                     );
@@ -6368,7 +6364,7 @@ function muteCommand(player, message) {
                     room.sendAnnouncement(
                         `You can't mute an admin.`,
                         player.id,
-                        errorColour,
+                        errorColor,
                         'bold',
                         HaxNotification.CHAT
                     );
@@ -6377,7 +6373,7 @@ function muteCommand(player, message) {
                 room.sendAnnouncement(
                     `There is no player with such ID in the room. Enter "!help mute" for more information.`,
                     player.id,
-                    errorColour,
+                    errorColor,
                     'bold',
                     HaxNotification.CHAT
                 );
@@ -6386,7 +6382,7 @@ function muteCommand(player, message) {
             room.sendAnnouncement(
                 `Incorrect format for your argument. Enter "!help mute" for more information.`,
                 player.id,
-                errorColour,
+                errorColor,
                 'bold',
                 HaxNotification.CHAT
             );
@@ -6395,7 +6391,7 @@ function muteCommand(player, message) {
         room.sendAnnouncement(
             `Wrong number of arguments. Enter "!help mute" for more information.`,
             player.id,
-            errorColour,
+            errorColor,
             'bold',
             HaxNotification.CHAT
         );
@@ -6415,7 +6411,7 @@ function unmuteCommand(player, message) {
                     room.sendAnnouncement(
                         `${playerUnmute.name} has been unmuted !`,
                         null,
-                        announcementColour,
+                        announcementColor,
                         'bold',
                         HaxNotification.CHAT
                     );
@@ -6423,7 +6419,7 @@ function unmuteCommand(player, message) {
                     room.sendAnnouncement(
                         `This player isn't muted !`,
                         player.id,
-                        errorColour,
+                        errorColor,
                         'bold',
                         HaxNotification.CHAT
                     );
@@ -6432,7 +6428,7 @@ function unmuteCommand(player, message) {
                 room.sendAnnouncement(
                     `There is no player with such ID in the room. Enter "!help unmute" for more information.`,
                     player.id,
-                    errorColour,
+                    errorColor,
                     'bold',
                     HaxNotification.CHAT
                 );
@@ -6443,7 +6439,7 @@ function unmuteCommand(player, message) {
             room.sendAnnouncement(
                 `${playerUnmute.name} has been unmuted !`,
                 null,
-                announcementColour,
+                announcementColor,
                 'bold',
                 HaxNotification.CHAT
             );
@@ -6451,7 +6447,7 @@ function unmuteCommand(player, message) {
             room.sendAnnouncement(
                 `Incorrect format for your argument. Enter "!help unmute" for more information.`,
                 player.id,
-                errorColour,
+                errorColor,
                 'bold',
                 HaxNotification.CHAT
             );
@@ -6460,7 +6456,7 @@ function unmuteCommand(player, message) {
         room.sendAnnouncement(
             `Wrong number of arguments. Enter "!help unmute" for more information.`,
             player.id,
-            errorColour,
+            errorColor,
             'bold',
             HaxNotification.CHAT
         );
@@ -6472,7 +6468,7 @@ function muteListCommand(player, message) {
         room.sendAnnouncement(
             "🔇 There's nobody in the mute list.",
             player.id,
-            announcementColour,
+            announcementColor,
             'bold',
             null
         );
@@ -6486,7 +6482,7 @@ function muteListCommand(player, message) {
     room.sendAnnouncement(
         cstm,
         player.id,
-        announcementColour,
+        announcementColor,
         'bold',
         null
     );
@@ -6501,7 +6497,7 @@ function clearbansCommand(player, message) {
         room.sendAnnouncement(
             '✔️ Bans cleared !',
             null,
-            announcementColour,
+            announcementColor,
             'bold',
             null
         );
@@ -6514,7 +6510,7 @@ function clearbansCommand(player, message) {
                 room.sendAnnouncement(
                     `✔️ ${banList.filter((p) => p[1] == ID)[0][0]} has been unbanned from the room !`,
                     null,
-                    announcementColour,
+                    announcementColor,
                     'bold',
                     null
                 );
@@ -6522,7 +6518,7 @@ function clearbansCommand(player, message) {
                 room.sendAnnouncement(
                     `The ID you entered doesn't have a ban associated to. Enter "!help clearbans" for more information.`,
                     player.id,
-                    errorColour,
+                    errorColor,
                     'bold',
                     HaxNotification.CHAT
                 );
@@ -6532,7 +6528,7 @@ function clearbansCommand(player, message) {
             room.sendAnnouncement(
                 `Invalid ID entered. Enter "!help clearbans" for more information.`,
                 player.id,
-                errorColour,
+                errorColor,
                 'bold',
                 HaxNotification.CHAT
             );
@@ -6541,7 +6537,7 @@ function clearbansCommand(player, message) {
         room.sendAnnouncement(
             `Wrong number of arguments. Enter "!help clearbans" for more information.`,
             player.id,
-            errorColour,
+            errorColor,
             'bold',
             HaxNotification.CHAT
         );
@@ -6553,7 +6549,7 @@ function banListCommand(player, message) {
         room.sendAnnouncement(
             "📢 There's nobody in the ban list.",
             player.id,
-            announcementColour,
+            announcementColor,
             'bold',
             null
         );
@@ -6567,7 +6563,7 @@ function banListCommand(player, message) {
     room.sendAnnouncement(
         cstm,
         player.id,
-        announcementColour,
+        announcementColor,
         'bold',
         null
     );
@@ -6578,7 +6574,7 @@ function adminListCommand(player, message) {
         room.sendAnnouncement(
             "📢 There's nobody in the admin list.",
             player.id,
-            announcementColour,
+            announcementColor,
             'bold',
             null
         );
@@ -6592,7 +6588,7 @@ function adminListCommand(player, message) {
     room.sendAnnouncement(
         cstm,
         player.id,
-        announcementColour,
+        announcementColor,
         'bold',
         null
     );
@@ -6613,7 +6609,7 @@ function setAdminCommand(player, message) {
                         room.sendAnnouncement(
                             `${playerAdmin.name} is now a room admin !`,
                             null,
-                            announcementColour,
+                            announcementColor,
                             'bold',
                             HaxNotification.CHAT
                         );
@@ -6621,7 +6617,7 @@ function setAdminCommand(player, message) {
                         room.sendAnnouncement(
                             `This player is a master already !`,
                             player.id,
-                            errorColour,
+                            errorColor,
                             'bold',
                             HaxNotification.CHAT
                         );
@@ -6630,7 +6626,7 @@ function setAdminCommand(player, message) {
                     room.sendAnnouncement(
                         `This player is a permanent admin already !`,
                         player.id,
-                        errorColour,
+                        errorColor,
                         'bold',
                         HaxNotification.CHAT
                     );
@@ -6639,7 +6635,7 @@ function setAdminCommand(player, message) {
                 room.sendAnnouncement(
                     `There is no player with such ID in the room. Enter "!help setadmin" for more information.`,
                     player.id,
-                    errorColour,
+                    errorColor,
                     'bold',
                     HaxNotification.CHAT
                 );
@@ -6648,7 +6644,7 @@ function setAdminCommand(player, message) {
             room.sendAnnouncement(
                 `Incorrect format for your argument. Enter "!help setadmin" for more information.`,
                 player.id,
-                errorColour,
+                errorColor,
                 'bold',
                 HaxNotification.CHAT
             );
@@ -6657,7 +6653,7 @@ function setAdminCommand(player, message) {
         room.sendAnnouncement(
             `Wrong number of arguments. Enter "!help setadmin" for more information.`,
             player.id,
-            errorColour,
+            errorColor,
             'bold',
             HaxNotification.CHAT
         );
@@ -6678,7 +6674,7 @@ function removeAdminCommand(player, message) {
                     room.sendAnnouncement(
                         `${playerAdmin.name} is not a room admin anymore !`,
                         null,
-                        announcementColour,
+                        announcementColor,
                         'bold',
                         HaxNotification.CHAT
                     );
@@ -6686,7 +6682,7 @@ function removeAdminCommand(player, message) {
                     room.sendAnnouncement(
                         `This player isn't a permanent admin !`,
                         player.id,
-                        errorColour,
+                        errorColor,
                         'bold',
                         HaxNotification.CHAT
                     );
@@ -6695,7 +6691,7 @@ function removeAdminCommand(player, message) {
                 room.sendAnnouncement(
                     `There is no player with such ID in the room. Enter "!help removeadmin" for more information.`,
                     player.id,
-                    errorColour,
+                    errorColor,
                     'bold',
                     HaxNotification.CHAT
                 );
@@ -6712,7 +6708,7 @@ function removeAdminCommand(player, message) {
             room.sendAnnouncement(
                 `${playerAdmin[1]} is not a room admin anymore !`,
                 null,
-                announcementColour,
+                announcementColor,
                 'bold',
                 HaxNotification.CHAT
             );
@@ -6720,7 +6716,7 @@ function removeAdminCommand(player, message) {
             room.sendAnnouncement(
                 `Incorrect format for your argument. Enter "!help removeadmin" for more information.`,
                 player.id,
-                errorColour,
+                errorColor,
                 'bold',
                 HaxNotification.CHAT
             );
@@ -6729,7 +6725,7 @@ function removeAdminCommand(player, message) {
         room.sendAnnouncement(
             `Wrong number of arguments. Enter "!help removeadmin" for more information.`,
             player.id,
-            errorColour,
+            errorColor,
             'bold',
             HaxNotification.CHAT
         );
@@ -6745,7 +6741,7 @@ function passwordCommand(player, message) {
             room.sendAnnouncement(
                 `The room password has been removed.`,
                 player.id,
-                announcementColour,
+                announcementColor,
                 'bold',
                 HaxNotification.CHAT
             );
@@ -6755,7 +6751,7 @@ function passwordCommand(player, message) {
         room.sendAnnouncement(
             `The room password has been set to ${roomPassword}`,
             player.id,
-            announcementColour,
+            announcementColor,
             'bold',
             HaxNotification.CHAT
         );
@@ -6766,7 +6762,7 @@ function passwordCommand(player, message) {
             room.sendAnnouncement(
                 `The room password has been removed.`,
                 player.id,
-                announcementColour,
+                announcementColor,
                 'bold',
                 HaxNotification.CHAT
             );
@@ -6774,7 +6770,7 @@ function passwordCommand(player, message) {
             room.sendAnnouncement(
                 `The room currently does not have a password. Enter "!help password" for more information.`,
                 player.id,
-                errorColour,
+                errorColor,
                 'bold',
                 HaxNotification.CHAT
             );
@@ -6806,7 +6802,7 @@ function checkTime() {
             room.sendAnnouncement(
                 '⚽ First goal wins !',
                 null,
-                announcementColour,
+                announcementColor,
                 'bold',
                 HaxNotification.CHAT
             );
@@ -6852,7 +6848,7 @@ function endGame(winner) {
         room.sendAnnouncement(
             `✨ Red Team won ${scores.red} - ${scores.blue} ! Current streak: ${streak}`,
             null,
-            redColour,
+            redColor,
             'bold',
             HaxNotification.CHAT
         );
@@ -6861,7 +6857,7 @@ function endGame(winner) {
         room.sendAnnouncement(
             `✨ Blue Team won ${scores.blue} - ${scores.red} ! Current streak: ${streak}`,
             null,
-            blueColour,
+            blueColor,
             'bold',
             HaxNotification.CHAT
         );
@@ -6870,7 +6866,7 @@ function endGame(winner) {
         room.sendAnnouncement(
             '💤 Draw limit reached !',
             null,
-            announcementColour,
+            announcementColor,
             'bold',
             HaxNotification.CHAT
         );
@@ -6883,11 +6879,11 @@ function endGame(winner) {
     let actionString = `🔴 ${actionRedPct.toFixed(0)}% - ${actionBluePct.toFixed(0)}% 🔵`;
     //let CSString = getCSString(scores);
     room.sendAnnouncement(
-        `📊 Possession: 🔴 ${possessionString}\n` +
-        `📊 Action Zone: 🔴 ${actionString}\n`,
-		// +`${CSString}`,
+        `📊 Possession: ${possessionString}\n` +
+        `📊 Action Zone: ${actionString}\n`,
+        // +`${CSString}`,
         null,
-        announcementColour,
+        announcementColor,
         'bold',
         HaxNotification.NONE
     );
@@ -6902,7 +6898,7 @@ function activateChooseMode() {
     /*room.sendAnnouncement(
         `🐢 Slow mode changed to choose mode duration of: ${chooseModeSlowMode}s.`,
         null,
-        announcementColour,
+        announcementColor,
         'bold',
         HaxNotification.CHAT
     );*/
@@ -6916,7 +6912,7 @@ function deactivateChooseMode() {
         /*room.sendAnnouncement(
             `🐢 Slow mode changed to choose mode duration of: ${defaultSlowMode}s.`,
             null,
-            announcementColour,
+            announcementColor,
             'bold',
             HaxNotification.CHAT
         );*/
@@ -6935,7 +6931,7 @@ function getSpecList(player) {
     room.sendAnnouncement(
         cstm,
         player.id,
-        infoColour,
+        infoColor,
         'bold',
         HaxNotification.CHAT
     );
@@ -6953,7 +6949,7 @@ function choosePlayer() {
         room.sendAnnouncement(
             "To choose a player, enter his number in the list given or use 'top', 'random' or 'bottom'.",
             captain.id,
-            infoColour,
+            infoColor,
             'bold',
             HaxNotification.MENTION
         );
@@ -6962,7 +6958,7 @@ function choosePlayer() {
                 room.sendAnnouncement(
                     `Hurry up ${player.name}, only ${Number.parseInt(String(chooseTime / 2))} seconds left to choose !`,
                     player.id,
-                    warningColour,
+                    warningColor,
                     'bold',
                     HaxNotification.MENTION
                 );
@@ -6998,7 +6994,7 @@ function chooseModeFunction(player, message) {
                 room.sendAnnouncement(
                     `${player.name} chose Top !`,
                     null,
-                    announcementColour,
+                    announcementColor,
                     'bold',
                     HaxNotification.CHAT
                 );
@@ -7010,7 +7006,7 @@ function chooseModeFunction(player, message) {
                 room.sendAnnouncement(
                     `${player.name} chose Random !`,
                     null,
-                    announcementColour,
+                    announcementColor,
                     'bold',
                     HaxNotification.CHAT
                 );
@@ -7021,7 +7017,7 @@ function chooseModeFunction(player, message) {
                 room.sendAnnouncement(
                     `${player.name} chose Bottom !`,
                     null,
-                    announcementColour,
+                    announcementColor,
                     'bold',
                     HaxNotification.CHAT
                 );
@@ -7030,7 +7026,7 @@ function chooseModeFunction(player, message) {
                     room.sendAnnouncement(
                         `Your number is invalid !`,
                         player.id,
-                        errorColour,
+                        errorColor,
                         'bold',
                         HaxNotification.CHAT
                     );
@@ -7042,7 +7038,7 @@ function chooseModeFunction(player, message) {
                     room.sendAnnouncement(
                         `${player.name} chose ${teamSpec[Number.parseInt(msgArray[0]) - 1].name} !`,
                         null,
-                        announcementColour,
+                        announcementColor,
                         'bold',
                         HaxNotification.CHAT
                     );
@@ -7058,7 +7054,7 @@ function chooseModeFunction(player, message) {
                 room.sendAnnouncement(
                     `${player.name} chose Top !`,
                     null,
-                    announcementColour,
+                    announcementColor,
                     'bold',
                     HaxNotification.CHAT
                 );
@@ -7072,7 +7068,7 @@ function chooseModeFunction(player, message) {
                 room.sendAnnouncement(
                     `${player.name} chose Random !`,
                     null,
-                    announcementColour,
+                    announcementColor,
                     'bold',
                     HaxNotification.CHAT
                 );
@@ -7083,7 +7079,7 @@ function chooseModeFunction(player, message) {
                 room.sendAnnouncement(
                     `${player.name} chose Bottom !`,
                     null,
-                    announcementColour,
+                    announcementColor,
                     'bold',
                     HaxNotification.CHAT
                 );
@@ -7092,7 +7088,7 @@ function chooseModeFunction(player, message) {
                     room.sendAnnouncement(
                         `Your number is invalid !`,
                         player.id,
-                        errorColour,
+                        errorColor,
                         'bold',
                         HaxNotification.CHAT
                     );
@@ -7104,7 +7100,7 @@ function chooseModeFunction(player, message) {
                     room.sendAnnouncement(
                         `${player.name} chose ${teamSpec[Number.parseInt(msgArray[0]) - 1].name} !`,
                         null,
-                        announcementColour,
+                        announcementColor,
                         'bold',
                         HaxNotification.CHAT
                     );
@@ -7197,7 +7193,7 @@ function handleActivityPlayer(player) {
             room.sendAnnouncement(
                 `⛔ ${player.name}, if you don't move or send a message in the next ${Math.floor(afkLimit / 3)} seconds, you will be kicked !`,
                 player.id,
-                warningColour,
+                warningColor,
                 'bold',
                 HaxNotification.MENTION
             );
@@ -7488,7 +7484,7 @@ function handlePlayersLeave() {
                 room.sendAnnouncement(
                     "Ragequit detected, game ended.",
                     null,
-                    infoColour,
+                    infoColor,
                     'bold',
                     HaxNotification.MENTION
                 )
@@ -7981,7 +7977,7 @@ function printRankings(statKey, id = 0) {
             room.sendAnnouncement(
                 'Not enough games played yet !',
                 id,
-                errorColour,
+                errorColor,
                 'bold',
                 HaxNotification.CHAT
             );
@@ -8000,7 +7996,7 @@ function printRankings(statKey, id = 0) {
     room.sendAnnouncement(
         rankingString,
         id,
-        infoColour,
+        infoColor,
         'bold',
         HaxNotification.CHAT
     );
@@ -8209,7 +8205,7 @@ function fetchActionsSummaryReport(game) {
             fieldReportRed.value += `> **${act[0].team != Team.RED ? '[OG] ' : ''}${act[0].name}:**` +
                 `${act[1] > 0 ? ` ${act[1]}G` : ''}` +
                 `${act[2] > 0 ? ` ${act[2]}A` : ''}`
-				// +`${act[3] > 0 ? ` ${act[3]}CS` : ''}\n`;
+                // +`${act[3] > 0 ? ` ${act[3]}CS` : ''}\n`;
         }
     }
     let blueActions = actionReportCountTeam(goals, Team.BLUE);
@@ -8218,7 +8214,7 @@ function fetchActionsSummaryReport(game) {
             fieldReportBlue.value += `> **${act[0].team != Team.BLUE ? '[OG] ' : ''}${act[0].name}:**` +
                 `${act[1] > 0 ? ` ${act[1]}G` : ''}` +
                 `${act[2] > 0 ? ` ${act[2]}A` : ''}`
-				// +`${act[3] > 0 ? ` ${act[3]}CS` : ''}\n`;
+                // +`${act[3] > 0 ? ` ${act[3]}CS` : ''}\n`;
         }
     }
 
@@ -8319,7 +8315,7 @@ room.onPlayerJoin = function (player) {
     room.sendAnnouncement(
         `👋 Hi ${player.name} !`,
         player.id,
-        welcomeColour,
+        welcomeColor,
         'bold',
         HaxNotification.CHAT
     );
@@ -8338,7 +8334,7 @@ room.onPlayerJoin = function (player) {
         room.sendAnnouncement(
             `⚡️ [ADMIN] ${player.name} has connected to the room`,
             null,
-            announcementColour,
+            announcementColor,
             'bold',
             HaxNotification.CHAT
         );
@@ -8361,7 +8357,7 @@ room.onPlayerTeamChange = function (changedPlayer, byPlayer) {
         room.sendAnnouncement(
             `${changedPlayer.name} is AFK !`,
             null,
-            errorColour,
+            errorColor,
             'bold',
             HaxNotification.CHAT
         );
@@ -8430,7 +8426,7 @@ room.onPlayerKicked = function (kickedPlayer, reason, ban, byPlayer) {
         room.sendAnnouncement(
             'You are not allowed to kick/ban players !',
             byPlayer.id,
-            errorColour,
+            errorColor,
             'bold',
             HaxNotification.CHAT
         );
@@ -8564,7 +8560,7 @@ room.onPlayerChat = function (player, message) { //chat
             room.sendAnnouncement(
                 `The command you tried to enter does not exist for you. Please enter '!help' to get the available commands to you.`,
                 player.id,
-                errorColour,
+                errorColor,
                 'bold',
                 HaxNotification.CHAT
             );
@@ -8590,7 +8586,7 @@ room.onPlayerChat = function (player, message) { //chat
         room.sendAnnouncement(
             `You are muted !`,
             player.id,
-            errorColour,
+            errorColor,
             'bold',
             HaxNotification.CHAT
         );
@@ -8701,7 +8697,7 @@ room.onGamePause = function (byPlayer) {
             room.sendAnnouncement(
                 `Game paused by ${byPlayer.name} !`,
                 null,
-                defaultColour,
+                defaultColor,
                 'bold',
                 HaxNotification.NONE
             );
@@ -8709,7 +8705,7 @@ room.onGamePause = function (byPlayer) {
             room.sendAnnouncement(
                 `Game paused !`,
                 null,
-                defaultColour,
+                defaultColor,
                 'bold',
                 HaxNotification.NONE
             );
@@ -8728,7 +8724,7 @@ room.onGameUnpause = function (byPlayer) {
             room.sendAnnouncement(
                 `Game unpaused by ${byPlayer.name} !`,
                 null,
-                defaultColour,
+                defaultColor,
                 'bold',
                 HaxNotification.NONE
             );
@@ -8736,7 +8732,7 @@ room.onGameUnpause = function (byPlayer) {
             room.sendAnnouncement(
                 `Game unpaused !`,
                 null,
-                defaultColour,
+                defaultColor,
                 'bold',
                 HaxNotification.NONE
             );
@@ -8767,7 +8763,7 @@ room.onTeamGoal = function (team) {
     room.sendAnnouncement(
         goalString,
         null,
-        team == Team.RED ? redColour : blueColour,
+        team == Team.RED ? redColor : blueColor,
         null,
         HaxNotification.CHAT
     );
@@ -8802,12 +8798,12 @@ room.onPositionsReset = function () {
 
 room.onRoomLink = function (url) {
     console.log(`${url}\nmasterPassword : ${masterPassword}`);
-	
+    
     if (roomWebhook != '' && masterPasswordAuth) {
         fetch(roomWebhook, {
             method: 'POST',
             body: JSON.stringify({
-                content: `[${getDate()}] 🔗 @Pharaoh89 LINK ${url}\nmasterPassword : ${masterPassword}`,
+                content: `[${getDate()}] 🔗 LINK ${url}\nmasterPassword : ${masterPassword}`,
                 username: roomName,
             }),
             headers: {
@@ -8831,7 +8827,7 @@ room.onKickRateLimitSet = function (min, rate, burst, byPlayer) {
         room.sendAnnouncement(
             `It is not allowed to change the kickrate limit. It must stay at "6-0-0".`,
             player.id,
-            errorColour,
+            errorColor,
             'bold',
             HaxNotification.CHAT
         );
@@ -8845,16 +8841,16 @@ room.onStadiumChange = function (newStadiumName, byPlayer) {
             room.sendAnnouncement(
                 `You can't change stadium manually ! Please use the stadium commands.`,
                 byPlayer.id,
-                errorColour,
+                errorColor,
                 'bold',
                 HaxNotification.CHAT
             );
             stadiumCommand(emptyPlayer, `!${currentStadium}`);
         } else {
             room.sendAnnouncement(
-                `Map changed. After you're done with this map, please use the stadium commands.`,
+                `After you're done with this map, please use the stadium commands.`,
                 byPlayer.id,
-                infoColour,
+                infoColor,
                 'bold',
                 HaxNotification.CHAT
             );
@@ -8874,13 +8870,9 @@ room.onGameTick = function () { //tick
 
 class Notify { //darxe notify system
     discord(){
-        room.sendAnnouncement(`EEF Discord - https://discord.gg/FHXZ8ghHXK`,null,0xffffff,"bold",null);
-    }
-	info(){
-        room.sendAnnouncement(`[Update November 2, v23.8.1317] We have returned! Stable connection and no unfair bans [@Pharaoh89]`,null, 0x969696,"bold",null);
+        room.sendAnnouncement(`Welcome to our Discord: https://discord.gg/FHXZ8ghHXK`,null,0xb078a6,"bold",null);
     }
 }
 const notify = new Notify();
 
-setInterval(notify.discord, 170000); //dc 0xffffff
-setInterval(notify.info, 250000); //info
+setInterval(notify.discord, 140091); //dc 0xffffff
