@@ -40,2822 +40,699 @@ const room = HBInit({
 });
 
 const trainingMap = `{
-	"name": "SPL 1v0 by DavidMC49",
-	"width": 500,
-	"height": 250,
-	"cameraWidth": 0,
-	"cameraHeight": 0,
-	"maxViewWidth": 0,
-	"cameraFollow": "ball",
-	"spawnDistance": 175,
-	"redSpawnPoints": [],
-	"blueSpawnPoints": [],
-	"canBeStored": false,
-	"kickOffReset": "partial",
-	"bg": {
-		"color": "444b57",
-		"kickOffRadius": 65
-	},
-	"traits": {
-		"ballArea": {
-			"vis": false,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			]
-		},
-		"goalPost": {
-			"radius": 8,
-			"invMass": 0,
-			"bCoef": 0.5
-		},
-		"goalNet": {
-			"vis": true,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			]
-		},
-		"kickOffBarrier": {
-			"vis": false,
-			"bCoef": 0.1,
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"cMask": [
-				"red",
-				"blue"
-			]
-		}
-	},
-	"vertexes": [
-		{
-			"x": -420,
-			"y": -200,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": 15
-		},
-		{
-			"x": -420,
-			"y": -70,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": 15
-		},
-		{
-			"x": 420,
-			"y": -200,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": -15
-		},
-		{
-			"x": -420,
-			"y": 70,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": 15
-		},
-		{
-			"x": -420,
-			"y": 200,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": 15
-		},
-		{
-			"x": 420,
-			"y": 200,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": 15
-		},
-		{
-			"x": 420,
-			"y": 70,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"color": "ffffff",
-			"bias": 15
-		},
-		{
-			"x": 420,
-			"y": -70,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": -15
-		},
-		{
-			"x": -14.865758720072378,
-			"y": -38.134046656075995,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"x": -29.865758720072378,
-			"y": -38.134046656075995,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"x": -33.86575872007238,
-			"y": -30.134046656076,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"x": -20.865758720072378,
-			"y": -17.134046656076,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"x": -24.865758720072378,
-			"y": -9.134046656075999,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"x": -39.86575872007238,
-			"y": -9.134046656075999,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"x": -15,
-			"y": 19,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"color": "8704EE"
-		},
-		{
-			"x": -9,
-			"y": -10,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"color": "8704EE"
-		},
-		{
-			"x": 8,
-			"y": -10,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"color": "8704EE"
-		},
-		{
-			"x": -12,
-			"y": 5,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"color": "8704EE"
-		},
-		{
-			"x": 5,
-			"y": 5,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"color": "8704EE"
-		},
-		{
-			"x": 13.86,
-			"y": -1,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"color": "8704EE"
-		},
-		{
-			"x": 13.568937125298635,
-			"y": 39.782288547285624,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"x": 19.568937125298635,
-			"y": 10.282288547285624,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"x": 35.56893712529863,
-			"y": 39.782288547285624,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"x": 0,
-			"y": 62,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"trait": "kickOffBarrier",
-			"color": "8704EE"
-		},
-		{
-			"x": 0,
-			"y": -62,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"trait": "kickOffBarrier",
-			"color": "8704EE"
-		},
-		{
-			"x": 420,
-			"y": -68,
-			"cMask": [
-				"wall"
-			],
-			"color": "ffffff"
-		},
-		{
-			"x": 420,
-			"y": 68,
-			"cMask": [
-				"wall"
-			],
-			"color": "ffffff"
-		},
-		{
-			"x": -420,
-			"y": -68,
-			"cMask": [
-				"wall"
-			],
-			"color": "ffffff"
-		},
-		{
-			"x": -420,
-			"y": 68,
-			"cMask": [
-				"wall"
-			],
-			"color": "ffffff"
-		},
-		{
-			"x": -455,
-			"y": -69,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"bias": 15,
-			"color": "ff6666",
-			"_data": {
-				"mirror": {}
-			}
-		},
-		{
-			"x": -421,
-			"y": -69,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"bias": -15,
-			"color": "ff6666",
-			"_data": {
-				"mirror": {}
-			}
-		},
-		{
-			"x": -455,
-			"y": 69,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"bias": 15,
-			"color": "ff6666",
-			"_data": {
-				"mirror": {}
-			}
-		},
-		{
-			"x": -421,
-			"y": 69,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"bias": 15,
-			"color": "ff6666",
-			"_data": {
-				"mirror": {}
-			}
-		},
-		{
-			"x": 455,
-			"y": -69,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"color": "6666ff",
-			"bias": 15,
-			"_data": {
-				"mirror": {}
-			}
-		},
-		{
-			"x": 421,
-			"y": -69,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"color": "6666ff",
-			"bias": 15,
-			"_data": {
-				"mirror": {}
-			}
-		},
-		{
-			"x": 455,
-			"y": 69,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"color": "6666ff",
-			"bias": -15,
-			"_data": {
-				"mirror": {}
-			}
-		},
-		{
-			"x": 421,
-			"y": 69,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"color": "6666ff",
-			"bias": -15,
-			"_data": {
-				"mirror": {}
-			}
-		},
-		{
-			"x": -419,
-			"y": -165,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"color": "848ea1"
-		},
-		{
-			"x": -284,
-			"y": -30,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"color": "848ea1"
-		},
-		{
-			"x": -419,
-			"y": 165,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"curve": -90,
-			"color": "848ea1"
-		},
-		{
-			"x": -284,
-			"y": 30,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"curve": -90,
-			"color": "848ea1"
-		},
-		{
-			"x": 419,
-			"y": -165,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"color": "848ea1",
-			"curve": -90
-		},
-		{
-			"x": 284,
-			"y": -30,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"color": "848ea1",
-			"curve": -90
-		},
-		{
-			"x": 419,
-			"y": 165,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"curve": 90,
-			"color": "848ea1"
-		},
-		{
-			"x": 284,
-			"y": 20,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"curve": 90,
-			"color": "848ea1"
-		},
-		{
-			"x": -500,
-			"y": 250,
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			]
-		},
-		{
-			"x": 500,
-			"y": 250,
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			]
-		},
-		{
-			"x": -500,
-			"y": -250,
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			]
-		},
-		{
-			"x": 500,
-			"y": -250,
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			]
-		},
-		{
-			"x": 0,
-			"y": -65,
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"trait": "kickOffBarrier",
-			"color": "444b57"
-		},
-		{
-			"x": 0,
-			"y": -249,
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"trait": "kickOffBarrier",
-			"color": "444b57"
-		},
-		{
-			"x": 0,
-			"y": 65,
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"trait": "kickOffBarrier",
-			"color": "444b57"
-		},
-		{
-			"x": 0,
-			"y": 249,
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"trait": "kickOffBarrier",
-			"color": "444b57"
-		},
-		{
-			"x": 0,
-			"y": 65,
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"trait": "kickOffBarrier",
-			"color": "848ea1",
-			"curve": 0
-		},
-		{
-			"x": 0,
-			"y": 200,
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"trait": "kickOffBarrier",
-			"color": "848ea1",
-			"curve": 0
-		},
-		{
-			"x": 0,
-			"y": -65,
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"trait": "kickOffBarrier",
-			"color": "848ea1",
-			"curve": 0
-		},
-		{
-			"x": 0,
-			"y": -200,
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"trait": "kickOffBarrier",
-			"color": "848ea1",
-			"curve": 0
-		}
+
+	"name" : "BFF Training v3",
+
+	"width" : 480,
+
+	"height" : 230,
+
+	"bg" : { "type" : "", "kickOffRadius" : 60, "color" : "34414b" },
+
+	"vertexes" : [
+		/* 0 */ { "x" : -401.4, "y" : -200, "trait" : "vertexDefault" },
+		/* 1 */ { "x" : 401.4, "y" : -200, "trait" : "vertexDefault" },
+		/* 2 */ { "x" : 401.4, "y" : 200, "trait" : "vertexDefault" },
+		/* 3 */ { "x" : -401.4, "y" : 200, "trait" : "vertexDefault" },
+		/* 4 */ { "x" : 0, "y" : 200, "trait" : "vertexDefault" },
+		/* 5 */ { "x" : 0, "y" : -200, "trait" : "vertexDefault" },
+		/* 6 */ { "x" : 0, "y" : -80, "cMask" : ["red","blue" ], "cGroup" : ["redKO","blueKO" ], "trait" : "vertexDefault" },
+		/* 7 */ { "x" : 0, "y" : 80, "cMask" : ["red","blue" ], "cGroup" : ["redKO","blueKO" ], "trait" : "vertexDefault" },
+		/* 8 */ { "x" : -400, "y" : 70, "trait" : "vertexDefault" },
+		/* 9 */ { "x" : -400, "y" : -70, "trait" : "vertexDefault" },
+		/* 10 */ { "x" : 400, "y" : -70, "trait" : "vertexDefault" },
+		/* 11 */ { "x" : 400, "y" : 70, "trait" : "vertexDefault" },
+		/* 12 */ { "x" : 0, "y" : 230, "trait" : "vertexDefault" },
+		/* 13 */ { "x" : 0, "y" : -230, "trait" : "vertexDefault" },
+		/* 14 */ { "x" : 436.4, "y" : -70, "trait" : "vertexDefault" },
+		/* 15 */ { "x" : 436.4, "y" : 70, "trait" : "vertexDefault" },
+		/* 16 */ { "x" : -436.4, "y" : -70, "trait" : "vertexDefault" },
+		/* 17 */ { "x" : -436.4, "y" : 70, "trait" : "vertexDefault" },
+		/* 18 */ { "x" : 0, "y" : -1.5, "trait" : "vertexDefault" },
+		/* 19 */ { "x" : 0, "y" : 1.5, "trait" : "vertexDefault" },
+		/* 20 */ { "x" : 400, "y" : -135, "trait" : "vertexDefault" },
+		/* 21 */ { "x" : 400, "y" : 135, "trait" : "vertexDefault" },
+		/* 22 */ { "x" : -400, "y" : -135, "trait" : "vertexDefault" },
+		/* 23 */ { "x" : -400, "y" : 135, "trait" : "vertexDefault" },
+		/* 24 */ { "x" : -400, "y" : -201.4, "trait" : "vertexDefault" },
+		/* 25 */ { "x" : 400, "y" : -201.4, "trait" : "vertexDefault" },
+		/* 26 */ { "x" : 400, "y" : 201.4, "trait" : "vertexDefault" },
+		/* 27 */ { "x" : -400, "y" : 201.4, "trait" : "vertexDefault" },
+		/* 28 */ { "x" : 435, "y" : -71.4, "trait" : "vertexDefault" },
+		/* 29 */ { "x" : 435, "y" : 71.4, "trait" : "vertexDefault" },
+		/* 30 */ { "x" : -435, "y" : -71.4, "trait" : "vertexDefault" },
+		/* 31 */ { "x" : -435, "y" : 71.4, "trait" : "vertexDefault" }
+
 	],
-	"segments": [
-		{
-			"v0": 0,
-			"v1": 1,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": 15,
-			"x": -420
-		},
-		{
-			"v0": 0,
-			"v1": 2,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": -15,
-			"y": -200
-		},
-		{
-			"v0": 3,
-			"v1": 4,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": 15,
-			"x": -420
-		},
-		{
-			"v0": 4,
-			"v1": 5,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": 15,
-			"y": 200
-		},
-		{
-			"v0": 5,
-			"v1": 6,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": 15,
-			"x": 420
-		},
-		{
-			"v0": 2,
-			"v1": 7,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": -15,
-			"x": 420
-		},
-		{
-			"v0": 8,
-			"v1": 9,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"y": -40
-		},
-		{
-			"v0": 9,
-			"v1": 10,
-			"curve": -135,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 10,
-			"v1": 11,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 11,
-			"v1": 12,
-			"curve": 135,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 12,
-			"v1": 13,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 14,
-			"v1": 15,
-			"curve": 0,
-			"vis": true,
-			"color": "8704EE",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 15,
-			"v1": 16,
-			"curve": 0,
-			"vis": true,
-			"color": "8704EE",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 17,
-			"v1": 18,
-			"curve": 0,
-			"vis": true,
-			"color": "8704EE",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"y": 5
-		},
-		{
-			"v0": 16,
-			"v1": 19,
-			"curve": 120,
-			"vis": true,
-			"color": "8704EE",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 19,
-			"v1": 18,
-			"curve": 60,
-			"vis": true,
-			"color": "8704EE",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 20,
-			"v1": 21,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 20,
-			"v1": 22,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 23,
-			"v1": 24,
-			"curve": 180,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"trait": "kickOffBarrier",
-			"x": 0
-		},
-		{
-			"v0": 24,
-			"v1": 23,
-			"curve": 180,
-			"vis": true,
-			"color": "8704EE",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"trait": "kickOffBarrier",
-			"x": 0
-		},
-		{
-			"v0": 25,
-			"v1": 26,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"cMask": [
-				"wall"
-			],
-			"x": 420
-		},
-		{
-			"v0": 27,
-			"v1": 28,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"cMask": [
-				"wall"
-			],
-			"x": -420
-		},
-		{
-			"v0": 29,
-			"v1": 30,
-			"curve": 0,
-			"vis": true,
-			"color": "ff6666",
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"bias": -15,
-			"_data": {
-				"mirror": {},
-				"arc": {
-					"a": [
-						-455,
-						-69
-					],
-					"b": [
-						-421,
-						-69
-					],
-					"curve": 0
-				}
-			}
-		},
-		{
-			"v0": 31,
-			"v1": 32,
-			"curve": 0,
-			"vis": true,
-			"color": "ff6666",
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"bias": 15,
-			"y": 69,
-			"_data": {
-				"mirror": {},
-				"arc": {
-					"a": [
-						-455,
-						69
-					],
-					"b": [
-						-421,
-						69
-					],
-					"curve": 0
-				}
-			}
-		},
-		{
-			"v0": 29,
-			"v1": 31,
-			"curve": 0,
-			"vis": true,
-			"color": "ff6666",
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"bias": 15,
-			"x": -455,
-			"_data": {
-				"mirror": {},
-				"arc": {
-					"a": [
-						-455,
-						-69
-					],
-					"b": [
-						-455,
-						69
-					],
-					"curve": 0
-				}
-			}
-		},
-		{
-			"v0": 33,
-			"v1": 34,
-			"curve": 0,
-			"vis": true,
-			"color": "6666ff",
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"bias": 15,
-			"y": -69,
-			"_data": {
-				"mirror": {},
-				"arc": {
-					"a": [
-						455,
-						-69
-					],
-					"b": [
-						421,
-						-69
-					],
-					"curve": 0
-				}
-			}
-		},
-		{
-			"v0": 35,
-			"v1": 36,
-			"curve": 0,
-			"vis": true,
-			"color": "6666ff",
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"bias": -15,
-			"y": 69,
-			"_data": {
-				"mirror": {},
-				"arc": {
-					"a": [
-						455,
-						69
-					],
-					"b": [
-						421,
-						69
-					],
-					"curve": 0
-				}
-			}
-		},
-		{
-			"v0": 33,
-			"v1": 35,
-			"curve": 0,
-			"vis": true,
-			"color": "6666ff",
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"bias": -15,
-			"x": 455,
-			"_data": {
-				"mirror": {},
-				"arc": {
-					"a": [
-						455,
-						-69
-					],
-					"b": [
-						455,
-						69
-					],
-					"curve": 0
-				}
-			}
-		},
-		{
-			"v0": 37,
-			"v1": 38,
-			"curve": 90,
-			"vis": true,
-			"color": "848ea1",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 39,
-			"v1": 40,
-			"curve": -90,
-			"vis": true,
-			"color": "848ea1",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 38,
-			"v1": 40,
-			"curve": 0,
-			"vis": true,
-			"color": "848ea1",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 41,
-			"v1": 42,
-			"curve": -90,
-			"vis": true,
-			"color": "848ea1",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 43,
-			"v1": 44,
-			"curve": 90,
-			"vis": true,
-			"color": "848ea1",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 42,
-			"v1": 44,
-			"curve": 0,
-			"vis": true,
-			"color": "848ea1",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"x": 284
-		},
-		{
-			"v0": 45,
-			"v1": 46,
-			"curve": 0,
-			"vis": false,
-			"color": "ffffff",
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"y": 250
-		},
-		{
-			"v0": 47,
-			"v1": 48,
-			"curve": 0,
-			"vis": false,
-			"color": "ffffff",
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"y": -250
-		},
-		{
-			"v0": 47,
-			"v1": 45,
-			"curve": 0,
-			"vis": false,
-			"color": "ffffff",
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"x": -500
-		},
-		{
-			"v0": 48,
-			"v1": 46,
-			"curve": 0,
-			"vis": false,
-			"color": "ffffff",
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			]
-		},
-		{
-			"v0": 49,
-			"v1": 50,
-			"curve": 0,
-			"vis": true,
-			"color": "444b57",
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"trait": "kickOffBarrier",
-			"x": 0
-		},
-		{
-			"v0": 51,
-			"v1": 52,
-			"curve": 0,
-			"vis": true,
-			"color": "444b57",
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"trait": "kickOffBarrier",
-			"x": 0
-		},
-		{
-			"v0": 49,
-			"v1": 51,
-			"curve": 180,
-			"vis": true,
-			"color": "848ea1",
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO"
-			],
-			"trait": "kickOffBarrier"
-		},
-		{
-			"v0": 51,
-			"v1": 49,
-			"curve": 180,
-			"vis": true,
-			"color": "848ea1",
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"blueKO"
-			],
-			"trait": "kickOffBarrier"
-		},
-		{
-			"v0": 53,
-			"v1": 54,
-			"curve": 0,
-			"vis": true,
-			"color": "848ea1",
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"trait": "kickOffBarrier",
-			"x": 0
-		},
-		{
-			"v0": 55,
-			"v1": 56,
-			"curve": 0,
-			"vis": true,
-			"color": "848ea1",
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"trait": "kickOffBarrier",
-			"x": 0
-		}
+
+	"segments" : [
+		{ "v0" : 5, "v1" : 6, "trait" : "wall_map_nc" },
+		{ "v0" : 4, "v1" : 7, "trait" : "wall_map_nc" },
+		
+		{ "v0" : 6, "v1" : 13, "trait" : "KO_barrier" },
+		{ "v0" : 7, "v1" : 12, "trait" : "KO_barrier" },
+		
+		{ "v0" : 6, "v1" : 7, "curve" : 180, "trait" : "KO_wall_red" },
+		
+		{ "v0" : 7, "v1" : 6, "curve" : 180, "trait" : "KO_wall_blue" },
+		
+		{ "v0" : 18, "v1" : 19, "curve" : 180, "trait" : "decoration_map" },
+		{ "v0" : 19, "v1" : 18, "curve" : 180, "trait" : "decoration_map" },
+		{ "v0" : 21, "v1" : 20, "curve" : 150, "trait" : "decoration_map" },
+		{ "v0" : 22, "v1" : 23, "curve" : 150, "trait" : "decoration_map" },
+		
+		{ "v0" : 10, "v1" : 14, "trait" : "wall_blue_goal" },
+		{ "v0" : 28, "v1" : 29, "trait" : "wall_blue_goal" },
+		{ "v0" : 15, "v1" : 11, "trait" : "wall_blue_goal" },
+		
+		{ "v0" : 8, "v1" : 17, "trait" : "wall_red_goal" },
+		{ "v0" : 31, "v1" : 30, "trait" : "wall_red_goal" },
+		{ "v0" : 16, "v1" : 9, "trait" : "wall_red_goal" },
+		
+		{ "v0" : 9, "v1" : 8, "trait" : "goal_line" },
+		{ "v0" : 10, "v1" : 11, "trait" : "goal_line" },
+		
+		{ "v0" : 0, "v1" : 1, "trait" : "wall_map" },
+		{ "v0" : 25, "v1" : 10, "trait" : "wall_map" },
+		{ "v0" : 11, "v1" : 26, "trait" : "wall_map" },
+		{ "v0" : 2, "v1" : 3, "trait" : "wall_map" },
+		{ "v0" : 27, "v1" : 8, "trait" : "wall_map" },
+		{ "v0" : 9, "v1" : 24, "trait" : "wall_map" }
+
 	],
-	"goals": [],
-	"discs": [
-		{
-			"radius": 5.4,
-			"invMass": 0,
-			"pos": [
-				-420,
-				-69
-			],
-			"color": "000000",
-			"bCoef": 0.7,
-			"cMask": [
-				"red",
-				"blue",
-				"ball"
-			],
-			"damping": 1,
-			"speed": [
-				0,
-				0
-			]
-		},
-		{
-			"radius": 5.4,
-			"invMass": 0,
-			"pos": [
-				-420,
-				69
-			],
-			"color": "000000",
-			"bCoef": 0.7,
-			"cMask": [
-				"red",
-				"blue",
-				"ball"
-			],
-			"damping": 1,
-			"speed": [
-				0,
-				0
-			]
-		},
-		{
-			"radius": 5.4,
-			"invMass": 0,
-			"pos": [
-				420,
-				-69
-			],
-			"color": "000000",
-			"bCoef": 0.7,
-			"cMask": [
-				"red",
-				"blue",
-				"ball"
-			],
-			"damping": 1,
-			"speed": [
-				0,
-				0
-			]
-		},
-		{
-			"radius": 5.4,
-			"invMass": 0,
-			"pos": [
-				420,
-				69
-			],
-			"color": "000000",
-			"bCoef": 0.7,
-			"cMask": [
-				"red",
-				"blue",
-				"ball"
-			],
-			"damping": 1,
-			"speed": [
-				0,
-				0
-			]
-		}
+
+	"planes" : [
+		{ "normal" : [0,1 ], "dist" : -230, "bCoef" : 0 },
+		{ "normal" : [0,-1 ], "dist" : -230, "bCoef" : 0 },
+		{ "normal" : [1,0 ], "dist" : -480, "bCoef" : 0 },
+		{ "normal" : [-1,0 ], "dist" : -480, "bCoef" : 0 }
+
 	],
-	"planes": [],
-	"joints": [],
-	"playerPhysics": {
-		"radius": 15,
-		"bCoef": 0,
-		"invMass": 0.5,
-		"damping": 0.96,
-		"cGroup": [
-			"red",
-			"blue"
-		],
-		"acceleration": 0.11,
-		"gravity": [
-			0,
-			0
-		],
-		"kickingAcceleration": 0.083,
-		"kickingDamping": 0.96,
-		"kickStrength": 4.545,
-		"kickback": 0
+
+	"goals" : [
+		
+
+	],
+
+	"discs" : [
+		{ "pos" : [-400,-70 ], "trait" : "goal_post" },
+		{ "pos" : [-400,70 ], "trait" : "goal_post" },
+		{ "pos" : [400,-70 ], "trait" : "goal_post" },
+		{ "pos" : [400,70 ], "trait" : "goal_post" }
+
+	],
+
+	"playerPhysics" : {
+		"bCoef" : 0,
+		"acceleration" : 0.11,
+		"kickingAcceleration" : 0.083,
+		"kickStrength" : 4.2
+
 	},
-	"ballPhysics": {
-		"radius": 5.8,
-		"bCoef": 0.412,
-		"cMask": [
-			"all"
-		],
-		"damping": 0.99,
-		"invMass": 1.5,
-		"gravity": [
-			0,
-			0
-		],
-		"color": "FFD700",
-		"cGroup": [
-			"ball"
-		]
-	}
+
+	"ballPhysics" : {
+		"radius" : 5.8,
+		"bCoef" : 0.412,
+		"invMass" : 1.55,
+		"color" : "FFF26D"
+
+	},
+
+	"spawnDistance" : 200,
+
+	"traits" : {
+		"wall_map" : { "vis" : true, "color" : "abc2d5", "bCoef" : 1, "cMask" : ["ball" ], "bias" : -10 },
+		"wall_map_nc" : { "vis" : true, "color" : "abc2d5", "bCoef" : 0, "cMask" : [ ], "cGroup" : [ ] },
+		"KO_wall_red" : { "vis" : true, "color" : "d9a472", "bCoef" : 0.1, "cMask" : ["red","blue" ], "cGroup" : ["redKO" ] },
+		"KO_wall_blue" : { "vis" : true, "color" : "d9a472", "bCoef" : 0.1, "cMask" : ["red","blue" ], "cGroup" : ["blueKO" ] },
+		"vertexDefault" : { "bCoef" : 1, "cMask" : [ ], "cGroup" : [ ] },
+		"decoration_map" : { "vis" : true, "color" : "626262", "bCoef" : 0, "cMask" : [ ] },
+		"goal_line" : { "vis" : true, "color" : "c5c5c5", "bCoef" : 0, "cMask" : [ ] },
+		"wall_red_goal" : { "vis" : true, "color" : "ff6666", "bCoef" : 0.1, "cMask" : ["ball" ], "bias" : -10 },
+		"wall_blue_goal" : { "vis" : true, "color" : "6666ff", "bCoef" : 0.1, "cMask" : ["ball" ], "bias" : -10 },
+		"goal_post" : { "radius" : 5.4, "invMass" : 0, "color" : "031726" },
+		"map_point" : { "curve" : 180, "vis" : true, "color" : "626262", "cMask" : [ ] },
+		"KO_barrier" : { "vis" : false, "bCoef" : 0.1, "cMask" : ["red","blue" ], "cGroup" : ["redKO","blueKO" ] }
+
+	},
+
+	"joints" : [
+		
+
+	],
+
+	"redSpawnPoints" : [
+		
+
+	],
+
+	"blueSpawnPoints" : [
+		
+
+	]
 }`;
 const classicMap = `{
-	"name": "SPL 1v1 by DavidMC49",
-	"width": 500,
-	"height": 250,
-	"cameraWidth": 0,
-	"cameraHeight": 0,
-	"maxViewWidth": 0,
-	"cameraFollow": "ball",
-	"spawnDistance": 175,
-	"redSpawnPoints": [],
-	"blueSpawnPoints": [],
-	"canBeStored": false,
-	"kickOffReset": "partial",
-	"bg": {
-		"color": "444b57",
-		"kickOffRadius": 65
-	},
-	"traits": {
-		"ballArea": {
-			"vis": false,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			]
-		},
-		"goalPost": {
-			"radius": 8,
-			"invMass": 0,
-			"bCoef": 0.5
-		},
-		"goalNet": {
-			"vis": true,
-			"bCoef": 0.1,
-			"cMask": [
-				"ball"
-			]
-		},
-		"kickOffBarrier": {
-			"vis": false,
-			"bCoef": 0.1,
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"cMask": [
-				"red",
-				"blue"
-			]
-		}
-	},
-	"vertexes": [
-		{
-			"x": -420,
-			"y": -200,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": 15
-		},
-		{
-			"x": -420,
-			"y": -70,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": 15
-		},
-		{
-			"x": 420,
-			"y": -200,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": -15
-		},
-		{
-			"x": -420,
-			"y": 70,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": 15
-		},
-		{
-			"x": -420,
-			"y": 200,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": 15
-		},
-		{
-			"x": 420,
-			"y": 200,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": 15
-		},
-		{
-			"x": 420,
-			"y": 70,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"color": "ffffff",
-			"bias": 15
-		},
-		{
-			"x": 420,
-			"y": -70,
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": -15
-		},
-		{
-			"x": -14.865758720072378,
-			"y": -38.134046656075995,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"x": -29.865758720072378,
-			"y": -38.134046656075995,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"x": -33.86575872007238,
-			"y": -30.134046656076,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"x": -20.865758720072378,
-			"y": -17.134046656076,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"x": -24.865758720072378,
-			"y": -9.134046656075999,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"x": -39.86575872007238,
-			"y": -9.134046656075999,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"x": -15,
-			"y": 19,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"color": "8704EE"
-		},
-		{
-			"x": -9,
-			"y": -10,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"color": "8704EE"
-		},
-		{
-			"x": 8,
-			"y": -10,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"color": "8704EE"
-		},
-		{
-			"x": -12,
-			"y": 5,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"color": "8704EE"
-		},
-		{
-			"x": 5,
-			"y": 5,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"color": "8704EE"
-		},
-		{
-			"x": 13.86,
-			"y": -1,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"color": "8704EE"
-		},
-		{
-			"x": 13.568937125298635,
-			"y": 39.782288547285624,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"x": 19.568937125298635,
-			"y": 10.282288547285624,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"x": 35.56893712529863,
-			"y": 39.782288547285624,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"x": 0,
-			"y": 62,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"trait": "kickOffBarrier",
-			"color": "8704EE"
-		},
-		{
-			"x": 0,
-			"y": -62,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"trait": "kickOffBarrier",
-			"color": "8704EE"
-		},
-		{
-			"x": 420,
-			"y": -68,
-			"cMask": [
-				"wall"
-			],
-			"color": "ffffff"
-		},
-		{
-			"x": 420,
-			"y": 68,
-			"cMask": [
-				"wall"
-			],
-			"color": "ffffff"
-		},
-		{
-			"x": -420,
-			"y": -68,
-			"cMask": [
-				"wall"
-			],
-			"color": "ffffff"
-		},
-		{
-			"x": -420,
-			"y": 68,
-			"cMask": [
-				"wall"
-			],
-			"color": "ffffff"
-		},
-		{
-			"x": -455,
-			"y": -69,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"bias": 15,
-			"color": "ff6666",
-			"_data": {
-				"mirror": {}
-			}
-		},
-		{
-			"x": -421,
-			"y": -69,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"bias": -15,
-			"color": "ff6666",
-			"_data": {
-				"mirror": {}
-			}
-		},
-		{
-			"x": -455,
-			"y": 69,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"bias": 15,
-			"color": "ff6666",
-			"_data": {
-				"mirror": {}
-			}
-		},
-		{
-			"x": -421,
-			"y": 69,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"bias": 15,
-			"color": "ff6666",
-			"_data": {
-				"mirror": {}
-			}
-		},
-		{
-			"x": 455,
-			"y": -69,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"color": "6666ff",
-			"bias": 15,
-			"_data": {
-				"mirror": {}
-			}
-		},
-		{
-			"x": 421,
-			"y": -69,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"color": "6666ff",
-			"bias": 15,
-			"_data": {
-				"mirror": {}
-			}
-		},
-		{
-			"x": 455,
-			"y": 69,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"color": "6666ff",
-			"bias": -15,
-			"_data": {
-				"mirror": {}
-			}
-		},
-		{
-			"x": 421,
-			"y": 69,
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"color": "6666ff",
-			"bias": -15,
-			"_data": {
-				"mirror": {}
-			}
-		},
-		{
-			"x": -419,
-			"y": -165,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"color": "848ea1"
-		},
-		{
-			"x": -284,
-			"y": -30,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"color": "848ea1"
-		},
-		{
-			"x": -419,
-			"y": 165,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"curve": -90,
-			"color": "848ea1"
-		},
-		{
-			"x": -284,
-			"y": 30,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"curve": -90,
-			"color": "848ea1"
-		},
-		{
-			"x": 419,
-			"y": -165,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"color": "848ea1",
-			"curve": -90
-		},
-		{
-			"x": 284,
-			"y": -30,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"color": "848ea1",
-			"curve": -90
-		},
-		{
-			"x": 419,
-			"y": 165,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"curve": 90,
-			"color": "848ea1"
-		},
-		{
-			"x": 284,
-			"y": 20,
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"curve": 90,
-			"color": "848ea1"
-		},
-		{
-			"x": -500,
-			"y": 250,
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			]
-		},
-		{
-			"x": 500,
-			"y": 250,
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			]
-		},
-		{
-			"x": -500,
-			"y": -250,
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			]
-		},
-		{
-			"x": 500,
-			"y": -250,
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			]
-		},
-		{
-			"x": 0,
-			"y": -65,
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"trait": "kickOffBarrier",
-			"color": "444b57"
-		},
-		{
-			"x": 0,
-			"y": -249,
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"trait": "kickOffBarrier",
-			"color": "444b57"
-		},
-		{
-			"x": 0,
-			"y": 65,
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"trait": "kickOffBarrier",
-			"color": "444b57"
-		},
-		{
-			"x": 0,
-			"y": 249,
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"trait": "kickOffBarrier",
-			"color": "444b57"
-		},
-		{
-			"x": 0,
-			"y": 65,
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"trait": "kickOffBarrier",
-			"color": "848ea1",
-			"curve": 0
-		},
-		{
-			"x": 0,
-			"y": 200,
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"trait": "kickOffBarrier",
-			"color": "848ea1",
-			"curve": 0
-		},
-		{
-			"x": 0,
-			"y": -65,
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"trait": "kickOffBarrier",
-			"color": "848ea1",
-			"curve": 0
-		},
-		{
-			"x": 0,
-			"y": -200,
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"trait": "kickOffBarrier",
-			"color": "848ea1",
-			"curve": 0
-		}
-	],
-	"segments": [
-		{
-			"v0": 0,
-			"v1": 1,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": 15,
-			"x": -420
-		},
-		{
-			"v0": 0,
-			"v1": 2,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": -15,
-			"y": -200
-		},
-		{
-			"v0": 3,
-			"v1": 4,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": 15,
-			"x": -420
-		},
-		{
-			"v0": 4,
-			"v1": 5,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": 15,
-			"y": 200
-		},
-		{
-			"v0": 5,
-			"v1": 6,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": 15,
-			"x": 420
-		},
-		{
-			"v0": 2,
-			"v1": 7,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 1,
-			"cMask": [
-				"ball"
-			],
-			"trait": "ballArea",
-			"bias": -15,
-			"x": 420
-		},
-		{
-			"v0": 8,
-			"v1": 9,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"y": -40
-		},
-		{
-			"v0": 9,
-			"v1": 10,
-			"curve": -135,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 10,
-			"v1": 11,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 11,
-			"v1": 12,
-			"curve": 135,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 12,
-			"v1": 13,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 14,
-			"v1": 15,
-			"curve": 0,
-			"vis": true,
-			"color": "8704EE",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 15,
-			"v1": 16,
-			"curve": 0,
-			"vis": true,
-			"color": "8704EE",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 17,
-			"v1": 18,
-			"curve": 0,
-			"vis": true,
-			"color": "8704EE",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"y": 5
-		},
-		{
-			"v0": 16,
-			"v1": 19,
-			"curve": 120,
-			"vis": true,
-			"color": "8704EE",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 19,
-			"v1": 18,
-			"curve": 60,
-			"vis": true,
-			"color": "8704EE",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 20,
-			"v1": 21,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 20,
-			"v1": 22,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 23,
-			"v1": 24,
-			"curve": 180,
-			"vis": true,
-			"color": "ffffff",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"trait": "kickOffBarrier",
-			"x": 0
-		},
-		{
-			"v0": 24,
-			"v1": 23,
-			"curve": 180,
-			"vis": true,
-			"color": "8704EE",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"trait": "kickOffBarrier",
-			"x": 0
-		},
-		{
-			"v0": 25,
-			"v1": 26,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"cMask": [
-				"wall"
-			],
-			"x": 420
-		},
-		{
-			"v0": 27,
-			"v1": 28,
-			"curve": 0,
-			"vis": true,
-			"color": "ffffff",
-			"cMask": [
-				"wall"
-			],
-			"x": -420
-		},
-		{
-			"v0": 29,
-			"v1": 30,
-			"curve": 0,
-			"vis": true,
-			"color": "ff6666",
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"bias": -15,
-			"_data": {
-				"mirror": {},
-				"arc": {
-					"a": [
-						-455,
-						-69
-					],
-					"b": [
-						-421,
-						-69
-					],
-					"curve": 0
-				}
-			}
-		},
-		{
-			"v0": 31,
-			"v1": 32,
-			"curve": 0,
-			"vis": true,
-			"color": "ff6666",
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"bias": 15,
-			"y": 69,
-			"_data": {
-				"mirror": {},
-				"arc": {
-					"a": [
-						-455,
-						69
-					],
-					"b": [
-						-421,
-						69
-					],
-					"curve": 0
-				}
-			}
-		},
-		{
-			"v0": 29,
-			"v1": 31,
-			"curve": 0,
-			"vis": true,
-			"color": "ff6666",
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"bias": 15,
-			"x": -455,
-			"_data": {
-				"mirror": {},
-				"arc": {
-					"a": [
-						-455,
-						-69
-					],
-					"b": [
-						-455,
-						69
-					],
-					"curve": 0
-				}
-			}
-		},
-		{
-			"v0": 33,
-			"v1": 34,
-			"curve": 0,
-			"vis": true,
-			"color": "6666ff",
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"bias": 15,
-			"y": -69,
-			"_data": {
-				"mirror": {},
-				"arc": {
-					"a": [
-						455,
-						-69
-					],
-					"b": [
-						421,
-						-69
-					],
-					"curve": 0
-				}
-			}
-		},
-		{
-			"v0": 35,
-			"v1": 36,
-			"curve": 0,
-			"vis": true,
-			"color": "6666ff",
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"bias": -15,
-			"y": 69,
-			"_data": {
-				"mirror": {},
-				"arc": {
-					"a": [
-						455,
-						69
-					],
-					"b": [
-						421,
-						69
-					],
-					"curve": 0
-				}
-			}
-		},
-		{
-			"v0": 33,
-			"v1": 35,
-			"curve": 0,
-			"vis": true,
-			"color": "6666ff",
-			"bCoef": 1.7,
-			"cMask": [
-				"ball"
-			],
-			"bias": -15,
-			"x": 455,
-			"_data": {
-				"mirror": {},
-				"arc": {
-					"a": [
-						455,
-						-69
-					],
-					"b": [
-						455,
-						69
-					],
-					"curve": 0
-				}
-			}
-		},
-		{
-			"v0": 37,
-			"v1": 38,
-			"curve": 90,
-			"vis": true,
-			"color": "848ea1",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 39,
-			"v1": 40,
-			"curve": -90,
-			"vis": true,
-			"color": "848ea1",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 38,
-			"v1": 40,
-			"curve": 0,
-			"vis": true,
-			"color": "848ea1",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 41,
-			"v1": 42,
-			"curve": -90,
-			"vis": true,
-			"color": "848ea1",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 43,
-			"v1": 44,
-			"curve": 90,
-			"vis": true,
-			"color": "848ea1",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			]
-		},
-		{
-			"v0": 42,
-			"v1": 44,
-			"curve": 0,
-			"vis": true,
-			"color": "848ea1",
-			"bCoef": 0,
-			"cMask": [
-				"wall"
-			],
-			"x": 284
-		},
-		{
-			"v0": 45,
-			"v1": 46,
-			"curve": 0,
-			"vis": false,
-			"color": "ffffff",
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"y": 250
-		},
-		{
-			"v0": 47,
-			"v1": 48,
-			"curve": 0,
-			"vis": false,
-			"color": "ffffff",
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"y": -250
-		},
-		{
-			"v0": 47,
-			"v1": 45,
-			"curve": 0,
-			"vis": false,
-			"color": "ffffff",
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"x": -550
-		},
-		{
-			"v0": 49,
-			"v1": 50,
-			"curve": 0,
-			"vis": true,
-			"color": "444b57",
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"trait": "kickOffBarrier",
-			"x": 0
-		},
-		{
-			"v0": 51,
-			"v1": 52,
-			"curve": 0,
-			"vis": true,
-			"color": "444b57",
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"trait": "kickOffBarrier",
-			"x": 0
-		},
-		{
-			"v0": 49,
-			"v1": 51,
-			"curve": 180,
-			"vis": true,
-			"color": "848ea1",
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO"
-			],
-			"trait": "kickOffBarrier"
-		},
-		{
-			"v0": 51,
-			"v1": 49,
-			"curve": 180,
-			"vis": true,
-			"color": "848ea1",
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"blueKO"
-			],
-			"trait": "kickOffBarrier"
-		},
-		{
-			"v0": 53,
-			"v1": 54,
-			"curve": 0,
-			"vis": true,
-			"color": "848ea1",
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"cGroup": [
-				"redKO",
-				"blueKO"
-			],
-			"trait": "kickOffBarrier",
-			"x": 0
-		},
-		{
-			"v0": 55,
-			"v1": 56,
-			"curve": 0,
-			"vis": true,
-			"color": "848ea1",
-			"bCoef": 0,
-			"cMask": [
-				"red",
-				"blue"
-			],
-			"trait": "kickOffBarrier",
-			"x": 0
-		}
-	],
-	"goals": [
-		{
-			"p0": [
-				-425.8,
-				-69
-			],
-			"p1": [
-				-425.8,
-				69
-			],
-			"team": "red"
-		},
-		{
-			"p0": [
-				425.8,
-				-69
-			],
-			"p1": [
-				425.8,
-				69
-			],
-			"team": "blue"
-		}
-	],
-	"discs": [
-		{
-			"radius": 5.4,
-			"invMass": 0,
-			"pos": [
-				-420,
-				-69
-			],
-			"color": "000000",
-			"bCoef": 0.7,
-			"cMask": [
-				"red",
-				"blue",
-				"ball"
-			],
-			"damping": 1,
-			"speed": [
-				0,
-				0
-			]
-		},
-		{
-			"radius": 5.4,
-			"invMass": 0,
-			"pos": [
-				-420,
-				69
-			],
-			"color": "000000",
-			"bCoef": 0.7,
-			"cMask": [
-				"red",
-				"blue",
-				"ball"
-			],
-			"damping": 1,
-			"speed": [
-				0,
-				0
-			]
-		},
-		{
-			"radius": 5.4,
-			"invMass": 0,
-			"pos": [
-				420,
-				-69
-			],
-			"color": "000000",
-			"bCoef": 0.7,
-			"cMask": [
-				"red",
-				"blue",
-				"ball"
-			],
-			"damping": 1,
-			"speed": [
-				0,
-				0
-			]
-		},
-		{
-			"radius": 5.4,
-			"invMass": 0,
-			"pos": [
-				420,
-				69
-			],
-			"color": "000000",
-			"bCoef": 0.7,
-			"cMask": [
-				"red",
-				"blue",
-				"ball"
-			],
-			"damping": 1,
-			"speed": [
-				0,
-				0
-			]
-		}
-	],
-	"planes": [],
-	"joints": [],
-	"playerPhysics": {
-		"radius": 15,
-		"bCoef": 0,
-		"invMass": 0.5,
-		"damping": 0.96,
-		"cGroup": [
-			"red",
-			"blue"
-		],
-		"acceleration": 0.11,
-		"gravity": [
-			0,
-			0
-		],
-		"kickingAcceleration": 0.083,
-		"kickingDamping": 0.96,
-		"kickStrength": 4.545,
-		"kickback": 0
-	},
-	"ballPhysics": {
-		"radius": 5.8,
-		"bCoef": 0.412,
-		"cMask": [
-			"all"
-		],
-		"damping": 0.99,
-		"invMass": 1.5,
-		"gravity": [
-			0,
-			0
-		],
-		"color": "FFD700",
-		"cGroup": [
-			"ball"
-		]
-	}
-}`
+    "name":"BFF Classic v3",
+    "width":480,
+    "height":230,
+    "bg":{
+       "type":"",
+       "kickOffRadius":60,
+       "color":"34414b"
+    },
+    "vertexes":[
+       {
+          "x":-401.4,
+          "y":-200,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":401.4,
+          "y":-200,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":401.4,
+          "y":200,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":-401.4,
+          "y":200,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":0,
+          "y":200,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":0,
+          "y":-200,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":0,
+          "y":-80,
+          "cMask":[
+             "red",
+             "blue"
+          ],
+          "cGroup":[
+             "redKO",
+             "blueKO"
+          ],
+          "trait":"vertexDefault"
+       },
+       {
+          "x":0,
+          "y":80,
+          "cMask":[
+             "red",
+             "blue"
+          ],
+          "cGroup":[
+             "redKO",
+             "blueKO"
+          ],
+          "trait":"vertexDefault"
+       },
+       {
+          "x":-400,
+          "y":70,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":-400,
+          "y":-70,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":400,
+          "y":-70,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":400,
+          "y":70,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":0,
+          "y":230,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":0,
+          "y":-230,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":436.4,
+          "y":-70,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":436.4,
+          "y":70,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":-436.4,
+          "y":-70,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":-436.4,
+          "y":70,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":0,
+          "y":-1.5,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":0,
+          "y":1.5,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":400,
+          "y":-135,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":400,
+          "y":135,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":-400,
+          "y":-135,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":-400,
+          "y":135,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":-400,
+          "y":-201.4,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":400,
+          "y":-201.4,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":400,
+          "y":201.4,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":-400,
+          "y":201.4,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":435,
+          "y":-71.4,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":435,
+          "y":71.4,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":-435,
+          "y":-71.4,
+          "trait":"vertexDefault"
+       },
+       {
+          "x":-435,
+          "y":71.4,
+          "trait":"vertexDefault"
+       }
+    ],
+    "segments":[
+       {
+          "v0":5,
+          "v1":6,
+          "trait":"wall_map_nc"
+       },
+       {
+          "v0":4,
+          "v1":7,
+          "trait":"wall_map_nc"
+       },
+       {
+          "v0":6,
+          "v1":13,
+          "trait":"KO_barrier"
+       },
+       {
+          "v0":7,
+          "v1":12,
+          "trait":"KO_barrier"
+       },
+       {
+          "v0":6,
+          "v1":7,
+          "curve":180,
+          "trait":"KO_wall_red"
+       },
+       {
+          "v0":7,
+          "v1":6,
+          "curve":180,
+          "trait":"KO_wall_blue"
+       },
+       {
+          "v0":18,
+          "v1":19,
+          "curve":180,
+          "trait":"decoration_map"
+       },
+       {
+          "v0":19,
+          "v1":18,
+          "curve":180,
+          "trait":"decoration_map"
+       },
+       {
+          "v0":21,
+          "v1":20,
+          "curve":150,
+          "trait":"decoration_map"
+       },
+       {
+          "v0":22,
+          "v1":23,
+          "curve":150,
+          "trait":"decoration_map"
+       },
+       {
+          "v0":10,
+          "v1":14,
+          "trait":"wall_blue_goal"
+       },
+       {
+          "v0":28,
+          "v1":29,
+          "trait":"wall_blue_goal"
+       },
+       {
+          "v0":15,
+          "v1":11,
+          "trait":"wall_blue_goal"
+       },
+       {
+          "v0":8,
+          "v1":17,
+          "trait":"wall_red_goal"
+       },
+       {
+          "v0":31,
+          "v1":30,
+          "trait":"wall_red_goal"
+       },
+       {
+          "v0":16,
+          "v1":9,
+          "trait":"wall_red_goal"
+       },
+       {
+          "v0":9,
+          "v1":8,
+          "trait":"goal_line"
+       },
+       {
+          "v0":10,
+          "v1":11,
+          "trait":"goal_line"
+       },
+       {
+          "v0":0,
+          "v1":1,
+          "trait":"wall_map"
+       },
+       {
+          "v0":25,
+          "v1":10,
+          "trait":"wall_map"
+       },
+       {
+          "v0":11,
+          "v1":26,
+          "trait":"wall_map"
+       },
+       {
+          "v0":2,
+          "v1":3,
+          "trait":"wall_map"
+       },
+       {
+          "v0":27,
+          "v1":8,
+          "trait":"wall_map"
+       },
+       {
+          "v0":9,
+          "v1":24,
+          "trait":"wall_map"
+       }
+    ],
+    "planes":[
+       {
+          "normal":[
+             0,
+             1
+          ],
+          "dist":-230,
+          "bCoef":0
+       },
+       {
+          "normal":[
+             0,
+             -1
+          ],
+          "dist":-230,
+          "bCoef":0
+       },
+       {
+          "normal":[
+             1,
+             0
+          ],
+          "dist":-480,
+          "bCoef":0
+       },
+       {
+          "normal":[
+             -1,
+             0
+          ],
+          "dist":-480,
+          "bCoef":0
+       }
+    ],
+    "goals":[
+       {
+          "p0":[
+             -407.9,
+             70
+          ],
+          "p1":[
+             -407.9,
+             -70
+          ],
+          "team":"red"
+       },
+       {
+          "p0":[
+             407.9,
+             70
+          ],
+          "p1":[
+             407.9,
+             -70
+          ],
+          "team":"blue"
+       }
+    ],
+    "discs":[
+       {
+          "pos":[
+             -400,
+             -70
+          ],
+          "trait":"goal_post"
+       },
+       {
+          "pos":[
+             -400,
+             70
+          ],
+          "trait":"goal_post"
+       },
+       {
+          "pos":[
+             400,
+             -70
+          ],
+          "trait":"goal_post"
+       },
+       {
+          "pos":[
+             400,
+             70
+          ],
+          "trait":"goal_post"
+       }
+    ],
+    "playerPhysics":{
+       "bCoef":0,
+       "acceleration":0.11,
+       "kickingAcceleration":0.083,
+       "kickStrength":4.2
+    },
+    "ballPhysics":{
+       "radius":5.8,
+       "bCoef":0.412,
+       "invMass":1.55,
+       "color":"FFF26D"
+    },
+    "spawnDistance":200,
+    "traits":{
+       "wall_map":{
+          "vis":true,
+          "color":"abc2d5",
+          "bCoef":1,
+          "cMask":[
+             "ball"
+          ],
+          "bias":-10
+       },
+       "wall_map_nc":{
+          "vis":true,
+          "color":"abc2d5",
+          "bCoef":0,
+          "cMask":[
+             
+          ],
+          "cGroup":[
+             
+          ]
+       },
+       "KO_wall_red":{
+          "vis":true,
+          "color":"d9a472",
+          "bCoef":0.1,
+          "cMask":[
+             "red",
+             "blue"
+          ],
+          "cGroup":[
+             "redKO"
+          ]
+       },
+       "KO_wall_blue":{
+          "vis":true,
+          "color":"d9a472",
+          "bCoef":0.1,
+          "cMask":[
+             "red",
+             "blue"
+          ],
+          "cGroup":[
+             "blueKO"
+          ]
+       },
+       "vertexDefault":{
+          "bCoef":1,
+          "cMask":[
+             
+          ],
+          "cGroup":[
+             
+          ]
+       },
+       "decoration_map":{
+          "vis":true,
+          "color":"626262",
+          "bCoef":0,
+          "cMask":[
+             
+          ]
+       },
+       "goal_line":{
+          "vis":true,
+          "color":"c5c5c5",
+          "bCoef":0,
+          "cMask":[
+             
+          ]
+       },
+       "wall_red_goal":{
+          "vis":true,
+          "color":"ff6666",
+          "bCoef":0.1,
+          "cMask":[
+             "ball"
+          ],
+          "bias":-10
+       },
+       "wall_blue_goal":{
+          "vis":true,
+          "color":"6666ff",
+          "bCoef":0.1,
+          "cMask":[
+             "ball"
+          ],
+          "bias":-10
+       },
+       "goal_post":{
+          "radius":5.4,
+          "invMass":0,
+          "color":"031726"
+       },
+       "map_point":{
+          "curve":180,
+          "vis":true,
+          "color":"626262",
+          "cMask":[
+             
+          ]
+       },
+       "KO_barrier":{
+          "vis":false,
+          "bCoef":0.1,
+          "cMask":[
+             "red",
+             "blue"
+          ],
+          "cGroup":[
+             "redKO",
+             "blueKO"
+          ]
+       }
+    },
+    "joints":[
+       
+    ],
+    "redSpawnPoints":[
+       
+    ],
+    "blueSpawnPoints":[
+       
+    ]
+ }`
 const bigMap = `{
-    "name":"BFF Big v3 from HaxMaps",
+    "name":"BFF Big v3",
     "width":800,
     "height":350,
     "bg":{
@@ -4051,7 +1928,8 @@ let adminList = [
     ['r3zt-IZ5DvDUDOvgmILrrrg06_UkEc6oGEGsBia3N2c', 'theapplewaseaten'],
     ['NmZF9AHd9WT_DZuRlcP56TgFGpTVo8v7GTmnqQJWI5g', 'slv'],
     ['I48TTeZm2IAxSkC8XM69IC-ngiw11MLsBX95VQMxx8Y', 'notat'],
-    ['SG-7jAUdef_vJRFxr3S5abHRBD46_xbsIv5QrJdm9t4', 'mecha']
+    ['UXa0ziDwJDGo0G12wBKlDSN_CHO2ZtD9VHcJJbbsZNY', 'pinot'],
+    ['kRRznFAzd3Ky8dvKP-HMu80m9Hj9TYQtcLankyK0PAs', 'yuji']
 ];
 let masterList = [
     'xeUiaLuGCf9LlAegDFcF0RenmtS-U5TcqQeAlSDiA_k', //coradme
@@ -7860,6 +5738,10 @@ room.onPlayerChat = function (player, message) { //chat
         room.sendAnnouncement(`👑 [${stats.playerName} | Lvl ${playerLevel}] ${player.name}: ${message}`, undefined, 0xFFD700, 'normal', 0); //notat
     } else if (authArray[player.id][0] == 'KTIuwa5xJDTYqHNRFW0zhvX2t95XuXhI8gZ9_1TBEMw') {
         room.sendAnnouncement(`🗿 [${stats.playerName} | Lvl ${playerLevel}] ${player.name}: ${message}`, undefined, 0xFFD700, 'normal', 0); //yura
+    } else if (authArray[player.id][0] == 'uL4_aogqL07MHuwnrUO3TxblVCU2yWOXu2Hqj4B5EgY') {
+        room.sendAnnouncement(`❄️ [${stats.playerName} | Lvl ${playerLevel}] ${player.name}: ${message}`, undefined, 0xFFD700, 'normal', 0); //vvv
+    } else if (authArray[player.id][0] == 'kRRznFAzd3Ky8dvKP-HMu80m9Hj9TYQtcLankyK0PAs') {
+        room.sendAnnouncement(`🐐 [${stats.playerName} | Lvl ${playerLevel}] ${player.name}: ${message}`, undefined, 0xFFD700, 'normal', 0); //yuji
     }
     else if (player.admin) {
         room.sendAnnouncement(`${playerEmoji}[${stats.playerName} | Lvl ${playerLevel}] ${player.name}: ${message}`, undefined, 0xFFD700, 'normal', 0);
@@ -7926,10 +5808,10 @@ const setKits = (array) => {
 }
 
 room.onGameStart = function (byPlayer) {
-	redKits.sort( () => .5 - Math.random() );
-    setKits(redKits[0])
-    blueKits.sort( () => .5 - Math.random() );
-    setKits(blueKits[0])
+	// redKits.sort( () => .5 - Math.random() );
+    // setKits(redKits[0])
+    // blueKits.sort( () => .5 - Math.random() );
+    // setKits(blueKits[0])
 
     clearTimeout(startTimeout);
     if (byPlayer != null) clearTimeout(stopTimeout);
