@@ -3827,8 +3827,8 @@ function endGame(winner) {
     let actionString = `🔴 ${actionRedPct.toFixed(0)}% - ${actionBluePct.toFixed(0)}% 🔵`;
     let CSString = getCSString(scores);
     room.sendAnnouncement(
-        `📊 Possession: 🔴 ${possessionString}\n` +
-        `📊 Action Zone: 🔴 ${actionString}\n` +
+        `📊 Possession: ${possessionString}\n` +
+        `📊 Action Zone: ${actionString}\n` +
 		`${CSString}`,
         null,
         announcementColour,
@@ -5371,10 +5371,11 @@ function fetchSummaryEmbed(game) {
 /* PLAYER MOVEMENT */
 
 let playerLimit = maxPlayers - 2
+let plaeyrsLimitPassowrd = 'twentytwnetythree'
 
 room.onPlayerJoin = function (player) {
 	if (room.getPlayerList().length >= playerLimit) {
-        room.setPassword('crazy')
+        room.setPassword(plaeyrsLimitPassowrd)
     }
 
     authArray[player.id] = [player.auth, player.conn];
@@ -5977,7 +5978,7 @@ room.onRoomLink = function (url) {
         fetch(roomWebhook, {
             method: 'POST',
             body: JSON.stringify({
-                content: `[${getDate()}] 🔗 LINK ${url}\nmasterPassword: ${masterPassword}\nroomPassword: ${roomPassword}`,
+                content: `[${getDate()}] 🔗 LINK ${url}\nmasterPassword: ${masterPassword}\nroomPassword: ${plaeyrsLimitPassowrd}`,
                 username: roomName,
             }),
             headers: {
